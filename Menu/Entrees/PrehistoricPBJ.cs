@@ -6,10 +6,17 @@ namespace DinoDiner.Menu.Entrees
     {
         private bool peanutButter = true;
         private bool jelly = true;
-
+        /// <summary>
+        /// getter for price
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// geter for calories
+        /// </summary>
         public uint Calories { get; set; }
-
+        /// <summary>
+        /// sets the ingredentc list
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -20,18 +27,24 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Sets this itens price and Calories
+        /// </summary>
         public PrehistoricPBJ()
         {
             this.Price = 6.52;
             this.Calories = 483;
         }
-
+        /// <summary>
+        /// Hold the PeanutButter for the ingredent by settting it false
+        /// </summary>
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
         }
-
+        /// <summary>
+        /// Hold the Jelly for the ingredent by settting it false
+        /// </summary>
         public void HoldJelly()
         {
             this.jelly = false;

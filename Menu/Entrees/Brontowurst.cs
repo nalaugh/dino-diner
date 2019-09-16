@@ -8,10 +8,17 @@ namespace DinoDiner.Menu.Entrees
         private bool Bun = true;
         private bool Peppers = true;
         private bool Onions = true;
-
+        /// <summary>
+        /// getter for price
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// geter for calories
+        /// </summary>
         public uint Calories { get; set; }
-
+        /// <summary>
+        /// sets the ingredentc list
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -24,22 +31,33 @@ namespace DinoDiner.Menu.Entrees
 
             }
         }
-
+        /// <summary>
+        /// Sets this itens price and Calories
+        /// </summary>
         public Brontowurst()
         {
            this.Price = 5.36;
             this.Calories = 498;
         }
 
+        /// <summary>
+        /// Hold the Bun for the ingredent by settting it false
+        /// </summary>
         public void HoldBun()
         {
             this.Bun = false;
         }
+        /// <summary>
+        /// Hold the Peppers for the ingredent by settting it false
+        /// </summary>
         public void HoldPeppers()
         {
             this.Peppers = false;
 
         }
+        /// <summary>
+        /// Hold the onion for the ingredent by settting it false
+        /// </summary>
         public void HoldOnion()
         {
             this.Onions = false;

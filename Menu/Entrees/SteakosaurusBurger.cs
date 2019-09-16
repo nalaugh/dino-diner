@@ -9,10 +9,17 @@ namespace DinoDiner.Menu.Entrees
         private bool Ketchup = true;
         private bool Mustard = true;
 
-
+        /// <summary>
+        /// getter for price
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// geter for calories
+        /// </summary>
         public uint Calories { get; set; }
-
+        /// <summary>
+        /// sets the ingredentc list
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -25,26 +32,38 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Sets this itens price and Calories
+        /// </summary>
         public SteakosaurusBurger()
         {
             this.Price = 5.15;
             this.Calories = 621;
         }
-
+        /// <summary>
+        /// Hold the Bun for the ingredent by settting it false
+        /// </summary>
         public void HoldBun()
         {
             this.Bun = false;
         }
-
-       public void HoldPickle()
+        /// <summary>
+        /// Hold the Pickle for the ingredent by settting it false
+        /// </summary>
+        public void HoldPickle()
         {
             this.pickle = false;
         }
+        /// <summary>
+        /// Hold the Ketchup for the ingredent by settting it false
+        /// </summary>
         public void HoldKetchup()
         {
             this.Ketchup = false;
         }
+        /// <summary>
+        /// Hold the Mustard for the ingredent by settting it false
+        /// </summary>
         public void HoldMustard()
         {
             this.Mustard = false;

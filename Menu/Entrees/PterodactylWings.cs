@@ -4,9 +4,18 @@ namespace DinoDiner.Menu.Entrees
 {
     public class PterodactylWings
 	{
+        /// <summary>
+        /// getter for price
+        /// </summary>
         public double Price { get; set; }
-        public uint Calories { get; set; }
 
+        /// <summary>
+        /// geter for calories
+        /// </summary>
+        public uint Calories { get; set; }
+        /// <summary>
+        /// sets the ingredentc list
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -15,6 +24,9 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
+        /// <summary>
+        /// Sets this itens price and Calories
+        /// </summary>
         public PterodactylWings()
         {
             Price = 7.21;

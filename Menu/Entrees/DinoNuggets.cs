@@ -5,10 +5,21 @@ namespace DinoDiner.Menu.Entrees
 {
     public class DinoNuggets
     {
+    /// <summary>
+    /// set the defalt nugget number
+    /// </summary>
         private uint Nuggetcount = 6;
+        /// <summary>
+        /// getter for price
+        /// </summary>
            public double Price { get; set; }
+        /// <summary>
+        /// geter for calories
+        /// </summary>
             public uint Calories { get; set; }
-
+        /// <summary>
+        /// sets the ingredentc list
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -19,7 +30,9 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+    /// <summary>
+    /// Sets this itens price and Calories
+    /// </summary>
     public DinoNuggets()
         
     {
@@ -27,6 +40,9 @@ namespace DinoDiner.Menu.Entrees
             this.Calories = 59 * (Nuggetcount);
 
         }
+        /// <summary>
+        /// Adds a nugget and changed the price and calories accoridingly
+        /// </summary>
         public void AddNugget()
         {
 
