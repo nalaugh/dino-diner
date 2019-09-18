@@ -2,7 +2,7 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger
+    public class TRexKingBurger : Entrees
     {
         private bool Bun = true;
         private bool pickle = true;
@@ -14,14 +14,6 @@ namespace DinoDiner.Menu.Entrees
         private bool Mayo = true;
         public int count = 3;
 
-        /// <summary>
-        /// getter for price
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// geter for calories
-        /// </summary>
-        public uint Calories { get; set; }
         /// <summary>
         /// sets the ingredentc list
         /// </summary>

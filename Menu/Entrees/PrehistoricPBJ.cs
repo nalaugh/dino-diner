@@ -2,18 +2,11 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class PrehistoricPBJ
+    public class PrehistoricPBJ :Entrees
     {
         private bool peanutButter = true;
         private bool jelly = true;
-        /// <summary>
-        /// getter for price
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// geter for calories
-        /// </summary>
-        public uint Calories { get; set; }
+  
         /// <summary>
         /// sets the ingredentc list
         /// </summary>

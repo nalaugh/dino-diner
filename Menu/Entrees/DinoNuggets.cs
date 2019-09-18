@@ -3,20 +3,13 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets
+    public class DinoNuggets : Entrees
     {
     /// <summary>
     /// set the defalt nugget number
     /// </summary>
         private uint Nuggetcount = 6;
-        /// <summary>
-        /// getter for price
-        /// </summary>
-           public double Price { get; set; }
-        /// <summary>
-        /// geter for calories
-        /// </summary>
-            public uint Calories { get; set; }
+  
         /// <summary>
         /// sets the ingredentc list
         /// </summary>

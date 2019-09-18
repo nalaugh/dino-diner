@@ -25,7 +25,7 @@ namespace DinoDiner.Menu.Sides
                 this.Calories = 720;
             }
         }
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

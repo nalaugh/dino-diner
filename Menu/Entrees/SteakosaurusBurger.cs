@@ -2,21 +2,14 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class SteakosaurusBurger
+    public class SteakosaurusBurger : Entrees
     {
         private bool Bun = true;
         private bool pickle = true;
         private bool Ketchup = true;
         private bool Mustard = true;
 
-        /// <summary>
-        /// getter for price
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// geter for calories
-        /// </summary>
-        public uint Calories { get; set; }
+
         /// <summary>
         /// sets the ingredentc list
         /// </summary>
@@ -35,7 +28,7 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Sets this itens price and Calories
         /// </summary>
-        public SteakosaurusBurger()
+        public SteakosaurusBurger() : base()
         {
             this.Price = 5.15;
             this.Calories = 621;

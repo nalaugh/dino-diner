@@ -1,0 +1,156 @@
+---
+uti: com.xamarin.workbook
+id: 30c34974-0324-4036-83e1-24b4e99a7112
+title: enum, abstacts, Inheritance
+platforms:
+- WPF
+---
+
+```csharp
+public enum grade {
+    A = 4,
+    B= 3,
+    C = 2,
+    D = 1,
+    F = 0,
+}
+```
+
+```csharp
+grade MyGrade = grade.B;
+```
+
+Staticly typed language cant put in the number. only the value as
+
+```csharp
+float x = 45;  
+int y = (int)4.5;
+```
+
+converting form int to a dould you dont lose nay data
+
+Converting double to an intager you are loosing data
+
+casting forces the change
+
+```csharp
+public abstract class student {
+    protected double creditscore;
+    protected double creadithours;
+
+    public string Frist {get;set;}
+    public string Last {get; set;}
+    public virtual double GPA
+    {
+        get{
+            return creditscore/creadithours;
+        }
+    }
+    public student (string first, string last){
+        this.Frist = first;
+        this.Last = last;
+    }
+    public void addcoursegrade( grade Grade, uint hour){
+        this.creadithours += hour;
+        switch(Grade){
+            case grade.A:
+                this.creditscore +=4*hour;
+                break;
+                  case grade.B:
+                this.creditscore +=3*hour;
+                break;
+                  case grade.C:
+                this.creditscore +=2*hour;
+                break;
+                  case grade.D:
+                this.creditscore +=1*hour;
+
+                break;
+        }
+    }
+
+}
+```
+
+Memory the doubles are heald along this the frist and last
+
+however the GPA does not have alocated memory
+
+abstat can not creat a student
+
+```csharp
+int foo = (int)grade.A; 
+```
+
+the type of an object is its class
+
+Polymorphisum : mutiple types same symble
+
+INheritance
+
+```csharp
+public class GradeStudent : student {
+
+   public string Researchfield {get; set;}
+    public override double GPA
+
+{
+    get
+    {
+         return 1.2* (creditscore/creadithours);
+    }
+}
+    public GradeStudent(string research, string first, string last): base (first, last){
+        this.Researchfield = research;
+
+    }
+    
+
+}
+```
+
+```csharp
+public class UNdergradStudent :student{
+    public UNdergradStudent(string first, string last): base(first, last){
+
+    }
+}
+```
+
+```csharp
+UNdergradStudent willie = new UNdergradStudent("Willie", "WildCat");
+```
+
+not replacing a GPA but adding it.
+
+have to overide it.
+
+```csharp
+GradeStudent mark = new GradeStudent("Poolologist","Mark", "Wildcat");
+```
+
+```csharp
+List<student> stu = new List<student>();
+```
+
+```csharp
+stu.Add(willie);  
+stu.Add(mark); 
+willie.addcoursegrade(grade.B, 1);
+mark.addcoursegrade(grade.A, 3);
+mark.addcoursegrade(grade.F, 4);
+stu; 
+```
+
+```csharp
+foreach(student s in stu)
+{
+    Console.WriteLine($"{s.Last}, {s.Frist} ({s.GPA}) {s.GetType()}");///(s.Last + ", "+ s.Frist + "()");
+}
+```
+
+we can treat ever graduate student like a student but cant treat a student like a grduatestudent.
+
+```csharp
+mark.GPA;
+```

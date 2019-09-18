@@ -2,17 +2,9 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class PterodactylWings
+    public class PterodactylWings : Entrees
 	{
-        /// <summary>
-        /// getter for price
-        /// </summary>
-        public double Price { get; set; }
 
-        /// <summary>
-        /// geter for calories
-        /// </summary>
-        public uint Calories { get; set; }
         /// <summary>
         /// sets the ingredentc list
         /// </summary>

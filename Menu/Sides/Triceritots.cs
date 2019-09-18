@@ -22,7 +22,7 @@ namespace DinoDiner.Menu.Sides
 
            
          }
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

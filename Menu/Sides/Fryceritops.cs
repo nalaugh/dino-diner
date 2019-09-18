@@ -6,14 +6,16 @@ namespace DinoDiner.Menu.Sides
 {
     public class Fryceritops : Side
     {
+        
         public Fryceritops()
         {
-            if (this.Size == Size.Small)
-            {
+          
                 this.Price = 0.99;
                 this.Calories = 222;
-            }
-            else if (this.Size == Size.Medium)
+
+
+           
+            if (this.Size == Size.Medium)
             {
                 this.Price = 1.45;
                 this.Calories = 365;
@@ -24,7 +26,7 @@ namespace DinoDiner.Menu.Sides
                 this.Calories = 480;
             }
         }
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

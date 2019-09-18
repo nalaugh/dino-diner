@@ -2,19 +2,13 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class VelociWrap
+    public class VelociWrap : Entrees
     {
         private bool Dressing = true;
         private bool Lettuce = true;
         private bool Cheese = true;
-        /// <summary>
-        /// getter for price
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// geter for calories
-        /// </summary>
-        public uint Calories { get; set; }
+  
+
         /// <summary>
         /// sets the ingredentc list
         /// </summary>
