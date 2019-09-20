@@ -10,9 +10,9 @@ namespace DinoDiner.Menu.Entrees
   
 
         /// <summary>
-        /// sets the ingredentc list
+        /// overrids the ingredentc list
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

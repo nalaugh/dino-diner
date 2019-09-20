@@ -6,34 +6,58 @@ namespace DinoDiner.Menu.Sides
 {
     public class Fryceritops : Side
     {
-        
-        public Fryceritops()
+        private Size size;
+        /// <summary>
+        /// Setting the size based on the size of the side
+        /// this is done through a switch overriding the previously set priced and calories.
+        /// </summary>
+        public override Size Size
         {
-          
-                this.Price = 0.99;
-                this.Calories = 222;
-
-
-           
-            if (this.Size == Size.Medium)
+            set
             {
-                this.Price = 1.45;
-                this.Calories = 365;
+                size = value;
+                switch (size)
+                {
+                    case Size.Small:
+                        Price = 0.99;
+                        Calories = 222;
+                        break;
+                    case Size.Medium:
+                        Price = 1.45;
+                        Calories = 365;
+                        break;
+                    case Size.Large:
+                        Price = 1.95;
+                        Calories = 480;
+                        break;    
+                }
             }
-            else if (this.Size == Size.Large)
+            get
             {
-                this.Price = 1.95;
-                this.Calories = 480;
+                return size;
             }
         }
+        /// <summary>
+        /// this constucts object seting the default sizes
+        /// </summary>
+        public Fryceritops()
+        {
+
+            this.Price = 0.99;
+            this.Calories = 222;
+        }
+        /// <summary>
+        /// this overides the ingresnts
+        /// </summary>
         public override List<string> Ingredients
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Potato", "Salt", "Vegtable Oil" };
+                List<string> ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
                 return ingredients;
             }
         }
+
     }
 
 }
