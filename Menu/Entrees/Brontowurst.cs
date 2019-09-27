@@ -2,7 +2,7 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class Brontowurst : Entrees
+    public class Brontowurst : Entree
     {
 
         private bool Bun = true;

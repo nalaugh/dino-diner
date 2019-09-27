@@ -5,7 +5,7 @@ using DinoDiner.Menu;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public abstract class Entrees
+    public abstract class Entree
     {
         /// <summary>
         /// Gets and sets the price

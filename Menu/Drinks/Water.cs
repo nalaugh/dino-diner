@@ -6,7 +6,7 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Water : Drink
     {
-        private Size size;
+        private Size size = Size.Small;
         /// <summary>
         /// this is jsut water unless the cutemer wants a lemon
         /// </summary>

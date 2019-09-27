@@ -9,7 +9,10 @@ namespace DinoDiner.Menu
 {
     public class CretaceousCombo
     {
-        private Size size;
+        /// <summary>
+        /// private backer with default to small
+        /// </summary>
+        private Size size = Size.Small;
         public Entree Entrees { get; set; }
         public Drink Drinks { get; set; }
         public Side Sides { get; set; }
@@ -32,7 +35,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return Drinks.Price + Sides.Price + Entree.Price - 0.25;
+                return Drinks.Price + Sides.Price + Entrees.Price - 0.25;
             }
 
         }
@@ -43,11 +46,27 @@ namespace DinoDiner.Menu
                 return Drinks.Calories + Sides.Calories + Entrees.Calories;
             }
         }
-
-
-        public override string ToString()
+        public List<string> Ingredients
         {
-            return "";
+            get
+            {
+                List<string> intgredients = new List<string>();
+                intgredients.AddRange(Entrees.Ingredients);
+                intgredients.AddRange(Drinks.Ingredients);
+                intgredients.AddRange(Sides.Ingredients);
+                return intgredients;
+
+            }
+        }
+
+
+        public CretaceousCombo() { };
+        public CretaceousCombo(Entree entree)
+        {
+            Entrees = entree;
+            Sides = new Fryceritops();
+            Drinks = new Sodasaurus();
+
         }
     }
 }

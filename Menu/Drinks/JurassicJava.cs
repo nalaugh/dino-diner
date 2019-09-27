@@ -6,7 +6,7 @@ namespace DinoDiner.Menu.Drinks
 {
     public class JurrassicJava : Drink
     {
-        private Size size;
+        private Size size = Size.Small;
         /// <summary>
         /// This cup is filled to the brim unless the cutermer wants the option to add cream.
         /// </summary>

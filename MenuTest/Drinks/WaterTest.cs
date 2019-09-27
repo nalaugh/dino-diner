@@ -12,33 +12,43 @@ namespace MenuTest.Drinks
     {
 
 
-        //set default price
+        /// <summary>
+        /// Check default price 
+        /// </summary>
         [Fact]
         public void DefaultPrice()
         {
             Water wtr = new Water();
             Assert.Equal<double>(0.10, wtr.Price);
         }
-        //set default Calories
+        /// <summary>
+        /// Checks Default Calories 
+        /// </summary>
         [Fact]
         public void DefaultCalories()
         {
             Water wtr = new Water();
             Assert.Equal<uint>(0, wtr.Calories);
         }
-        //Default Ice
+        /// <summary>
+        /// Check default Ice
+        /// </summary>
         public void DefaultIce()
         {
             Water wtr = new Water();
             Assert.True(wtr.Ice);
         }
-        //Defalt size
+        /// <summary>
+        /// Check default Size
+        /// </summary>
         public void DefaultSize()
         {
             Water wtr = new Water();
             Assert.Equal<Size>(Size.Small, wtr.Size);
         }
-        //Default Lemon
+        /// <summary>
+        /// Check dafulat Lemon
+        /// </summary>
         public void DefaultLemon()
         {
             Water wtr = new Water();
@@ -47,7 +57,9 @@ namespace MenuTest.Drinks
 
 
 
-        //set price for small
+        /// <summary>
+        /// Checks the price of a small drink
+        /// </summary>
         [Fact]
         public void SmallPrice()
         {
@@ -56,7 +68,9 @@ namespace MenuTest.Drinks
             wtr.Size = Size.Small;
             Assert.Equal<double>(0.10, wtr.Price);
         }
-        //set small Calories
+        /// <summary>
+        /// CHecks the calories of a small drink
+        /// </summary>f
         [Fact]
         public void SmallCalories()
         {
@@ -66,7 +80,9 @@ namespace MenuTest.Drinks
             Assert.Equal<uint>(0, wtr.Calories);
         }
 
-        //set price for Medium
+        /// <summary>
+        /// Checks the price of a Medien drink
+        /// </summary>
         [Fact]
         public void MediumPrice()
         {
@@ -74,7 +90,9 @@ namespace MenuTest.Drinks
             wtr.Size = Size.Medium;
             Assert.Equal<double>(0.10, wtr.Price);
         }
-        //set Medium Calories
+        /// <summary>
+        /// CHecks the calories of a medium drink
+        /// </summary>
         [Fact]
         public void MediumCalories()
         {
@@ -82,7 +100,9 @@ namespace MenuTest.Drinks
             wtr.Size = Size.Medium;
             Assert.Equal<uint>(0, wtr.Calories);
         }
-        //set price for Large
+        /// <summary>
+        /// Checks the price of a Large drink
+        /// </summary>
         [Fact]
         public void LargePrice()
         {
@@ -90,7 +110,9 @@ namespace MenuTest.Drinks
             wtr.Size = Size.Large;
             Assert.Equal<double>(0.10, wtr.Price);
         }
-        //set Large Calories
+        /// <summary>
+        /// CHecks the calories of a Large drink
+        /// </summary>
         [Fact]
         public void LargeCalories()
         {
@@ -99,7 +121,9 @@ namespace MenuTest.Drinks
             Assert.Equal<uint>(0, wtr.Calories);
         }
 
-        //Add ice test
+        /// <summary>
+        /// Check to see if hold works
+        /// </summary>
         [Fact]
         public void Holdice()
         {
@@ -108,7 +132,9 @@ namespace MenuTest.Drinks
             Assert.False(wtr.Ice);
         }
 
-        //Add Lemon
+        /// <summary>
+        /// checks to see if add Lemon works 
+        /// </summary>
         [Fact]
         public void AddLemon()
         {
@@ -120,7 +146,9 @@ namespace MenuTest.Drinks
 
 
 
-        //test Ingredence
+        /// <summary>
+        /// Check ingredience works
+        /// </summary>
         [Fact]
         public void ShouldGiveIngrediance()
         {
@@ -130,7 +158,9 @@ namespace MenuTest.Drinks
             Assert.Single(ingredients);
 
         }
-        //test Ingredence add Lemon
+        /// <summary>
+        /// CHeck Ingredience after adding Lemon
+        /// </summary>
         [Fact]
         public void ShouldGiveIngredianceLemon()
         {

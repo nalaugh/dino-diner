@@ -9,7 +9,7 @@ namespace DinoDiner.Menu.Drinks
     {
         private SodasaurusFlavor flavor;
 
-        private Size size;
+        private Size size = Size.Small;
         /// <summary>
         /// this set the flavor the the sode the the cutomer wants
         /// </summary>

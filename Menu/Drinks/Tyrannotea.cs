@@ -6,7 +6,7 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Tyrannotea : Drink
     {
-        private Size size;
+        private Size size = Size.Small;
         /// <summary>
         /// this is tea unless the cutemer wants sweet tea
         /// </summary>

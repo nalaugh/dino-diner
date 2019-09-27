@@ -6,7 +6,7 @@ namespace DinoDiner.Menu.Sides
 {
     public class Fryceritops : Side
     {
-        private Size size;
+        private Size size = Size.Small;
         /// <summary>
         /// Setting the size based on the size of the side
         /// this is done through a switch overriding the previously set priced and calories.

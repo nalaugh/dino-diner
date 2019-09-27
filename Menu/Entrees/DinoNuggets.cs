@@ -3,7 +3,7 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets : Entrees
+    public class DinoNuggets : Entree
     {
     /// <summary>
     /// set the defalt nugget number

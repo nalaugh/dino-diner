@@ -6,7 +6,7 @@ namespace DinoDiner.Menu.Sides
 {
    public class MezzorellaSticks: Side
     {
-        private Size size;
+        private Size size = Size.Small;
         /// <summary>
         /// overrides the price and the calories based on the size of the side
         /// </summary>

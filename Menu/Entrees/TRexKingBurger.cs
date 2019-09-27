@@ -2,7 +2,7 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger : Entrees
+    public class TRexKingBurger : Entree
     {
         private bool Bun = true;
         private bool pickle = true;

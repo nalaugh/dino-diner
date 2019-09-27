@@ -9,13 +9,15 @@ namespace MenuTest.Drinks
 {
     public class SodaSaurusTest
     {
-        //The ability to set each possible flavor
+        //1.The ability to set each possible flavor
         //2.The correct default price, calories, ice, and size
         //3.The correct price and calories after changing to small, medium, and large sizes.
         //4.That invoking HoldIce() results in the Ice property being false.
         //5. The correct ingredients are given
 
-        //set flavor to cola
+        /// <summary>
+        /// checks the faloring
+        /// </summary>
         [Fact]
         public void shouldBeAbletoSetFlavorCola()
         {
@@ -23,7 +25,9 @@ namespace MenuTest.Drinks
             soda.Flavor = SodasaurusFlavor.Cola;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Cola, soda.Flavor);
         }
-        //set flavor to Cherry
+        /// <summary>
+        /// checks the faloring
+        /// </summary>
         [Fact]
         public void shouldBeAbletoSetFlavorCharry()
         {
@@ -31,7 +35,9 @@ namespace MenuTest.Drinks
             soda.Flavor = SodasaurusFlavor.Cherry;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Cherry, soda.Flavor);
         }
-        //set flavor to Lime
+        /// <summary>
+        /// checks the faloring
+        /// </summary>
         [Fact]
         public void shouldBeAbletoSetFlavorLime()
         {
@@ -39,7 +45,9 @@ namespace MenuTest.Drinks
             soda.Flavor = SodasaurusFlavor.Lime;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Lime, soda.Flavor);
         }
-        //set flavor to Vanilla
+        /// <summary>
+        /// checks the faloring
+        /// </summary>
         [Fact]
         public void shouldBeAbletoSetFlavorVanilla()
         {
@@ -47,7 +55,9 @@ namespace MenuTest.Drinks
             soda.Flavor = SodasaurusFlavor.Vanilla;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Vanilla, soda.Flavor);
         }
-        //set flavor to Orange
+        /// <summary>
+        /// checks the faloring
+        /// </summary>
         [Fact]
         public void shouldBeAbletoSetFlavorOrange()
         {
@@ -55,7 +65,9 @@ namespace MenuTest.Drinks
             soda.Flavor = SodasaurusFlavor.Orange;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Orange, soda.Flavor);
         }
-        //set flavor to Chocolate
+        /// <summary>
+        /// checks the faloring
+        /// </summary>
         [Fact]
         public void shouldBeAbletoSetFlavorChocolate()
         {
@@ -63,7 +75,9 @@ namespace MenuTest.Drinks
             soda.Flavor = SodasaurusFlavor.Chocolate;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Chocolate, soda.Flavor);
         }
-        //set flavor to RootBeer
+        /// <summary>
+        /// checks the faloring
+        /// </summary>
         [Fact]
         public void shouldBeAbletoSetFlavorRootBeer()
         {
@@ -73,14 +87,18 @@ namespace MenuTest.Drinks
         }
        
         
-        //set default price
+        /// <summary>
+        /// Check the defualt Price
+        /// </summary>
         [Fact]
         public void DefaultPrice()
         {
             Sodasaurus sode = new Sodasaurus();
             Assert.Equal<double>(1.50, sode.Price);
         }
-        //set default Calories
+        /// <summary>
+        /// Check the defualt Calorie
+        /// </summary>
         [Fact]
         public void DefaultCalories()
         {
@@ -88,7 +106,9 @@ namespace MenuTest.Drinks
             Assert.Equal<uint>(112, sode.Calories);
         }
 
-        //Holde ice default
+        /// <summary>
+        /// Check the defualt Ice
+        /// </summary>
         [Fact]
         public void Holdicedefault()
         {
@@ -97,7 +117,9 @@ namespace MenuTest.Drinks
             Assert.True(soda.Ice);
 
         }
-        //default size
+        /// <summary>
+        /// Check the defualt size
+        /// </summary>
         public void DefaultSize()
         {
             Sodasaurus soda = new Sodasaurus();
@@ -105,7 +127,9 @@ namespace MenuTest.Drinks
         }
 
 
-        //set price for small
+        /// <summary>
+        /// Checks the price of a small drink
+        /// </summary>
         [Fact]
         public void SmallPrice()
         {
@@ -114,7 +138,9 @@ namespace MenuTest.Drinks
             sode.Size = Size.Small;
             Assert.Equal<double>(1.50, sode.Price);
         }
-        //set small Calories
+        /// <summary>
+        /// CHecks the calories of a small drink
+        /// </summary>
         [Fact]
         public void SmallCalories()
         {
@@ -124,7 +150,9 @@ namespace MenuTest.Drinks
             Assert.Equal<uint>(112, sode.Calories);
         }
 
-        //set price for Medium
+        /// <summary>
+        /// Checks the price of a Medium drink
+        /// </summary>
         [Fact]
         public void MediumPrice()
         {
@@ -132,7 +160,9 @@ namespace MenuTest.Drinks
             sode.Size = Size.Medium;
             Assert.Equal<double>(2.00, sode.Price);
         }
-        //set Medium Calories
+        /// <summary>
+        /// CHecks the calories of a Medium drink
+        /// </summary>
         [Fact]
         public void MediumCalories()
         {
@@ -140,7 +170,9 @@ namespace MenuTest.Drinks
             sode.Size = Size.Medium;
             Assert.Equal<uint>(156, sode.Calories);
         }
-        //set price for Large
+        /// <summary>
+        /// Checks the price of a Large drink
+        /// </summary>
         [Fact]
         public void LargePrice()
         {
@@ -148,7 +180,9 @@ namespace MenuTest.Drinks
             sode.Size = Size.Large;
             Assert.Equal<double>(2.50, sode.Price);
         }
-        //set Large Calories
+        /// <summary>
+        /// CHecks the calories of a Large drink
+        /// </summary>
         [Fact]
         public void LargeCalories()
         {
@@ -156,7 +190,9 @@ namespace MenuTest.Drinks
             sode.Size = Size.Large;
             Assert.Equal<uint>(208, sode.Calories);
         }
-        //Holde ice test
+        /// <summary>
+        /// Checks the see that the Ice was held 
+        /// </summary>
         [Fact]
         public void Holdice()
         {
@@ -164,7 +200,9 @@ namespace MenuTest.Drinks
             soda.HoldIce();
             Assert.False(soda.Ice);
         }
-        //test Ingredence
+        /// <summary>
+        /// CHecks defualt ingredience 
+        /// </summary>
         [Fact]
         public void ShouldGiveIngrediance()
         {
