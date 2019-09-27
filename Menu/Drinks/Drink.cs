@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu.Drinks
 {
 
-    public abstract class Side
+ 
+    public abstract class Drink
     {
         /// <summary>
         /// Gets and sets the price
@@ -27,6 +28,16 @@ namespace DinoDiner.Menu.Sides
         /// Gets or sets the size
         /// </summary>
         public abstract Size Size { get; set; }
-
+        /// <summary>
+        /// Adds ice to the drink
+        /// </summary>
+        public bool Ice { get; set; } = true;
+        /// <summary>
+        /// hold the ice from the drink;
+        /// </summary>
+        public void HoldIce()
+        {
+            this.Ice = false;
+        }
     }
 }
