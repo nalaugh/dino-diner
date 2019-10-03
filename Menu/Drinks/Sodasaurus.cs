@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
 
     public class Sodasaurus : Drink
@@ -71,6 +71,10 @@ namespace DinoDiner.Menu.Drinks
             this.Price = 1.50;
             this.Calories = 112;
            
+        }
+        public override string ToString()
+        {
+            return size +" "+ Flavor + " Sodasaurus";
         }
     }
 

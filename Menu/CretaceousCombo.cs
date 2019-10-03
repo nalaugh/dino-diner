@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Sides;
+using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
@@ -13,9 +11,21 @@ namespace DinoDiner.Menu
         /// private backer with default to small
         /// </summary>
         private Size size = Size.Small;
+        /// <summary>
+        /// creats a fied for entree
+        /// </summary>
         public Entree Entrees { get; set; }
+        /// <summary>
+        /// creats a field of Drink
+        /// </summary>
         public Drink Drinks { get; set; }
+        /// <summary>
+        /// Creats a field of side
+        /// </summary>
         public Side Sides { get; set; }
+        /// <summary>
+        /// sets the size of the drink and the sides
+        /// </summary>
         public Size Size
         {
 
@@ -31,6 +41,9 @@ namespace DinoDiner.Menu
 
             }
         }
+        /// <summary>
+        /// gets the price of of all the idenms and applies a discount for the combo
+        /// </summary>
         public double Price
         {
             get
@@ -39,6 +52,9 @@ namespace DinoDiner.Menu
             }
 
         }
+        /// <summary>
+        /// this gets the tolal calories for the combo
+        /// </summary>
         public uint Calories
         {
             get
@@ -46,6 +62,9 @@ namespace DinoDiner.Menu
                 return Drinks.Calories + Sides.Calories + Entrees.Calories;
             }
         }
+        /// <summary>
+        /// gets all the ingredents of a combo
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -60,13 +79,17 @@ namespace DinoDiner.Menu
         }
 
 
-        public CretaceousCombo() { };
+        public CretaceousCombo() { }
         public CretaceousCombo(Entree entree)
         {
             Entrees = entree;
             Sides = new Fryceritops();
             Drinks = new Sodasaurus();
 
+        }
+        public override string ToString()
+        {
+            return Entrees.ToString() + " Combo";
         }
     }
 }

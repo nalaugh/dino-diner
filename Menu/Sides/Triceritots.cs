@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     public class Triceritots : Side
     {
@@ -48,6 +48,10 @@ namespace DinoDiner.Menu.Sides
                 List<string> ingredients = new List<string>() { "Potato", "Vegetable Oil", "Salt" };
                 return ingredients;
             }
+        }
+        public override string ToString()
+        {
+            return size + " Triceritots";
         }
     }
 

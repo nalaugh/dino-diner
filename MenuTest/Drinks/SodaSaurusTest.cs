@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Drinks;
 using Xunit;
 using DinoDiner.Menu;
 
@@ -93,36 +92,10 @@ namespace MenuTest.Drinks
         [Fact]
         public void DefaultPrice()
         {
-            Sodasaurus sode = new Sodasaurus();
-            Assert.Equal<double>(1.50, sode.Price);
-        }
-        /// <summary>
-        /// Check the defualt Calorie
-        /// </summary>
-        [Fact]
-        public void DefaultCalories()
-        {
-            Sodasaurus sode = new Sodasaurus();
-            Assert.Equal<uint>(112, sode.Calories);
-        }
-
-        /// <summary>
-        /// Check the defualt Ice
-        /// </summary>
-        [Fact]
-        public void Holdicedefault()
-        {
             Sodasaurus soda = new Sodasaurus();
-
+            Assert.Equal<double>(1.50, soda.Price);
+            Assert.Equal<uint>(112, soda.Calories);
             Assert.True(soda.Ice);
-
-        }
-        /// <summary>
-        /// Check the defualt size
-        /// </summary>
-        public void DefaultSize()
-        {
-            Sodasaurus soda = new Sodasaurus();
             Assert.Equal<Size>(Size.Small, soda.Size);
         }
 
@@ -137,16 +110,6 @@ namespace MenuTest.Drinks
             sode.Size = Size.Medium;
             sode.Size = Size.Small;
             Assert.Equal<double>(1.50, sode.Price);
-        }
-        /// <summary>
-        /// CHecks the calories of a small drink
-        /// </summary>
-        [Fact]
-        public void SmallCalories()
-        {
-            Sodasaurus sode = new Sodasaurus();
-            sode.Size = Size.Medium;
-            sode.Size = Size.Small;
             Assert.Equal<uint>(112, sode.Calories);
         }
 
@@ -159,17 +122,9 @@ namespace MenuTest.Drinks
             Sodasaurus sode = new Sodasaurus();
             sode.Size = Size.Medium;
             Assert.Equal<double>(2.00, sode.Price);
-        }
-        /// <summary>
-        /// CHecks the calories of a Medium drink
-        /// </summary>
-        [Fact]
-        public void MediumCalories()
-        {
-            Sodasaurus sode = new Sodasaurus();
-            sode.Size = Size.Medium;
             Assert.Equal<uint>(156, sode.Calories);
         }
+
         /// <summary>
         /// Checks the price of a Large drink
         /// </summary>
@@ -179,17 +134,9 @@ namespace MenuTest.Drinks
             Sodasaurus sode = new Sodasaurus();
             sode.Size = Size.Large;
             Assert.Equal<double>(2.50, sode.Price);
-        }
-        /// <summary>
-        /// CHecks the calories of a Large drink
-        /// </summary>
-        [Fact]
-        public void LargeCalories()
-        {
-            Sodasaurus sode = new Sodasaurus();
-            sode.Size = Size.Large;
             Assert.Equal<uint>(208, sode.Calories);
         }
+
         /// <summary>
         /// Checks the see that the Ice was held 
         /// </summary>
@@ -212,7 +159,7 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Natural Flavors", ingredients);
             Assert.Contains<string>("Cane Sugar", ingredients);
             Assert.Equal<int>(3, ingredients.Count);
-
+           
         }
        
     }

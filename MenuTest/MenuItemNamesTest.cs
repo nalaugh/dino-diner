@@ -123,9 +123,9 @@ namespace MenuTest
         [InlineData(Size.Large, true)]
         public void JurrasicJavaToStringShouldGiveNameForSizeAndDecaf(Size size, bool decaf)
         {
-            JurassicJava java = new JurassicJava();
+            JurrassicJava java = new JurrassicJava();
             java.Size = size;
-            java.Decaf = decaf;
+            java.Decaff = decaf;
             if (decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());
             else Assert.Equal($"{size} Jurassic Java", java.ToString());
         }
@@ -158,6 +158,7 @@ namespace MenuTest
             Sodasaurus soda = new Sodasaurus();
             soda.Size = size;
             soda.Flavor = flavor;
+
             Assert.Equal($"{size} {flavor} Sodasaurus", soda.ToString());
         }
 

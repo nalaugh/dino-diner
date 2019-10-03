@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
    public class MeteorMacAndCheese: Side
     {
@@ -52,7 +52,13 @@ namespace DinoDiner.Menu.Sides
                 return ingredients;
             }
         }
+
+        public override string ToString()
+        {
+            return size + " Meteor Mac and Cheese";
+        }
     }
+
 
 }
 

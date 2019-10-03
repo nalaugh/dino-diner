@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
    public class MezzorellaSticks: Side
     {
@@ -54,6 +54,10 @@ namespace DinoDiner.Menu.Sides
                 List<string> ingredients = new List<string>() { "Cheese Product", "Breading", "Vegetable Oil" };
                 return ingredients;
             }
+        }
+        public override string ToString()
+        {
+            return size + " Mezzorella Sticks";
         }
     }
 }

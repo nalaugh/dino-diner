@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class TRexKingBurger : Entree
     {
@@ -100,6 +100,11 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMayo()
         {
             this.Mayo = false;
+        }
+
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
         }
     }
 }

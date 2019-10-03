@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     public class JurrassicJava : Drink
     {
@@ -79,6 +79,14 @@ namespace DinoDiner.Menu.Drinks
         public void AddIce()
         {
             this.Ice = true;
+        }
+
+        public override string ToString()
+        {
+            if (Decaff)
+                return size + " Decaf Jurassic Java";
+            else
+                return  size + " Jurassic Java";
         }
 
     }
