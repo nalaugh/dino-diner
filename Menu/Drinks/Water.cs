@@ -1,16 +1,32 @@
-﻿using System;
+﻿/*  water
+*   Author: Natalie Laughlin
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Implement a class to represent a glass of water that inherits from the Drink base class. 
+    /// It should have property Lemon (bool, default false), and a AddLemon() method.  
+    /// The Water class should have a price of $0.10 and 0 calories for all sizes. 
+    /// Its ingredients should be "Water" and (if lemon was added) "Lemon".
+    /// </summary>
     public class Water : Drink
     {
+        /// <summary>
+        /// private property of size
+        /// </summary>
         private Size size = Size.Small;
         /// <summary>
         /// this is jsut water unless the cutemer wants a lemon
         /// </summary>
         public bool Lemon { get; set; } = false;
+        /// <summary>
+        /// this gets the size of the drink
+        /// </summary>
         public override Size Size
         {
             set
@@ -70,6 +86,10 @@ namespace DinoDiner.Menu
         {
             this.Lemon = true;
         }
+        /// <summary>
+        /// this overrides the tostring.
+        /// </summary>
+        /// <returns>the size and water</returns>
         public override string ToString()
         {
             string  s  =  size + " Water";

@@ -1,10 +1,19 @@
-﻿using System;
+﻿/*  MeteorMacAndCheese
+*   Author: Natalie Laughlin
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-   public class MeteorMacAndCheese: Side
+    /// <summary>
+    /// Implement a class to represent the MeteorMacAndCheese Side that inherits from the Side base class.  
+    /// It’s price is $0.99 (small), $1.45 (medium), or $1.95 (large).  
+    /// Its calories are 420 (small), 490 (medium), and 520 (large). 
+    /// Its ingredients are **macaroni noodles, cheese product, **and pork sausage.
+    /// </summary>
+    public class MeteorMacAndCheese: Side
     {
         private Size size = Size.Small;
         /// <summary>
@@ -44,6 +53,9 @@ namespace DinoDiner.Menu
                 this.Price = 0.99;
                 this.Calories = 420;           
         }
+        /// <summary>
+        /// overrides the ingretnest list
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -52,7 +64,10 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// overrids the tostring method
+        /// </summary>
+        /// <returns>the size and name of the item</returns>
         public override string ToString()
         {
             return size + " Meteor Mac and Cheese";

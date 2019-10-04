@@ -1,11 +1,15 @@
-﻿using System;
+﻿/*  SodasaurusFlavor
+*   Author: Natalie Laughlin
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// gives all the differnt flavors the drinks might come in
+    /// Implement an enum of flavors for the soda fountain.  
+    /// Possible flavors are: Cola, Orange, Vanilla, Chocolate, RootBeer, Cherry, and Lime.
     /// </summary>
     public enum SodasaurusFlavor
     {

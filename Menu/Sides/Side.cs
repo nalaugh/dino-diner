@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*  size
+*   Author: Natalie Laughlin
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;

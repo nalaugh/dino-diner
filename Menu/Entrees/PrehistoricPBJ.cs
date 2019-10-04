@@ -1,10 +1,24 @@
-﻿using System.Collections.Generic;
+﻿/*  PrehistoricPBJ
+*   Author: Natalie Laughlin
+*/
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// The impelmentation of the prehistoric PB & J is provided as an example.  
+    /// Its price is $6.52, it contains 483 calories, and its ingredients are: bread, peanut butter, and jelly. 
+    /// It implements methods to hold the peanut butter and jelly.
+    /// </summary>
     public class PrehistoricPBJ :Entree
     {
+        /// <summary>
+        /// private veriable of peanutbuter
+        /// </summary>
         private bool peanutButter = true;
+        /// <summary>
+        /// private veriable of jelly
+        /// </summary>
         private bool jelly = true;
   
         /// <summary>
@@ -42,6 +56,10 @@ namespace DinoDiner.Menu
         {
             this.jelly = false;
         }
+        /// <summary>
+        /// overrifes the tosting metod
+        /// </summary>
+        /// <returns>the name of the item</returns>
         public override string ToString()
         {
             return "Prehistoric PB&J";

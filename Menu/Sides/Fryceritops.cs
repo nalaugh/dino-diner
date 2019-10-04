@@ -1,11 +1,22 @@
-﻿using System;
+﻿/*  Fryceritops
+*   Author: Natalie Laughlin
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Implement a class to represent the Fryceritops Side that inherits from the Side base class. 
+    /// It’s price is $0.99 (small), $1.45 (medium), or $1.95 (large).  Its calories are 222 (small), 365 (medium), and 480 (large).  
+    /// Its ingredients are **potatoes, salt, **and vegtable oil
+    /// </summary>
     public class Fryceritops : Side
     {
+        /// <summary>
+        /// private verible of size
+        /// </summary>
         private Size size = Size.Small;
         /// <summary>
         /// Setting the size based on the size of the side
@@ -57,7 +68,10 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// overrides the tosting method
+        /// </summary>
+        /// <returns>the size and the name of the item </returns>
         public override string ToString()
         {
             return size + " Friceritops";

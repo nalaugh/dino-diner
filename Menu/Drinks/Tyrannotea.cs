@@ -1,11 +1,25 @@
-﻿using System;
+﻿/*  Tyrannotea
+*   Author: Natalie Laughlin
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Implement a class to represent Tyrannotea that inherits from Drink. 
+    /// It should have properties for Sweet (a bool, default false) and Lemon (a bool, default false). 
+    /// Its price is $0.99 (small), $1.49 (medium), and $1.99 (large).  Its calories are 8 (small), 16 (medium), and 32 (large). 
+    /// Adding sweetener doubles these values. 
+    /// It should also implement a method AddLemon() which sets the lemon to true. 
+    /// Its ingredients should be "Water", "Tea", (if lemon was added) "Lemon", and (if sweet) "Cane Sugar".
+    /// </summary>
     public class Tyrannotea : Drink
     {
+        /// <summary>
+        /// private veriabl of size
+        /// </summary>
         private Size size = Size.Small;
         /// <summary>
         /// this is tea unless the cutemer wants sweet tea
@@ -16,6 +30,9 @@ namespace DinoDiner.Menu
         /// this has no lemon unless the cutomer wants it
         /// </summary>
         public bool Lemon { get; set; } = false;
+        /// <summary>
+        /// gets the size of the drink
+        /// </summary>
         public override Size Size
         {
             set
@@ -93,7 +110,10 @@ namespace DinoDiner.Menu
         {
             this.Lemon = true;
         }
-
+        /// <summary>
+        /// orverides the toString
+        /// </summary>
+        /// <returns>the name of the item along with if its size and wheither it's sweet or not  </returns>
         public override string ToString()
         {
             if (Sweet)

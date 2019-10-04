@@ -1,14 +1,28 @@
-﻿using System;
+﻿/*  Sodasaurus
+*   Author: Natalie Laughlin
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-
+    /// <summary>
+    /// Implement a class to represent a Sodasaurus that inherits from the Drink class.  
+    /// It should have an additional property of Flavor with type SodasaurusFlavor.  
+    /// The price of a Sodasaurus is $1.50 (small), $2.00 (medium), and $2.50 (large).  
+    /// Calories are 112 (small), 156 (medium), and 208 (large). 
+    /// Its ingredients should be "Water", "Natural Flavors", and "Cane Sugar."
+    /// </summary>
     public class Sodasaurus : Drink
     {
+        /// <summary>
+        /// private varible of flavor
+        /// </summary>
         private SodasaurusFlavor flavor;
-
+        /// <summary>
+        /// private veriable of size small
+        /// </summary>
         private Size size = Size.Small;
         /// <summary>
         /// this set the flavor the the sode the the cutomer wants
@@ -72,6 +86,10 @@ namespace DinoDiner.Menu
             this.Calories = 112;
            
         }
+        /// <summary>
+        /// overrides the ToString method 
+        /// </summary>
+        /// <returns>the size the flavor and the name of the item</returns>
         public override string ToString()
         {
             return size +" "+ Flavor + " Sodasaurus";

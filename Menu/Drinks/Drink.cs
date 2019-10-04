@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*  Drink
+*   Author: Natalie Laughlin
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
@@ -6,7 +9,11 @@ using DinoDiner.Menu;
 namespace DinoDiner.Menu
 {
 
- 
+    /// <summary>
+    /// Implement an abstract base class to represent any drink.  
+    /// It should contain properties for: Price (a double), Calories (an uint), Ingredients (a List<string>), Size  (using a Size enum, default small), 
+    /// and Ice (bool, default true). It should also implement a method HoldIce() which sets the Ice property to false.
+    /// </summary>
     public abstract class Drink : IMenuItem
     {
         /// <summary>

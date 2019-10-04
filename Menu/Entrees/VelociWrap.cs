@@ -1,11 +1,29 @@
-﻿using System.Collections.Generic;
+﻿/*  VelociWarp
+*   Author: Natalie Laughlin
+*/
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Implement a class to represent the Veloci-Wrap entree.  
+    /// Its price is $6.86, it contains 356 calories, 
+    /// and its ingredients are: a flour tortilla, chicken breast, romaine lettuce, Ceasar dressing, and parmesan cheese.  
+    /// It should implement methods to hold the dressing, lettuce, and cheese.
+    /// </summary>
     public class VelociWrap : Entree
     {
+        /// <summary>
+        /// private veriable of of dressing
+        /// </summary>
         private bool Dressing = true;
+        /// <summary>
+        /// private veribale of Lettuce 
+        /// </summary>
         private bool Lettuce = true;
+        /// <summary>
+        /// private veriable of cheese
+        /// </summary>
         private bool Cheese = true;
   
 
@@ -52,7 +70,10 @@ namespace DinoDiner.Menu
         {
             this.Cheese = false;
         }
-
+        /// <summary>
+        /// override the tostring metod 
+        /// </summary>
+        /// <returns>returnes the name of the item</returns>
         public override string ToString()
         {
             return "Veloci-Wrap";

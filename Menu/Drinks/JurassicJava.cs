@@ -1,11 +1,25 @@
-﻿using System;
+﻿/*  JurassicJava
+*   Author: Natalie Laughlin
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Implement a class to represent the JurrasicJava, that inherits from the Drink class.  
+    /// Unlike other drinks, it should default to Ice as false.  
+    /// It should also implement properties for RoomForCream (bool, default false), Decaf (bool, default false). 
+    /// It should also implement a method LeaveRoomForCream() and AddIce().
+    /// Its price is $.59 (small), $.99 (medium), and $1.49 (large) and calories are 2 (small), 4 (medium), and 8 (large). 
+    /// Its ingredients should be "Water" and "Coffee".
+    /// </summary>
     public class JurrassicJava : Drink
     {
+        /// <summary>
+        /// private veriable of size
+        /// </summary>
         private Size size = Size.Small;
         /// <summary>
         /// This cup is filled to the brim unless the cutermer wants the option to add cream.
@@ -80,7 +94,10 @@ namespace DinoDiner.Menu
         {
             this.Ice = true;
         }
-
+        /// <summary>
+        /// overrides the toString method 
+        /// </summary>
+        /// <returns>the size of the drink the name and if it was Decaf or not </returns>
         public override string ToString()
         {
             if (Decaff)

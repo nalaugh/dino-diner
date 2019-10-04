@@ -5,6 +5,9 @@ using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// creatse the comb with the right size calories and ingredients
+    /// </summary>
     public class CretaceousCombo
     {
         /// <summary>

@@ -1,17 +1,53 @@
-﻿using System.Collections.Generic;
+﻿/*  TRexKingBurger
+*   Author: Natalie Laughlin
+*/
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Implement a class to represent the T-Rex King Burger entree.  
+    /// Its price is $8.45, it contains 728 calories, 
+    /// and its ingredients are: a whole wheat bun, three steakburger patties, lettuce, tomato, onion, pickle, ketchup, mustard, and mayo. 
+    /// It should implement methods for holding the bun, lettuce, tomato, onion, pickle, ketchup, mustard, and mayo.
+    /// </summary>
     public class TRexKingBurger : Entree
     {
+        /// <summary>
+        /// private veriable for bun
+        /// </summary>
         private bool Bun = true;
+        /// <summary>
+        /// private veriable of pickle
+        /// </summary>
         private bool pickle = true;
+        /// <summary>
+        /// private veriable of Ketchup
+        /// </summary>
         private bool Ketchup = true;
+        /// <summary>
+        /// private verible of Mustard
+        /// </summary>
         private bool Mustard = true;
+        /// <summary>
+        /// private veriable of Lettuce
+        /// </summary>
         private bool Lettuce = true;
+        /// <summary>
+        /// Private veribale of Onion
+        /// </summary>
         private bool Onions = true;
+        /// <summary>
+        /// private veriable of Tomato
+        /// </summary>
         private bool tomato = true;
+        /// <summary>
+        /// private veribale of Mayo
+        /// </summary>
         private bool Mayo = true;
+        /// <summary>
+        /// private variable of the number patties
+        /// </summary>
         public int count = 3;
 
         /// <summary>
@@ -101,7 +137,10 @@ namespace DinoDiner.Menu
         {
             this.Mayo = false;
         }
-
+        /// <summary>
+        /// overrides the to sting method
+        /// </summary>
+        /// <returns>the name if the item.</returns>
         public override string ToString()
         {
             return "T-Rex King Burger";

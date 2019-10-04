@@ -1,7 +1,14 @@
-﻿using System.Collections.Generic;
+﻿/*  PterodactylWings
+*   Author: Natalie Laughlin
+*/
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Implement a class to represent the Pterodactyl Wings entree. 
+    /// Its price is $7.21, it contains 318 calories, and its ingredients are:  Chicken and Wing Sauce.
+    /// </summary>
     public class PterodactylWings : Entree
 	{
 
@@ -24,7 +31,10 @@ namespace DinoDiner.Menu
             Price = 7.21;
             Calories = 318;
         }
-
+        /// <summary>
+        /// overrids the toString method
+        /// </summary>
+        /// <returns>the name of the item</returns>
         public override string ToString()
         {
             return "Pterodactyl Wings";
