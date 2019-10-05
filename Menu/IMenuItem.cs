@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*  IMenuItem
+*   Author: Natalie Laughlin
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,8 +13,17 @@ namespace DinoDiner.Menu
     /// </summary>
     public interface IMenuItem
     {
+        /// <summary>
+        /// the price of the item
+        /// </summary>
         double Price { get; }
+        /// <summary>
+        /// the number of calories of an item
+        /// </summary>
         uint Calories { get; }
+        /// <summary>
+        /// the ingredients in an item
+        /// </summary>
         List<string> Ingredients { get; }
     }
 }

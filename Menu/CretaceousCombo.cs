@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* CretaceousCombo
+*   Author: Natalie Laughlin
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
@@ -81,8 +84,10 @@ namespace DinoDiner.Menu
             }
         }
 
-
-        public CretaceousCombo() { }
+        /// <summary>
+        /// constructs a combo
+        /// </summary>
+        /// <param name="entree">the type of combo</param>
         public CretaceousCombo(Entree entree)
         {
             Entrees = entree;
@@ -90,6 +95,10 @@ namespace DinoDiner.Menu
             Drinks = new Sodasaurus();
 
         }
+        /// <summary>
+        /// overrides the toString method
+        /// </summary>
+        /// <returns>the name of the combo</returns>
         public override string ToString()
         {
             return Entrees.ToString() + " Combo";
