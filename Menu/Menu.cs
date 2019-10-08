@@ -36,18 +36,12 @@ namespace DinoDiner.Menu
             get
             {
                 List<Entree> it = new List<Entree>();
-                Brontowurst bs = new Brontowurst();
-                DinoNuggets Dn = new DinoNuggets();
-                PrehistoricPBJ pj = new PrehistoricPBJ();
-                SteakosaurusBurger SB = new SteakosaurusBurger();
-                TRexKingBurger king = new TRexKingBurger();
-                VelociWrap Vw = new VelociWrap();
-                it.Add(bs);
-                it.Add(Dn);
-                it.Add(pj);
-                it.Add(SB);
-                it.Add(king);
-                it.Add(Vw);
+                it.Add(new Brontowurst());
+                it.Add(new DinoNuggets());
+                it.Add(new PrehistoricPBJ());
+                it.Add(new SteakosaurusBurger());
+                it.Add(new TRexKingBurger());
+                it.Add(new VelociWrap());
                 return it;
                 
             }
@@ -60,14 +54,10 @@ namespace DinoDiner.Menu
             get
             {
                 List<Side> it = new List<Side>();
-                Fryceritops Fry = new Fryceritops();
-                MeteorMacAndCheese Mac = new MeteorMacAndCheese();
-                MezzorellaSticks mez = new MezzorellaSticks();
-                Triceritots tri = new Triceritots();
-                it.Add(Fry);
-                it.Add(Mac);
-                it.Add(mez);
-                it.Add(tri);
+                it.Add(new Fryceritops());
+                it.Add(new MeteorMacAndCheese());
+                it.Add(new MezzorellaSticks());
+                it.Add(new Triceritots());
                 return it;
 
             }
@@ -80,14 +70,10 @@ namespace DinoDiner.Menu
             get
             {
                 List<Drink> it = new List<Drink>();
-                JurrassicJava jv = new JurrassicJava();
-                Sodasaurus soda = new Sodasaurus();
-                Tyrannotea tea = new Tyrannotea();
-                Water water = new Water();
-                it.Add(jv);
-                it.Add(soda);
-                it.Add(tea);
-                it.Add(water);
+                it.Add(new JurrassicJava());
+                it.Add(new Sodasaurus());
+                it.Add(new Tyrannotea());
+                it.Add(new Water());
                 return it;
 
             }
@@ -100,20 +86,13 @@ namespace DinoDiner.Menu
             get
             {
                 List<CretaceousCombo> it = new List<CretaceousCombo>();
-                CretaceousCombo br = new CretaceousCombo(new Brontowurst());
-                CretaceousCombo Dn = new CretaceousCombo(new DinoNuggets());
-                CretaceousCombo Pj = new CretaceousCombo(new PrehistoricPBJ());
-                CretaceousCombo pt = new CretaceousCombo(new PterodactylWings());
-                CretaceousCombo St = new CretaceousCombo(new SteakosaurusBurger());
-                CretaceousCombo king = new CretaceousCombo(new TRexKingBurger());
-                CretaceousCombo Vw = new CretaceousCombo(new VelociWrap());
-                it.Add(br);
-                it.Add(Dn);
-                it.Add(Pj);
-                it.Add(pt);
-                it.Add(St);
-                it.Add(king);
-                it.Add(Vw);
+                it.Add(new CretaceousCombo(new Brontowurst()));
+                it.Add(new CretaceousCombo(new DinoNuggets()));
+                it.Add(new CretaceousCombo(new PrehistoricPBJ()));
+                it.Add(new CretaceousCombo(new PterodactylWings()));
+                it.Add(new CretaceousCombo(new SteakosaurusBurger()));
+                it.Add(new CretaceousCombo(new TRexKingBurger()));
+                it.Add(new CretaceousCombo(new VelociWrap()));
                 return it;
             }
         }

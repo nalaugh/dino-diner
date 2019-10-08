@@ -21,7 +21,7 @@ namespace MenuTest.Drinks
         /// Checks the Default price
         /// </summary>
         [Fact]
-        public void DefaultPrice()
+        public void ShouldGiveDefaultSetting()
         {
             Tyrannotea ty = new Tyrannotea();
             Assert.Equal<double>(0.99, ty.Price);
@@ -31,15 +31,11 @@ namespace MenuTest.Drinks
             Assert.False(ty.Lemon);
             Assert.False(ty.Sweet);
         }
-
-        
-
-
         /// <summary>
         /// Checks the price for small
         /// </summary>
         [Fact]
-        public void SmallPrice()
+        public void ShouldGiveSmallTea()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.Size = Size.Medium;
@@ -53,7 +49,7 @@ namespace MenuTest.Drinks
         /// Checks  Medium
         /// </summary>
         [Fact]
-        public void MediumPrice()
+        public void ShouldGiveMediumTea()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.Size = Size.Medium;
@@ -65,28 +61,20 @@ namespace MenuTest.Drinks
         /// Checks the price for Large
         /// </summary>
         [Fact]
-        public void LargePrice()
+        public void ShouldGiveLargeTea()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.Size = Size.Large;
             Assert.Equal<double>(1.99, ty.Price);
             Assert.Equal<uint>(32, ty.Calories);
         }
-        /// <summary>
-        /// Checks the calories for Large
-        /// </summary>
-        [Fact]
-        public void LargeCalories()
-        {
-            Tyrannotea ty = new Tyrannotea();
 
-        }
 
         /// <summary>
         /// Checks the price after set to sweet small
         /// </summary>
         [Fact]
-        public void SmallPriceSweet()
+        public void ShouldGiveSmallSweetTea()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.Sweet = true;
@@ -94,101 +82,61 @@ namespace MenuTest.Drinks
             ty.Size = Size.Small;
            
             Assert.Equal<double>(0.99*2, ty.Price);
-        }
-       /// <summary>
-       /// CHecks the calories after set to sweet Small
-       /// </summary>
-        [Fact]
-        public void SmallCaloriesSweet()
-        {
-            Tyrannotea ty = new Tyrannotea();
-            ty.Sweet = true;
-            ty.Size = Size.Medium;
-            ty.Size = Size.Small;
-          
-            Assert.Equal<uint>(8*2, ty.Calories);
+            Assert.Equal<uint>(8 * 2, ty.Calories);
         }
 
         /// <summary>
-        /// Checks the price after set to sweet Medium 
+        /// Checks the price and Calories after set to sweet Medium 
         /// </summary>
         [Fact]
-        public void MediumPriceSweet()
+        public void ShouldGiveMediumeSweetTea()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.Sweet = true;
             ty.Size = Size.Medium;
            
             Assert.Equal<double>(1.49*2, ty.Price);
-        }
-        /// <summary>
-        /// CHecks the calories after set to sweet Medium
-        /// </summary>
-        [Fact]
-        public void MediumCaloriesSweet()
-        {
-            Tyrannotea ty = new Tyrannotea();
-            ty.Sweet = true;
-            ty.Size = Size.Medium;
-         
-            Assert.Equal<uint>(16*2, ty.Calories);
+
+            Assert.Equal<uint>(16 * 2, ty.Calories);
         }
         /// <summary>
         /// Checks the price after set to sweet Large
         /// </summary>
         [Fact]
-        public void LargePriceSweet()
+        public void ShouldGiveLargeSweetTea()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.Sweet = true;
             ty.Size = Size.Large;
          
             Assert.Equal<double>(1.99*2, ty.Price);
+            Assert.Equal<uint>(32 * 2, ty.Calories);
         }
-        /// <summary>
-        /// CHecks the calories after set to sweet Large
-        /// </summary>
-        [Fact]
-        public void LargeCaloriesSweet()
-        {
-            Tyrannotea ty = new Tyrannotea();
-            ty.Sweet = true;
-            ty.Size = Size.Large;
-            Assert.Equal<uint>(32*2, ty.Calories);
-        }
-
-
         /// <summary>
         /// CHecks to see that Lemon is set to true 
         /// </summary>
         [Fact]
-        public void AddLemon()
+        public void ShouldGiveLemon()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.AddLemon();
             Assert.True(ty.Lemon);
         }
-
-
-
-
         /// <summary>
         /// CHeck to see if HoldICe sets Ice to false
         /// </summary>
         [Fact]
-        public void Holdice()
+        public void ShouldHoldice()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.HoldIce();
             Assert.False(ty.Ice);
         }
-
-
         /// <summary>
         /// Checks price after reset small
         /// </summary>
         [Fact]
-        public void SmallPriceSwap()
+        public void ShouldGiveSmallSwap()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.Size = Size.Medium;
@@ -196,18 +144,6 @@ namespace MenuTest.Drinks
             ty.Sweet = true;
             ty.Sweet = false;
             Assert.Equal<double>(0.99, ty.Price);
-        }
-        /// <summary>
-        /// Checks caloried after rest small
-        /// </summary>
-        [Fact]
-        public void SmallCaloriesSwap()
-        {
-            Tyrannotea ty = new Tyrannotea();
-            ty.Size = Size.Medium;
-            ty.Size = Size.Small;
-            ty.Sweet = true;
-            ty.Sweet = false;
             Assert.Equal<uint>(8, ty.Calories);
         }
 
@@ -215,51 +151,30 @@ namespace MenuTest.Drinks
         /// Checks price after reset Medium
         /// </summary>
         [Fact]
-        public void MediumPriceSwap()
+        public void ShouldGiveMediumSwap()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.Size = Size.Medium;
             ty.Sweet = true;
             ty.Sweet = false;
             Assert.Equal<double>(1.49, ty.Price);
-        }
-        /// <summary>
-        /// Checks caloried after rest Medium
-        /// </summary>
-        [Fact]
-        public void MediumCaloriesSwap()
-        {
-            Tyrannotea ty = new Tyrannotea();
-            ty.Size = Size.Medium;
-            ty.Sweet = true;
-            ty.Sweet = false;
             Assert.Equal<uint>(16, ty.Calories);
+
         }
+
         /// <summary>
         /// Checks price after reset Large
         /// </summary>
         [Fact]
-        public void LargePriceSwap()
+        public void ShouldGiveLargeSwap()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.Size = Size.Large;
             ty.Sweet = true;
             ty.Sweet = false;
             Assert.Equal<double>(1.99, ty.Price);
-        }
-        /// <summary>
-        /// Checks caloried after rest large
-        /// </summary>
-        [Fact]
-        public void LargeCaloriesSwap()
-        {
-            Tyrannotea ty = new Tyrannotea();
-            ty.Size = Size.Large;
-            ty.Sweet = true;
-            ty.Sweet = false;
             Assert.Equal<uint>(32, ty.Calories);
         }
-
 
        /// <summary>
        /// Check default ingredence

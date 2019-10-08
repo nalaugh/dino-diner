@@ -20,7 +20,7 @@ namespace MenuTest.Drinks
         /// Check the default for everything
         /// </summary>
         [Fact]
-        public void DefaultPrice()
+        public void ShouldGiveDefaultSetting()
         {
             JurrassicJava jv = new JurrassicJava();
             Assert.Equal<double>(0.59, jv.Price);
@@ -38,7 +38,7 @@ namespace MenuTest.Drinks
         /// Checks the price and Calories of a small drink
         /// </summary>
         [Fact]
-        public void SmallPrice()
+        public void ShouldGiveSmallJava()
         {
             JurrassicJava jv = new JurrassicJava();
             jv.Size = Size.Medium;
@@ -51,7 +51,7 @@ namespace MenuTest.Drinks
         /// Checks of a Medium drink
         /// </summary>
         [Fact]
-        public void MediumPrice()
+        public void ShouldGiveMediumJava()
         {
             JurrassicJava jv = new JurrassicJava();
             jv.Size = Size.Medium;
@@ -63,7 +63,7 @@ namespace MenuTest.Drinks
         /// Checks a Large drink
         /// </summary>
         [Fact]
-        public void LargePrice()
+        public void ShouldGiveLargeJava()
         {
             JurrassicJava jv = new JurrassicJava();
             jv.Size = Size.Large;
@@ -75,7 +75,7 @@ namespace MenuTest.Drinks
         /// Checks if the Lemon is addded
         /// </summary>
         [Fact]
-        public void Addice()
+        public void ShouldAddice()
         {
             JurrassicJava jv = new JurrassicJava();
             jv.AddIce();
@@ -86,7 +86,7 @@ namespace MenuTest.Drinks
         /// Leaves rom for Cream
         /// </summary>
         [Fact]
-        public void Leaveroom()
+        public void ShouldLeaveroom()
         {
             JurrassicJava jv = new JurrassicJava();
             jv.RoomForCream();

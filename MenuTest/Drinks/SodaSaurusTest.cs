@@ -90,7 +90,7 @@ namespace MenuTest.Drinks
         /// Check the defualt Price
         /// </summary>
         [Fact]
-        public void DefaultPrice()
+        public void ShouldGiveDefaultSetting()
         {
             Sodasaurus soda = new Sodasaurus();
             Assert.Equal<double>(1.50, soda.Price);
@@ -104,7 +104,7 @@ namespace MenuTest.Drinks
         /// Checks the price of a small drink
         /// </summary>
         [Fact]
-        public void SmallPrice()
+        public void ShouldGiveSmallSoda()
         {
             Sodasaurus sode = new Sodasaurus();
             sode.Size = Size.Medium;
@@ -117,7 +117,7 @@ namespace MenuTest.Drinks
         /// Checks the price of a Medium drink
         /// </summary>
         [Fact]
-        public void MediumPrice()
+        public void ShouldGiveMediumSOda()
         {
             Sodasaurus sode = new Sodasaurus();
             sode.Size = Size.Medium;
@@ -129,7 +129,7 @@ namespace MenuTest.Drinks
         /// Checks the price of a Large drink
         /// </summary>
         [Fact]
-        public void LargePrice()
+        public void ShouldGiveLargeSoda()
         {
             Sodasaurus sode = new Sodasaurus();
             sode.Size = Size.Large;
@@ -141,7 +141,7 @@ namespace MenuTest.Drinks
         /// Checks the see that the Ice was held 
         /// </summary>
         [Fact]
-        public void Holdice()
+        public void ShouldHoldice()
         {
             Sodasaurus soda = new Sodasaurus();
             soda.HoldIce();

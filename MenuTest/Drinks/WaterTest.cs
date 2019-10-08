@@ -15,116 +15,62 @@ namespace MenuTest.Drinks
         /// Check default price 
         /// </summary>
         [Fact]
-        public void DefaultPrice()
+        public void ShouldGiveDefaultSettings()
         {
             Water wtr = new Water();
             Assert.Equal<double>(0.10, wtr.Price);
-        }
-        /// <summary>
-        /// Checks Default Calories 
-        /// </summary>
-        [Fact]
-        public void DefaultCalories()
-        {
-            Water wtr = new Water();
             Assert.Equal<uint>(0, wtr.Calories);
-        }
-        /// <summary>
-        /// Check default Ice
-        /// </summary>
-        public void DefaultIce()
-        {
-            Water wtr = new Water();
             Assert.True(wtr.Ice);
-        }
-        /// <summary>
-        /// Check default Size
-        /// </summary>
-        public void DefaultSize()
-        {
-            Water wtr = new Water();
             Assert.Equal<Size>(Size.Small, wtr.Size);
-        }
-        /// <summary>
-        /// Check dafulat Lemon
-        /// </summary>
-        public void DefaultLemon()
-        {
-            Water wtr = new Water();
             Assert.False(wtr.Lemon);
         }
-
 
 
         /// <summary>
         /// Checks the price of a small drink
         /// </summary>
         [Fact]
-        public void SmallPrice()
+        public void ShouldGiveSmallWater()
         {
             Water wtr = new Water();
             wtr.Size = Size.Medium;
             wtr.Size = Size.Small;
             Assert.Equal<double>(0.10, wtr.Price);
-        }
-        /// <summary>
-        /// CHecks the calories of a small drink
-        /// </summary>f
-        [Fact]
-        public void SmallCalories()
-        {
-            Water wtr = new Water();
-            wtr.Size = Size.Medium;
-            wtr.Size = Size.Small;
             Assert.Equal<uint>(0, wtr.Calories);
         }
+
 
         /// <summary>
         /// Checks the price of a Medien drink
         /// </summary>
         [Fact]
-        public void MediumPrice()
+        public void ShouldGiveMediumWater()
         {
             Water wtr = new Water();
             wtr.Size = Size.Medium;
             Assert.Equal<double>(0.10, wtr.Price);
-        }
-        /// <summary>
-        /// CHecks the calories of a medium drink
-        /// </summary>
-        [Fact]
-        public void MediumCalories()
-        {
-            Water wtr = new Water();
-            wtr.Size = Size.Medium;
             Assert.Equal<uint>(0, wtr.Calories);
         }
+
+
         /// <summary>
         /// Checks the price of a Large drink
         /// </summary>
         [Fact]
-        public void LargePrice()
+        public void ShouldGiveLargeWater()
         {
             Water wtr = new Water();
             wtr.Size = Size.Large;
             Assert.Equal<double>(0.10, wtr.Price);
-        }
-        /// <summary>
-        /// CHecks the calories of a Large drink
-        /// </summary>
-        [Fact]
-        public void LargeCalories()
-        {
-            Water wtr = new Water();
-            wtr.Size = Size.Large;
             Assert.Equal<uint>(0, wtr.Calories);
         }
 
-        /// <summary>
-        /// Check to see if hold works
-        /// </summary>
-        [Fact]
-        public void Holdice()
+
+    /// <summary>
+    /// Check to see if hold works
+    /// </summary>
+    [Fact]
+        public void ShouldHoldice()
         {
             Water wtr = new Water();
             wtr.HoldIce();
@@ -135,7 +81,7 @@ namespace MenuTest.Drinks
         /// checks to see if add Lemon works 
         /// </summary>
         [Fact]
-        public void AddLemon()
+        public void ShouldAddLemon()
         {
             Water wtr = new Water();
             wtr.AddLemon();
