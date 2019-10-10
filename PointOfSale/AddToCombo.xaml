@@ -1,0 +1,36 @@
+﻿<Page x:Class="PointOfSale.AddToCombo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddToCombo">
+
+    <Grid>
+       
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button  FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Click="Side">Side</Button>
+            <Button  FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Click="Drink">Drink</Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button  FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0">Small</Button>
+            <Button  FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1">Small</Button>
+            <Button  FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2">Small</Button>
+        </Grid>
+    </Grid>
+</Page>
