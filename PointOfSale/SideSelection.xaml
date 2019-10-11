@@ -9,70 +9,83 @@
       Title="SideSelection">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-
-        </Grid.ColumnDefinitions>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center">Sides</Label>
-            <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap">Fryceritops</TextBlock>
-                    <Image Source="DinoDiner-08.png" Height="64" Width="84"/>
-                </StackPanel>
-            </Button>
-            <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" >
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap">Triceritots</TextBlock>
-                    <Image Source="DinoDiner-11.png" Height="64" Width="84"/>
-                </StackPanel>
-            </Button>
-            <Button Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" >
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap">Meteor Mac Cheese</TextBlock>
-                    <Image Source="DinoDiner-09.png" Height="64" Width="84"/>
-                </StackPanel>
-            </Button>
-            <Button Grid.Row="4" FontFamily="Showcard Gothic" FontSize="18" >
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap">Mozzerella Sticks</TextBlock>
-                    <Image Source="DinoDiner-10.png" Height="64" Width="84"/>
-                </StackPanel>
-            </Button>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1" HorizontalAlignment="Center" FontFamily ="Showcard Gothic" >Add To Combo</Label>
         </Grid>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
 
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center">Size</Label>
-            <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >Small</Button>
-            <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" >Medium</Button>
-            <Button Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" >Large</Button>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42*"/>
+                    <RowDefinition Height="91*"/>
+                    <RowDefinition Height="98*"/>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="89*"/>
+                </Grid.RowDefinitions>
+                <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Margin="171,0" Width="58">Sides</Label>
+                <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap">Fryceritops</TextBlock>
+                        <Image Source="DinoDiner-08.png" Height="64" Width="84"/>
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" >
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap">Triceritots</TextBlock>
+                        <Image Source="DinoDiner-11.png" Height="64" Width="84"/>
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" >
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap">Meteor Mac &amp; Cheese</TextBlock>
+                        <Image Source="DinoDiner-09.png" Height="64" Width="84"/>
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="4" FontFamily="Showcard Gothic" FontSize="18" >
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap">Mozzerella Sticks</TextBlock>
+                        <Image Source="DinoDiner-10.png" Height="64" Width="84"/>
+                    </StackPanel>
+                </Button>
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center">Size</Label>
+                <RadioButton Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Small</RadioButton>
+                <RadioButton Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Medium</RadioButton>
+                <RadioButton Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Large</RadioButton>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+            </Grid>
         </Grid>
-        <Grid Grid.Column="2">
-            <Grid.RowDefinitions>
-
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-        </Grid>
-
     </Grid>
 </Page>

@@ -54,8 +54,8 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Compile Include="AddToCombo.xaml.cs">
-      <DependentUpon>AddToCombo.xaml</DependentUpon>
+    <Compile Include="CustomizeCombo.xaml.cs">
+      <DependentUpon>CustomizeCombo.xaml</DependentUpon>
     </Compile>
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
@@ -69,7 +69,7 @@
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddToCombo.xaml">
+    <Page Include="CustomizeCombo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,6 +189,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DinoDiner-10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pterodactyl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="T-Rex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="stegosaurus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="brontosaurus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Raptor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

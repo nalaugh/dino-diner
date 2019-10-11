@@ -11,6 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7C1B5B40-5F15-4A99-B8ED-14F389DAAD58}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\Pictures\brontosaurus.png = ..\..\..\Pictures\brontosaurus.png
 		Dino.jpg = Dino.jpg
 		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-01.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-01.png
 		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-02.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-02.png
@@ -27,6 +28,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-13.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-13.png
 		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-14.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-14.png
 		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-15.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-15.png
+		..\..\..\Pictures\pterodactyl.png = ..\..\..\Pictures\pterodactyl.png
+		..\..\..\Pictures\Raptor.png = ..\..\..\Pictures\Raptor.png
+		..\..\..\Pictures\stegosaurus.png = ..\..\..\Pictures\stegosaurus.png
+		..\..\..\Pictures\T-Rex.png = ..\..\..\Pictures\T-Rex.png
 	EndProjectSection
 EndProject
 Global

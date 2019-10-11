@@ -9,46 +9,59 @@
       Title="FlavorSelection">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-
-            </Grid.RowDefinitions>
-            
-            <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >Cola</Button>
-            <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" >Cherry</Button>
-            <Button Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" >Chocolate</Button>
-
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1" HorizontalAlignment="Center" FontFamily="Showcard Gothic" >Add To Order</Label>
         </Grid>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
 
-            </Grid.RowDefinitions>
-            <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >Lime</Button>
-            <Button Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" >Orange</Button>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >Cola</Button>
+                <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" >Cherry</Button>
+                <Button Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" >Chocolate</Button>
+
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+
+                </Grid.RowDefinitions>
+                <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >Lime</Button>
+                <Button Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" >Orange</Button>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >Root Beer</Button>
+                <Button Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" >Vanilla</Button>
+            </Grid>
         </Grid>
-        <Grid Grid.Column="2">
-            <Grid.RowDefinitions>
-
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >Root Beer</Button>
-            <Button Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" >Vanilla</Button>
-        </Grid>
-
     </Grid>
 </Page>
