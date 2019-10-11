@@ -7,8 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SideSelection">
-
-    <Grid>
+    <Page.Resources>
+        <Style x:Key="CustomerDefinition">
+            <Setter Property="Control.FontFamily" Value="Showcard Gothic"/>
+            <Setter Property="Control.FontSize" Value="18"/>
+        </Style>
+    </Page.Resources>
+    <Grid x:Name="Drinkpage" Style="{StaticResource CustomerDefinition}">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="9*"/>
@@ -19,7 +24,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="1" HorizontalAlignment="Center" FontFamily ="Showcard Gothic" >Add To Combo</Label>
+            <Label Grid.Column="1" HorizontalAlignment="Center"  >Add To Combo</Label>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -36,26 +41,26 @@
                     <RowDefinition Height="85*"/>
                     <RowDefinition Height="89*"/>
                 </Grid.RowDefinitions>
-                <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Margin="171,0" Width="58">Sides</Label>
-                <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >
+                <Label   HorizontalAlignment="Center" Margin="171,0" Width="58">Sides</Label>
+                <Button Grid.Row="1" >
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Fryceritops</TextBlock>
                         <Image Source="DinoDiner-08.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" >
+                <Button Grid.Row="2" >
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Triceritots</TextBlock>
                         <Image Source="DinoDiner-11.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" >
+                <Button Grid.Row="3" >
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Meteor Mac &amp; Cheese</TextBlock>
                         <Image Source="DinoDiner-09.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Row="4" FontFamily="Showcard Gothic" FontSize="18" >
+                <Button Grid.Row="4">
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Mozzerella Sticks</TextBlock>
                         <Image Source="DinoDiner-10.png" Height="64" Width="84"/>
@@ -71,10 +76,10 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center">Size</Label>
-                <RadioButton Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Small</RadioButton>
-                <RadioButton Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Medium</RadioButton>
-                <RadioButton Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Large</RadioButton>
+                <Label HorizontalAlignment="Center">Size</Label>
+                <RadioButton Grid.Row="1" HorizontalAlignment="Center" >Small</RadioButton>
+                <RadioButton Grid.Row="2"  HorizontalAlignment="Center" >Medium</RadioButton>
+                <RadioButton Grid.Row="3" HorizontalAlignment="Center" >Large</RadioButton>
             </Grid>
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>

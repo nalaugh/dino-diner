@@ -7,44 +7,51 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomizeCombo">
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="9*"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="1" HorizontalAlignment="Center" FontFamily ="Showcard Gothic" >
-                <TextBlock TextWrapping="Wrap">Add To Order Customize Combo</TextBlock> 
-            </Label>
-        </Grid>
-        <Grid Grid.Row="1">
+    <Page.Resources>
+        <Style x:Key="CustomerDefinition">
+            <Setter Property="Control.FontFamily" Value="Showcard Gothic"/>
+            <Setter Property="Control.FontSize" Value="18"/>
+        </Style>
+    </Page.Resources>
+    <Grid  Style="{StaticResource CustomerDefinition}">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="9*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button  FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Click="Side">Side</Button>
-                <Button  FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Click="Drink">Drink</Button>
+                <Label Grid.Column="1" HorizontalAlignment="Center" FontFamily ="Showcard Gothic" FontSize="20">
+                    <TextBlock TextWrapping="Wrap">Add To Order Customize Combo</TextBlock>
+                </Label>
             </Grid>
             <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <RadioButton Grid.Column="0" FontFamily="Showcard Gothic" FontSize="18" >Small</RadioButton>
-                <RadioButton Grid.Column="1" FontFamily="Showcard Gothic" FontSize="18" >Medium</RadioButton>
-                <RadioButton Grid.Column="2" FontFamily="Showcard Gothic" FontSize="18" >Large</RadioButton>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button  FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Click="Side">Side</Button>
+                    <Button  FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Click="Drink">Drink</Button>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Grid.Column="0" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Small</RadioButton>
+                    <RadioButton Grid.Column="1" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Medium</RadioButton>
+                    <RadioButton Grid.Column="2" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Large</RadioButton>
+                </Grid>
             </Grid>
         </Grid>
     </Grid>

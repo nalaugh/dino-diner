@@ -7,8 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Menu Category Selection">
-
-    <Grid>
+ <Page.Resources>
+        <Style x:Key="CustomerDefinition">
+            <Setter Property="Control.FontFamily" Value="Showcard Gothic"/>
+            <Setter Property="Control.FontSize" Value="18"/>
+        </Style>
+    </Page.Resources>
+    <Grid x:Name="Drinkpage" Style="{StaticResource CustomerDefinition}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>

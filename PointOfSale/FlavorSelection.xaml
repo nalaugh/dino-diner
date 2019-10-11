@@ -7,8 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FlavorSelection">
-
-    <Grid>
+    <Page.Resources>
+        <Style x:Key="CustomerDefinition">
+            <Setter Property="Control.FontFamily" Value="Showcard Gothic"/>
+            <Setter Property="Control.FontSize" Value="18"/>
+        </Style>
+    </Page.Resources>
+    <Grid  Style="{StaticResource CustomerDefinition}">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="9*"/>
@@ -19,7 +24,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="1" HorizontalAlignment="Center" FontFamily="Showcard Gothic" >Add To Order</Label>
+            <Label Grid.Column="1" HorizontalAlignment="Center"  >Add To Order</Label>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -36,9 +41,21 @@
 
                 </Grid.RowDefinitions>
 
-                <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >Cola</Button>
-                <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" >Cherry</Button>
-                <Button Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" >Chocolate</Button>
+                <Button Grid.Row="1" >
+                    <Button.Background>
+                        <SolidColorBrush Color="Tan"></SolidColorBrush>
+                    </Button.Background>
+                    Cola</Button>
+                <Button Grid.Row="2">
+                    <Button.Background>
+                    <SolidColorBrush Color="Maroon"></SolidColorBrush>
+                    </Button.Background>
+                    Cherry</Button>
+                <Button Grid.Row="0" >
+                    <Button.Background>
+                        <SolidColorBrush Color="SaddleBrown"></SolidColorBrush>
+                    </Button.Background>
+                    Chocolate</Button>
 
 
             </Grid>
@@ -50,8 +67,16 @@
                     <RowDefinition/>
 
                 </Grid.RowDefinitions>
-                <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >Lime</Button>
-                <Button Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" >Orange</Button>
+                <Button Grid.Row="1"  >
+                    <Button.Background>
+                        <SolidColorBrush Color="LimeGreen"></SolidColorBrush>
+                    </Button.Background>
+                    Lime</Button>
+                <Button Grid.Row="0"  >
+                    <Button.Background>
+                        <SolidColorBrush Color="Orange"></SolidColorBrush>
+                    </Button.Background>
+                    Orange</Button>
             </Grid>
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
@@ -59,8 +84,16 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" >Root Beer</Button>
-                <Button Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" >Vanilla</Button>
+                <Button Grid.Row="1">
+                    <Button.Background>
+                        <SolidColorBrush Color="SandyBrown"></SolidColorBrush>
+                    </Button.Background>
+                    Root Beer</Button>
+                <Button Grid.Row="0">
+                    <Button.Background>
+                        <SolidColorBrush Color="Beige"></SolidColorBrush>
+                    </Button.Background>
+                    Vanilla</Button>
             </Grid>
         </Grid>
     </Grid>

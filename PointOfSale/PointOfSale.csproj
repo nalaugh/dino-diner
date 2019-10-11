@@ -143,67 +143,68 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Dino.jpg" />
+    <Resource Include="Images\Dino.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-01.png" />
+    <Resource Include="Images\DinoDiner-01.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-03.png" />
+    <Resource Include="Images\DinoDiner-03.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-02.png" />
+    <Resource Include="Images\DinoDiner-02.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-07.png" />
+    <Resource Include="Images\DinoDiner-07.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-04.png" />
+    <Resource Include="Images\DinoDiner-04.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-06.png" />
+    <Resource Include="Images\DinoDiner-06.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-05.png" />
+    <Resource Include="Images\DinoDiner-05.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-13.png" />
+    <Resource Include="Images\DinoDiner-13.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-12.png" />
+    <Resource Include="Images\DinoDiner-12.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-14.png" />
+    <Resource Include="Images\DinoDiner-14.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-15.png" />
+    <Resource Include="Images\DinoDiner-15.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-08.png" />
+    <Resource Include="Images\DinoDiner-08.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-11.png" />
+    <Resource Include="Images\DinoDiner-11.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-09.png" />
+    <Resource Include="Images\DinoDiner-09.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DinoDiner-10.png" />
+    <Resource Include="Images\DinoDiner-10.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pterodactyl.png" />
+    <Resource Include="Images\pterodactyl.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="T-Rex.png" />
+    <Resource Include="Images\T-Rex.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="stegosaurus.png" />
+    <Resource Include="Images\stegosaurus.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="brontosaurus.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Raptor.png" />
+    <Resource Include="Images\Raptor.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
