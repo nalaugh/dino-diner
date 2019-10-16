@@ -39,29 +39,29 @@
                 <Grid>
 
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="58*"/>
+                        <RowDefinition Height="89*"/>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="83*"/>
+                        <RowDefinition Height="79*"/>
                     </Grid.RowDefinitions>
 
-                    <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Drinks</Label>
-                    <Button Grid.Row="1" FontSize="18" Click="coffee" >
+                    <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Margin="96,0,95,10" Width="76" >Drinks</Label>
+                    <Button Grid.Row="1" FontSize="18" Click="Coffee" >
                         <StackPanel>
                             <TextBlock TextWrapping="Wrap">Jurassic Java</TextBlock>
                             <Image Source="Images/DinoDiner-13.png" Height="64" Width="84"/>
                         </StackPanel>
 
                     </Button>
-                    <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" Click="soda">
+                    <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" Click="Soda">
                         <StackPanel>
                             <TextBlock TextWrapping="Wrap">Sodasaurus</TextBlock>
                             <Image Source="Images/DinoDiner-14.png" Height="64" Width="84"/>
                         </StackPanel>
 
                     </Button>
-                    <Button Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" Click="tea">
+                    <Button Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" Click="Tea">
                         <StackPanel>
                             <TextBlock TextWrapping="Wrap">Tyrannotea</TextBlock>
                             <Image Source="Images/DinoDiner-12.png" Height="64" Width="84"/>
@@ -78,26 +78,26 @@
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
 
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="58*"/>
+                        <RowDefinition Height="144*"/>
+                        <RowDefinition Height="102*"/>
+                        <RowDefinition Height="101*"/>
                     </Grid.RowDefinitions>
-                    <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center">Size</Label>
+                    <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Margin="110,0" Width="46">Size</Label>
 
-                    <RadioButton Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Small</RadioButton>
-                    <RadioButton Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Medium</RadioButton>
-                    <RadioButton Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Large</RadioButton>
+                    <RadioButton Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Margin="96,0" Width="74" >Small</RadioButton>
+                    <RadioButton Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Margin="88,0" Width="90" >Medium</RadioButton>
+                    <RadioButton Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Margin="96,0" Width="74" >Large</RadioButton>
                 </Grid>
                 <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
 
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="19*"/>
+                        <RowDefinition Height="37*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="38*"/>
                     </Grid.RowDefinitions>
-                    <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center">Speshal</Label>
+                    <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Margin="91,0" Width="85">Speshal</Label>
                     <Grid Grid.Row="2" Name="mid"></Grid>
                     <Grid Grid.Row="1" Name="top"></Grid>
                     <Grid Grid.Row="3" Name="bottom"></Grid>

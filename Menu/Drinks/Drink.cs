@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -14,7 +15,7 @@ namespace DinoDiner.Menu
     /// It should contain properties for: Price (a double), Calories (an uint), Ingredients (a List<string>), Size  (using a Size enum, default small), 
     /// and Ice (bool, default true). It should also implement a method HoldIce() which sets the Ice property to false.
     /// </summary>
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets the price
@@ -39,6 +40,13 @@ namespace DinoDiner.Menu
         /// Adds ice to the drink
         /// </summary>
         public bool Ice { get; set; } = true;
+
+        public string Description => throw new NotImplementedException();
+
+        public string[] Special => throw new NotImplementedException();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// hold the ice from the drink;
         /// </summary>

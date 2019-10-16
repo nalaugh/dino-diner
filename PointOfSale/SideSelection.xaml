@@ -45,25 +45,25 @@
                 <Button Grid.Row="1" >
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Fryceritops</TextBlock>
-                        <Image Source="DinoDiner-08.png" Height="64" Width="84"/>
+                        <Image Source="Images/DinoDiner-08.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
                 <Button Grid.Row="2" >
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Triceritots</TextBlock>
-                        <Image Source="DinoDiner-11.png" Height="64" Width="84"/>
+                        <Image Source="Images/DinoDiner-11.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
                 <Button Grid.Row="3" >
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Meteor Mac &amp; Cheese</TextBlock>
-                        <Image Source="DinoDiner-09.png" Height="64" Width="84"/>
+                        <Image Source="Images/DinoDiner-09.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
                 <Button Grid.Row="4">
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Mozzerella Sticks</TextBlock>
-                        <Image Source="DinoDiner-10.png" Height="64" Width="84"/>
+                        <Image Source="Images/DinoDiner-10.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
 

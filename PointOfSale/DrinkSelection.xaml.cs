@@ -42,7 +42,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void soda(object sender, RoutedEventArgs e)
+        private void Soda(object sender, RoutedEventArgs e)
         {
             this.top.Children.Clear();
             this.mid.Children.Clear();
@@ -68,7 +68,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tea(object sender, RoutedEventArgs e)
+        private void Tea(object sender, RoutedEventArgs e)
         {
             this.top.Children.Clear();
             this.mid.Children.Clear();
@@ -87,7 +87,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="secder"></param>
         /// <param name="e"></param>
-        private void coffee(object secder, RoutedEventArgs e)
+        private void Coffee(object secder, RoutedEventArgs e)
         {
             this.top.Children.Clear();
             this.mid.Children.Clear();
