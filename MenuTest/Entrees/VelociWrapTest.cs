@@ -56,5 +56,64 @@ namespace MenuTest.Entrees
             vw.HoldCheese();
             Assert.DoesNotContain<string>("Parmesan Cheese", vw.Ingredients);
         }
+
+        [Fact]
+        public void SHouldhaveEmptySpaciallistByDefault()
+        {
+            VelociWrap bw = new VelociWrap();
+            Assert.Empty(bw.Special);
+        }
+        [Fact]
+        public void ShouldhaveholdBunInSpecail()
+        {
+            VelociWrap bw = new VelociWrap();
+            bw.HoldLettuce();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Lettuce", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveholdPeppersInSpecail()
+        {
+            VelociWrap bw = new VelociWrap();
+            bw.HoldDressing();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Dressing", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveholdOnionsInSpecail()
+        {
+            VelociWrap bw = new VelociWrap();
+            bw.HoldCheese();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Cheese", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        {
+            VelociWrap bw = new VelociWrap();
+            bw.HoldLettuce();
+            bw.HoldDressing();
+            bw.HoldCheese();
+       
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Dressing", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Lettuce", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Cheese", item);
+            }
+            );
+        }
     }
 }

@@ -220,6 +220,49 @@ namespace MenuTest.Drinks
             Assert.Equal<int>(3, ingredients.Count);
 
         }
+        [Fact]
+        public void SHouldhaveEmptySpaciallistByDefault()
+        {
+            Tyrannotea ty = new Tyrannotea();
+            Assert.Empty(ty.Special);
+        }
+        [Fact]
+        public void ShouldhaveholdIcedInSpecail()
+        {
+            Tyrannotea ty = new Tyrannotea();
+            ty.HoldIce();
+            Assert.Collection<string>(ty.Special, item =>
+            {
+                Assert.Equal("Hold Ice", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveAddLemonInSpecail()
+        {
+            Tyrannotea ty = new Tyrannotea();
+            ty.AddLemon();
+            Assert.Collection<string>(ty.Special, item =>
+            {
+                Assert.Equal("Add Lemon", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        {
+            Tyrannotea ty = new Tyrannotea();
+            ty.AddLemon();
+            ty.HoldIce();
+           
+
+            Assert.Collection<string>(ty.Special, item =>
+            {
+                Assert.Equal("Add Lemon", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Ice", item);
+            });
+        }
 
     }
 }

@@ -2,6 +2,7 @@
 *   Author: Natalie Laughlin
 */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 
 namespace DinoDiner.Menu
@@ -11,13 +12,46 @@ namespace DinoDiner.Menu
     /// Its price is $4.25, it contains 59 calories per nugget, and its ingredients are: 6 chicken nuggets.  
     /// It should implement methods for adding a nugget at an additional $0.25.
     /// </summary>
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, IOrderItem, INotifyPropertyChanged
     {
     /// <summary>
     /// set the defalt nugget number
     /// </summary>
         private uint Nuggetcount = 6;
-  
+
+
+        /// <summary>
+        /// propertychange evnt handler; notifies of chagws to the price,
+        /// Desciption and Special Properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Nuggetcount > 6) special.Add("Add Nugget");
+                return special.ToArray();
+
+            }
+        }
+
         /// <summary>
         /// sets the ingredentc list
         /// </summary>
@@ -50,6 +84,8 @@ namespace DinoDiner.Menu
             this.Nuggetcount++;
             this.Price = (4.25 + (0.25 * (Nuggetcount - 6)));
             this.Calories = 59 * (Nuggetcount);
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// overrides the to string method

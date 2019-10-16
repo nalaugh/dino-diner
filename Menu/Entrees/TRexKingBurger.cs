@@ -2,6 +2,7 @@
 *   Author: Natalie Laughlin
 */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,7 +12,7 @@ namespace DinoDiner.Menu
     /// and its ingredients are: a whole wheat bun, three steakburger patties, lettuce, tomato, onion, pickle, ketchup, mustard, and mayo. 
     /// It should implement methods for holding the bun, lettuce, tomato, onion, pickle, ketchup, mustard, and mayo.
     /// </summary>
-    public class TRexKingBurger : Entree
+    public class TRexKingBurger : Entree, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// private veriable for bun
@@ -51,6 +52,46 @@ namespace DinoDiner.Menu
         public int count = 3;
 
         /// <summary>
+        /// propertychange evnt handler; notifies of chagws to the price,
+        /// Desciption and Special Properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Bun) special.Add("Hold Bun");
+                if (!pickle) special.Add("Hold Pickles");
+                if (!Ketchup) special.Add("Hold Ketchup");
+                if (!Mustard) special.Add("Hold Mustard");
+                if (!Lettuce) special.Add("Hold Lettuce");
+                if (!Onions) special.Add("Hold Onions");
+                if (!tomato) special.Add("Hold Tomatos");
+                if (!Mayo) special.Add("Hold Mayo");
+                return special.ToArray();
+
+            }
+        }
+
+
+        /// <summary>
         /// sets the ingredentc list
         /// </summary>
         public override List<string> Ingredients
@@ -87,6 +128,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.Bun = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the Ketchup for the ingredent by settting it false
@@ -94,6 +137,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.Ketchup = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the Mustard for the ingredent by settting it false
@@ -101,6 +146,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.Mustard = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the Lettuse for the ingredent by settting it false
@@ -108,6 +155,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.Lettuce = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the Tomatos for the ingredent by settting it false
@@ -115,6 +164,8 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             this.tomato = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the pickle for the ingredent by settting it false
@@ -122,6 +173,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the Onion for the ingredent by settting it false
@@ -129,6 +182,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.Onions = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the Mayo for the ingredent by settting it false
@@ -136,6 +191,8 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             this.Mayo = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// overrides the to sting method

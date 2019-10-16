@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -15,7 +16,7 @@ namespace DinoDiner.Menu
     /// It should also implement a method AddLemon() which sets the lemon to true. 
     /// Its ingredients should be "Water", "Tea", (if lemon was added) "Lemon", and (if sweet) "Cane Sugar".
     /// </summary>
-    public class Tyrannotea : Drink
+    public class Tyrannotea : Drink, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// private veriabl of size
@@ -76,6 +77,40 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// propertychange evnt handler; notifies of chagws to the price,
+        /// Desciption and Special Properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Lemon) special.Add("Add Lemon");
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+
+            }
+        }
+
+
+        /// <summary>
         /// constucts a Tyrannotee witb default values
         /// </summary>
         public Tyrannotea()
@@ -109,6 +144,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.Lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// orverides the toString

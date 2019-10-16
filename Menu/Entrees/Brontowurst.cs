@@ -2,6 +2,7 @@
 *   Author: Natalie Laughlin
 */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -10,7 +11,7 @@ namespace DinoDiner.Menu
     /// Its price is $5.36, it contains 498 calories, and its ingredients are: brautwurst, whole-wheat bun, peppers, and onions.  
     /// It should implement methods for holding the bun, peppers, and onions.
     /// </summary>
-    public class Brontowurst : Entree
+    public class Brontowurst : Entree, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// private verible of bun
@@ -24,6 +25,40 @@ namespace DinoDiner.Menu
         /// private verible of Onions
         /// </summary>
         private bool Onions = true;
+
+        /// <summary>
+        /// propertychange evnt handler; notifies of chagws to the price,
+        /// Desciption and Special Properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Bun) special.Add("Hold Bun");
+                if (!Peppers) special.Add("Hold Peppers");
+                if (!Onions) special.Add("Hold Onions");
+                return special.ToArray();
+
+            }
+        }
 
         /// <summary>
         /// sets the ingredentc list
@@ -55,6 +90,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.Bun = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the Peppers for the ingredent by settting it false
@@ -62,6 +99,8 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             this.Peppers = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
 
         }
         /// <summary>
@@ -70,6 +109,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.Onions = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// overrides the to sting method

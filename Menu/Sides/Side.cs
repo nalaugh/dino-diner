@@ -30,6 +30,21 @@ namespace DinoDiner.Menu
         /// Gets or sets the size
         /// </summary>
         public abstract Size Size { get; set; }
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public abstract string Description
+        {
+            get;
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public abstract string[] Special
+        {
+            get;
+
+        }
 
     }
 }

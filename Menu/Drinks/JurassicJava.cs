@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -15,7 +16,7 @@ namespace DinoDiner.Menu
     /// Its price is $.59 (small), $.99 (medium), and $1.49 (large) and calories are 2 (small), 4 (medium), and 8 (large). 
     /// Its ingredients should be "Water" and "Coffee".
     /// </summary>
-    public class JurrassicJava : Drink
+    public class JurrassicJava : Drink, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// private veriable of size
@@ -58,6 +59,40 @@ namespace DinoDiner.Menu
                 return size;
             }
         }
+
+        /// <summary>
+        /// propertychange evnt handler; notifies of chagws to the price,
+        /// Desciption and Special Properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Ice) special.Add("Add Ice");
+                if (RoomFOrCream) special.Add("Leave Room for Cream");
+                return special.ToArray();
+
+            }
+        }
+
         /// <summary>
         /// adds the ingredantes
         /// </summary>
@@ -86,6 +121,8 @@ namespace DinoDiner.Menu
         public void RoomForCream()
         {
             this.RoomFOrCream = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Adds ice if the person wants it.
@@ -93,6 +130,8 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             this.Ice = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// overrides the toString method 

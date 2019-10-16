@@ -2,6 +2,7 @@
 *   Author: Natalie Laughlin
 */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -10,7 +11,7 @@ namespace DinoDiner.Menu
     /// Its price is $6.52, it contains 483 calories, and its ingredients are: bread, peanut butter, and jelly. 
     /// It implements methods to hold the peanut butter and jelly.
     /// </summary>
-    public class PrehistoricPBJ :Entree
+    public class PrehistoricPBJ : Entree, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// private veriable of peanutbuter
@@ -20,7 +21,39 @@ namespace DinoDiner.Menu
         /// private veriable of jelly
         /// </summary>
         private bool jelly = true;
-  
+        /// <summary>
+        /// propertychange evnt handler; notifies of chagws to the price,
+        /// Desciption and Special Properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!jelly) special.Add("Hold Jelly");
+                if (!peanutButter) special.Add("Hold Peanut Butter");
+                return special.ToArray();
+                
+            }
+        }
+
         /// <summary>
         /// sets the ingredentc list
         /// </summary>
@@ -48,6 +81,8 @@ namespace DinoDiner.Menu
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the Jelly for the ingredent by settting it false
@@ -55,6 +90,8 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.jelly = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// overrifes the tosting metod
@@ -64,5 +101,7 @@ namespace DinoDiner.Menu
         {
             return "Prehistoric PB&J";
         }
+
+
     }
 }

@@ -24,11 +24,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// creats a field of Drink
         /// </summary>
-        public Drink Drinks { get; set; }
+        public Drink Drinks { get; set; } = new Sodasaurus();
         /// <summary>
         /// Creats a field of side
         /// </summary>
-        public Side Sides { get; set; }
+        public Side Sides { get; set; } = new Fryceritops();
         /// <summary>
         /// sets the size of the drink and the sides
         /// </summary>
@@ -101,7 +101,29 @@ namespace DinoDiner.Menu
         /// <returns>the name of the combo</returns>
         public override string ToString()
         {
-            return Entrees.ToString() + " Combo";
+            return $"{Entrees} Combo";
+        }
+        public string Description
+        {
+            get
+            {
+                {
+                    return this.ToString();
+                }
+            }
+        }
+        public string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                specials.AddRange(Entrees.Special);
+                specials.Add(Drinks.ToString());
+                specials.AddRange(Drinks.Special);
+                specials.Add(Sides.ToString());
+                specials.AddRange(Sides.Special);
+                return specials.ToArray();
+            }
         }
     }
 }

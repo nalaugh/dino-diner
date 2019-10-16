@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
     /// It should contain properties for: Price (a double), Calories (an uint), Ingredients (a List<string>), Size  (using a Size enum, default small), 
     /// and Ice (bool, default true). It should also implement a method HoldIce() which sets the Ice property to false.
     /// </summary>
-    public abstract class Drink : IMenuItem, IOrderItem, INotifyPropertyChanged
+    public abstract class Drink : IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -40,12 +40,23 @@ namespace DinoDiner.Menu
         /// Adds ice to the drink
         /// </summary>
         public bool Ice { get; set; } = true;
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public abstract string Description
+        {
+            get;
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public abstract string[] Special
+        {
+            get;
+         
+        }
 
-        public string Description => throw new NotImplementedException();
 
-        public string[] Special => throw new NotImplementedException();
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// hold the ice from the drink;

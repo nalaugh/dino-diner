@@ -92,7 +92,48 @@ namespace MenuTest.Drinks
             jv.RoomForCream();
             Assert.True(jv.RoomFOrCream);
         }
- 
+        [Fact]
+        public void SHouldhaveEmptySpaciallistByDefault()
+        {
+            JurrassicJava jv = new JurrassicJava();
+            Assert.Empty(jv.Special);
+        }
+        [Fact]
+        public void ShouldhaveholdIcedInSpecail()
+        {
+            JurrassicJava jv = new JurrassicJava();
+            jv.AddIce();
+            Assert.Collection<string>(jv.Special, item =>
+            {
+                Assert.Equal("Add Ice", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveLeaveRoomInSpecail()
+        {
+            JurrassicJava jv = new JurrassicJava();
+            jv.RoomForCream();
+            Assert.Collection<string>(jv.Special, item =>
+            {
+                Assert.Equal("Leave Room for Cream", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        {
+            JurrassicJava jv = new JurrassicJava();
+            jv.AddIce();
+            jv.RoomForCream();
+
+            Assert.Collection<string>(jv.Special, item =>
+            {
+                Assert.Equal("Add Ice", item);
+            },
+            item =>
+            {
+                Assert.Equal("Leave Room for Cream", item);
+            });
+        }
 
 
     }

@@ -64,6 +64,81 @@ namespace MenuTest.Entrees
             sb.HoldMustard();
             Assert.DoesNotContain<string>("Mustard", sb.Ingredients);
         }
+        [Fact]
+        public void SHouldhaveEmptySpaciallistByDefault()
+        {
+            SteakosaurusBurger bw = new SteakosaurusBurger();
+            Assert.Empty(bw.Special);
+        }
+        [Fact]
+        public void ShouldhaveholdBunInSpecail()
+        {
+            SteakosaurusBurger bw = new SteakosaurusBurger();
+            bw.HoldBun();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Bun", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveholdPeppersInSpecail()
+        {
+            SteakosaurusBurger bw = new SteakosaurusBurger();
+            bw.HoldKetchup();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Ketchup", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveholdOnionsInSpecail()
+        {
+            SteakosaurusBurger bw = new SteakosaurusBurger();
+            bw.HoldMustard();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Mustard", item);
+            });
+        }
+        [Fact]
+        public void shouldholdPickles()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldPickle();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Pickles", item);
+                }
+
+                );
+        }
+        [Fact]
+        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        {
+            SteakosaurusBurger bw = new SteakosaurusBurger();
+            bw.HoldBun();
+            bw.HoldKetchup();
+            bw.HoldMustard();
+            bw.HoldPickle();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Bun", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Pickles", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Ketchup", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Mustard", item);
+            }
+            );
+        }
     }
 
 }

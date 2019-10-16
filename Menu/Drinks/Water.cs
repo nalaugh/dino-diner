@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -14,7 +15,7 @@ namespace DinoDiner.Menu
     /// The Water class should have a price of $0.10 and 0 calories for all sizes. 
     /// Its ingredients should be "Water" and (if lemon was added) "Lemon".
     /// </summary>
-    public class Water : Drink
+    public class Water : Drink, INotifyPropertyChanged, IOrderItem
     {
         /// <summary>
         /// private property of size
@@ -54,6 +55,39 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// propertychange evnt handler; notifies of chagws to the price,
+        /// Desciption and Special Properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Lemon) special.Add("Add Lemon");
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+
+            }
+        }
+
+        /// <summary>
         /// enter the ingredients
         /// </summary>
         public override List<string> Ingredients
@@ -85,6 +119,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.Lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// this overrides the tostring.

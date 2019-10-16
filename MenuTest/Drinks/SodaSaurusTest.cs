@@ -13,78 +13,23 @@ namespace MenuTest.Drinks
         //3.The correct price and calories after changing to small, medium, and large sizes.
         //4.That invoking HoldIce() results in the Ice property being false.
         //5. The correct ingredients are given
+        
+            [Theory]
+            [InlineData(SodasaurusFlavor.Cherry)]
+        [InlineData(SodasaurusFlavor.Chocolate)]
+        [InlineData(SodasaurusFlavor.Cola)]
+        [InlineData(SodasaurusFlavor.Lime)]
+        [InlineData(SodasaurusFlavor.Orange)]
+        [InlineData(SodasaurusFlavor.RootBeer)]
+        [InlineData(SodasaurusFlavor.Vanilla)]
 
-        /// <summary>
-        /// checks the faloring
-        /// </summary>
-        [Fact]
-        public void shouldBeAbletoSetFlavorCola()
+        public void ShouldBeAbleToSetFlavor(SodasaurusFlavor flavor)
         {
             Sodasaurus soda = new Sodasaurus();
-            soda.Flavor = SodasaurusFlavor.Cola;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Cola, soda.Flavor);
+            soda.Flavor = flavor;
+            Assert.Equal<SodasaurusFlavor>(flavor, soda.Flavor);
         }
-        /// <summary>
-        /// checks the faloring
-        /// </summary>
-        [Fact]
-        public void shouldBeAbletoSetFlavorCharry()
-        {
-            Sodasaurus soda = new Sodasaurus();
-            soda.Flavor = SodasaurusFlavor.Cherry;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Cherry, soda.Flavor);
-        }
-        /// <summary>
-        /// checks the faloring
-        /// </summary>
-        [Fact]
-        public void shouldBeAbletoSetFlavorLime()
-        {
-            Sodasaurus soda = new Sodasaurus();
-            soda.Flavor = SodasaurusFlavor.Lime;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Lime, soda.Flavor);
-        }
-        /// <summary>
-        /// checks the faloring
-        /// </summary>
-        [Fact]
-        public void shouldBeAbletoSetFlavorVanilla()
-        {
-            Sodasaurus soda = new Sodasaurus();
-            soda.Flavor = SodasaurusFlavor.Vanilla;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Vanilla, soda.Flavor);
-        }
-        /// <summary>
-        /// checks the faloring
-        /// </summary>
-        [Fact]
-        public void shouldBeAbletoSetFlavorOrange()
-        {
-            Sodasaurus soda = new Sodasaurus();
-            soda.Flavor = SodasaurusFlavor.Orange;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Orange, soda.Flavor);
-        }
-        /// <summary>
-        /// checks the faloring
-        /// </summary>
-        [Fact]
-        public void shouldBeAbletoSetFlavorChocolate()
-        {
-            Sodasaurus soda = new Sodasaurus();
-            soda.Flavor = SodasaurusFlavor.Chocolate;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Chocolate, soda.Flavor);
-        }
-        /// <summary>
-        /// checks the faloring
-        /// </summary>
-        [Fact]
-        public void shouldBeAbletoSetFlavorRootBeer()
-        {
-            Sodasaurus soda = new Sodasaurus();
-            soda.Flavor = SodasaurusFlavor.RootBeer;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.RootBeer, soda.Flavor);
-        }
-       
+
         
         /// <summary>
         /// Check the defualt Price
@@ -161,6 +106,13 @@ namespace MenuTest.Drinks
             Assert.Equal<int>(3, ingredients.Count);
            
         }
-       
+        [Fact]
+        public void SHouldhaveEmptySpaciallistByDefault()
+        {
+            Tyrannotea ty = new Tyrannotea();
+            Assert.Empty(ty.Special);
+        }
+   
+
     }
 }

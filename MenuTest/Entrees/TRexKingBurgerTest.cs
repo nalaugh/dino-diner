@@ -106,6 +106,153 @@ namespace MenuTest.Entrees
             trex.HoldMayo();
             Assert.DoesNotContain<string>("Mayo", trex.Ingredients);
         }
+        [Fact]
+        public void SHouldhaveEmptySpaciallistByDefault()
+        {
+            TRexKingBurger bw = new TRexKingBurger();
+            Assert.Empty(bw.Special);
+        }
+        [Fact]
+        public void ShouldhaveholdBunInSpecail()
+        {
+            TRexKingBurger bw = new TRexKingBurger();
+            bw.HoldBun();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Bun", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveholdPeppersInSpecail()
+        {
+            TRexKingBurger bw = new TRexKingBurger();
+            bw.HoldKetchup();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Ketchup", item);
+            });
+        }
+        [Fact]
+        public void ShouldhaveholdOnionsInSpecail()
+        {
+            TRexKingBurger bw = new TRexKingBurger();
+            bw.HoldMustard();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Mustard", item);
+            });
+        }
+        [Fact]
+        public void shouldholdPickles()
+        {
+            TRexKingBurger sb = new TRexKingBurger();
+            sb.HoldPickle();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Pickles", item);
+                }
+
+                );
+        }
+        [Fact]
+        public void shouldholdLettuce()
+        {
+            TRexKingBurger sb = new TRexKingBurger();
+            sb.HoldLettuce();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Lettuce", item);
+                }
+
+                );
+        }
+        [Fact]
+        public void shouldholdMayo()
+        {
+            TRexKingBurger sb = new TRexKingBurger();
+            sb.HoldMayo();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Mayo", item);
+                }
+
+                );
+        }
+        [Fact]
+        public void shouldholdOnion()
+        {
+            TRexKingBurger sb = new TRexKingBurger();
+            sb.HoldOnion();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Onions", item);
+                }
+
+                );
+        }
+        [Fact]
+        public void shouldholdTomotos()
+        {
+            TRexKingBurger sb = new TRexKingBurger();
+            sb.HoldTomato();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Tomatos", item);
+                }
+
+                );
+        }
+        [Fact]
+        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        {
+            TRexKingBurger bw = new TRexKingBurger();
+            bw.HoldBun();
+            bw.HoldKetchup();
+            bw.HoldMustard();
+            bw.HoldPickle();
+            bw.HoldTomato();
+            bw.HoldMayo();
+            bw.HoldOnion();
+            bw.HoldLettuce();
+            Assert.Collection<string>(bw.Special, item =>
+            {
+                Assert.Equal("Hold Bun", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Pickles", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Ketchup", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Mustard", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Lettuce", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Onions", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Tomatos", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Mayo", item);
+            }
+            );
+        }
 
     }
 

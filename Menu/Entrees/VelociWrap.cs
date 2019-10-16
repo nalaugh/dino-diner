@@ -2,6 +2,7 @@
 *   Author: Natalie Laughlin
 */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,7 +12,7 @@ namespace DinoDiner.Menu
     /// and its ingredients are: a flour tortilla, chicken breast, romaine lettuce, Ceasar dressing, and parmesan cheese.  
     /// It should implement methods to hold the dressing, lettuce, and cheese.
     /// </summary>
-    public class VelociWrap : Entree
+    public class VelociWrap : Entree, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// private veriable of of dressing
@@ -25,7 +26,40 @@ namespace DinoDiner.Menu
         /// private veriable of cheese
         /// </summary>
         private bool Cheese = true;
-  
+
+        /// <summary>
+        /// propertychange evnt handler; notifies of chagws to the price,
+        /// Desciption and Special Properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Dressing) special.Add("Hold Dressing");
+                if (!Lettuce) special.Add("Hold Lettuce");
+                if (!Cheese) special.Add("Hold Cheese");
+                return special.ToArray();
+            }
+        }
+
 
         /// <summary>
         /// overrids the ingredentc list
@@ -55,6 +89,8 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             this.Dressing = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the Lettuce for the ingredent by settting it false
@@ -62,6 +98,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.Lettuce = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Hold the Cheese for the ingredent by settting it false
@@ -69,6 +107,8 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             this.Cheese = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// override the tostring metod 

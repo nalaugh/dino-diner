@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -13,7 +14,7 @@ namespace DinoDiner.Menu
     /// Its calories are 540 (small), 610 (medium), and 720 (large). 
     /// Its ingredients are **cheese product, breading, **and vegtable oil.
     /// </summary>
-    public class MezzorellaSticks: Side
+    public class MezzorellaSticks: Side, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// private verible of size
@@ -32,14 +33,17 @@ namespace DinoDiner.Menu
                     case Size.Large:
                         Price = 1.95;
                         Calories = 720;
+                        NotifyOfPropertyChange("Price");
                         break;
                     case Size.Medium:
                         Price = 1.45;
                         Calories = 610;
+                        NotifyOfPropertyChange("Price");
                         break;
                     case Size.Small:
                         Price = 0.99;
                         Calories = 540;
+                        NotifyOfPropertyChange("Price");
                         break;
 
                 }
@@ -49,6 +53,36 @@ namespace DinoDiner.Menu
             get
             {
                 return size;
+            }
+        }
+        /// <summary>
+        /// propertychange evnt handler; notifies of chagws to the price,
+        /// Desciption and Special Properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// Gets the disciption
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special prepartion instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+
             }
         }
         /// <summary>
