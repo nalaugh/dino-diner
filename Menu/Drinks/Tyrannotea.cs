@@ -45,12 +45,14 @@ namespace DinoDiner.Menu
                         
                         Price = 0.99;
                         Calories = 8;
+
                         if(Sweet)
                         {
                             Price = Price * 2;
                             Calories = Calories * 2;
                         }
-                            break;
+                        NotifyOfPropertyChange("Price");
+                        break;
                     case Size.Medium:
                         Price = 1.49;
                         Calories = 16;
@@ -59,6 +61,7 @@ namespace DinoDiner.Menu
                             Price = Price * 2;
                             Calories = Calories * 2;
                         }
+                        NotifyOfPropertyChange("Price");
                         break;
                     case Size.Large:
                         Price = 1.99;
@@ -68,6 +71,7 @@ namespace DinoDiner.Menu
                             Price = Price * 2;
                             Calories = Calories * 2;
                         }
+                        NotifyOfPropertyChange("Price");
                         break;
                 }
             }

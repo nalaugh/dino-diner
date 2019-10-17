@@ -50,7 +50,7 @@ namespace MenuTest.Entrees
         public void HoldPeanutBUtterShouldNotifyofSpecialPropertyChange()
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
-            pbj.HoldJelly();
+            pbj.HoldPeanutButter();
             Assert.PropertyChanged(pbj, "Special", () =>
             {
                 pbj.HoldPeanutButter();

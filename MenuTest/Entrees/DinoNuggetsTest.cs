@@ -86,6 +86,16 @@ namespace MenuTest.Entrees
             Assert.Equal<uint>(dn.Calories, 59*9);
         }
         [Fact]
+        public void HoldPeanutBUtterShouldNotifyofSpecialPropertyChange()
+        {
+            DinoNuggets dn = new DinoNuggets();
+            dn.AddNugget();
+            Assert.PropertyChanged(dn, "Special", () =>
+            {
+                dn.AddNugget();
+            });
+        }
+        [Fact]
         public void SHouldhaveEmptySpaciallistByDefault()
         {
             DinoNuggets bw = new DinoNuggets();
