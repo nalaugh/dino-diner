@@ -204,7 +204,7 @@ namespace MenuTest.Entrees
             });
         }
         [Fact]
-        public void ShouldhaveholdPeppersInSpecail()
+        public void ShouldhaveholdKetchupInSpecail()
         {
             TRexKingBurger bw = new TRexKingBurger();
             bw.HoldKetchup();
@@ -214,7 +214,7 @@ namespace MenuTest.Entrees
             });
         }
         [Fact]
-        public void ShouldhaveholdOnionsInSpecail()
+        public void ShouldhaveholdMustardInSpecail()
         {
             TRexKingBurger bw = new TRexKingBurger();
             bw.HoldMustard();
@@ -224,7 +224,7 @@ namespace MenuTest.Entrees
             });
         }
         [Fact]
-        public void shouldholdPickles()
+        public void ShouldholdPicklesInSpecial()
         {
             TRexKingBurger sb = new TRexKingBurger();
             sb.HoldPickle();
@@ -237,7 +237,7 @@ namespace MenuTest.Entrees
                 );
         }
         [Fact]
-        public void shouldholdLettuce()
+        public void ShouldholdLettuceInSpecial()
         {
             TRexKingBurger sb = new TRexKingBurger();
             sb.HoldLettuce();
@@ -250,7 +250,7 @@ namespace MenuTest.Entrees
                 );
         }
         [Fact]
-        public void shouldholdMayo()
+        public void ShouldholdMayoInSpecial()
         {
             TRexKingBurger sb = new TRexKingBurger();
             sb.HoldMayo();
@@ -263,7 +263,7 @@ namespace MenuTest.Entrees
                 );
         }
         [Fact]
-        public void shouldholdOnion()
+        public void ShouldholdOnionInSpecial()
         {
             TRexKingBurger sb = new TRexKingBurger();
             sb.HoldOnion();
@@ -276,7 +276,7 @@ namespace MenuTest.Entrees
                 );
         }
         [Fact]
-        public void shouldholdTomotos()
+        public void ShouldholdTomotosInSpecial()
         {
             TRexKingBurger sb = new TRexKingBurger();
             sb.HoldTomato();
@@ -289,7 +289,7 @@ namespace MenuTest.Entrees
                 );
         }
         [Fact]
-        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        public void ShouldhaveholdAllInSpecail()
         {
             TRexKingBurger bw = new TRexKingBurger();
             bw.HoldBun();

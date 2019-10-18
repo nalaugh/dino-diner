@@ -36,7 +36,13 @@ namespace DinoDiner.Menu
         /// </summary>
         public override string Description
         {
-            get { return this.ToString(); }
+            get {
+                if (Nuggetcount > 6)
+                {
+                    return  this.ToString();
+                }
+                else
+                return  this.ToString(); }
         }
         /// <summary>
         /// gets the special prepartion instructions
@@ -46,7 +52,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (Nuggetcount > 6) special.Add("Add Nugget");
+                if(Nuggetcount>6)special.Add((Nuggetcount - 6) + " Extra Nuggets");
                 return special.ToArray();
 
             }

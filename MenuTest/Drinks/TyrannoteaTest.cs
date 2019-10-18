@@ -247,7 +247,7 @@ namespace MenuTest.Drinks
             });
         }
         [Fact]
-        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        public void ShouldhaveholdIceAndLemonInSpecail()
         {
             Tyrannotea ty = new Tyrannotea();
             ty.AddLemon();
@@ -261,6 +261,36 @@ namespace MenuTest.Drinks
             item =>
             {
                 Assert.Equal("Hold Ice", item);
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceSmallPropertyChange()
+        {
+            Tyrannotea jv = new Tyrannotea();
+            jv.Size = Size.Small;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceMediumPropertyChange()
+        {
+            Tyrannotea jv = new Tyrannotea();
+            jv.Size = Size.Medium;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Medium;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceLargePropertyChange()
+        {
+            Tyrannotea jv = new Tyrannotea();
+            jv.Size = Size.Large;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Large;
             });
         }
 

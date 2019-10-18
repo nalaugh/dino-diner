@@ -90,5 +90,35 @@ namespace MenuTest.Sides
             MezzorellaSticks ms = new MezzorellaSticks();
             Assert.Empty(ms.Special);
         }
+        [Fact]
+        public void ShouldShowPriceSmallPropertyChange()
+        {
+            MezzorellaSticks jv = new MezzorellaSticks();
+            jv.Size = Size.Small;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceMediumPropertyChange()
+        {
+            MezzorellaSticks jv = new MezzorellaSticks();
+            jv.Size = Size.Medium;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Medium;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceLargePropertyChange()
+        {
+            MezzorellaSticks jv = new MezzorellaSticks();
+            jv.Size = Size.Large;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Large;
+            });
+        }
     }
 }

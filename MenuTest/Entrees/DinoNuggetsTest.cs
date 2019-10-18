@@ -102,13 +102,13 @@ namespace MenuTest.Entrees
             Assert.Empty(bw.Special);
         }
         [Fact]
-        public void ShouldhaveholdBunInSpecail()
+        public void ShouldhaveAddNuggetInSpecail()
         {
             DinoNuggets bw = new DinoNuggets();
             bw.AddNugget();
             Assert.Collection<string>(bw.Special, item =>
             {
-                Assert.Equal("Add Nugget", item);
+                Assert.Equal("1 Extra Nuggets", item);
             });
         }
         

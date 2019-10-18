@@ -89,5 +89,35 @@ namespace MenuTest.Sides
             Triceritots tt = new Triceritots();
             Assert.Empty(tt.Special);
         }
+        [Fact]
+        public void ShouldShowPriceSmallPropertyChange()
+        {
+            Triceritots jv = new Triceritots();
+            jv.Size = Size.Small;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceMediumPropertyChange()
+        {
+            Triceritots jv = new Triceritots();
+            jv.Size = Size.Medium;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Medium;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceLargePropertyChange()
+        {
+            Triceritots jv = new Triceritots();
+            jv.Size = Size.Large;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Large;
+            });
+        }
     }
 }

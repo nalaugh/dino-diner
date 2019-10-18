@@ -122,7 +122,7 @@ namespace MenuTest.Entrees
             });
         }
         [Fact]
-        public void ShouldhaveholdPeppersInSpecail()
+        public void ShouldhaveholdKetchupInSpecail()
         {
             SteakosaurusBurger bw = new SteakosaurusBurger();
             bw.HoldKetchup();
@@ -132,7 +132,7 @@ namespace MenuTest.Entrees
             });
         }
         [Fact]
-        public void ShouldhaveholdOnionsInSpecail()
+        public void ShouldhaveholdMustardInSpecail()
         {
             SteakosaurusBurger bw = new SteakosaurusBurger();
             bw.HoldMustard();
@@ -142,7 +142,7 @@ namespace MenuTest.Entrees
             });
         }
         [Fact]
-        public void shouldholdPickles()
+        public void ShouldholdPicklesInSpecail()
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldPickle();
@@ -155,7 +155,7 @@ namespace MenuTest.Entrees
                 );
         }
         [Fact]
-        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        public void ShouldhaveholdAllInSpecail()
         {
             SteakosaurusBurger bw = new SteakosaurusBurger();
             bw.HoldBun();

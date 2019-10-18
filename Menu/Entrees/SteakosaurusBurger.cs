@@ -82,7 +82,7 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
-        /// Sets this itens price and Calories
+        /// Sets this itens price and Calories55
         /// </summary>
         public SteakosaurusBurger() : base()
         {

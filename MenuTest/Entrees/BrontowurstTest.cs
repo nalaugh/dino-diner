@@ -123,7 +123,7 @@ namespace MenuTest.Entrees
             });
         }
         [Fact]
-        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        public void ShouldhaveholdAllInSpecail()
         {
             Brontowurst bw = new Brontowurst();
             bw.HoldBun();

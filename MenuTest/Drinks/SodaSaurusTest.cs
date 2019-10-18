@@ -109,10 +109,40 @@ namespace MenuTest.Drinks
         [Fact]
         public void SHouldhaveEmptySpaciallistByDefault()
         {
-            Tyrannotea ty = new Tyrannotea();
+            Sodasaurus ty = new Sodasaurus();
             Assert.Empty(ty.Special);
         }
-   
+        [Fact]
+        public void ShouldShowPriceSmallPropertyChange()
+        {
+            Sodasaurus jv = new Sodasaurus();
+            jv.Size = Size.Small;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceMediumPropertyChange()
+        {
+            Sodasaurus jv = new Sodasaurus();
+            jv.Size = Size.Medium;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Medium;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceLargePropertyChange()
+        {
+            Sodasaurus jv = new Sodasaurus();
+            jv.Size = Size.Large;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Large;
+            });
+        }
+
 
     }
 }

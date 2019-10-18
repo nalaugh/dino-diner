@@ -69,6 +69,7 @@
                     <Image Source="Images/stegosaurus.png" Height="66" Width="94"></Image>
                 </StackPanel>
             </Button>
+            
         </Grid>
     </Grid>
 </Page>

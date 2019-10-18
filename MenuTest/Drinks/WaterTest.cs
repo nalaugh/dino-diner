@@ -120,13 +120,13 @@ namespace MenuTest.Drinks
         [Fact]
         public void SHouldhaveEmptySpaciallistByDefault()
         {
-            Tyrannotea ty = new Tyrannotea();
+            Water ty = new Water();
             Assert.Empty(ty.Special);
         }
         [Fact]
         public void ShouldhaveholdIcedInSpecail()
         {
-            Tyrannotea ty = new Tyrannotea();
+            Water ty = new Water();
             ty.HoldIce();
             Assert.Collection<string>(ty.Special, item =>
             {
@@ -134,9 +134,9 @@ namespace MenuTest.Drinks
             });
         }
         [Fact]
-        public void ShouldhaveLeaveRoomInSpecail()
+        public void ShouldhaveLemonInSpecail()
         {
-            Tyrannotea ty = new Tyrannotea();
+            Water ty = new Water();
             ty.AddLemon();
             Assert.Collection<string>(ty.Special, item =>
             {
@@ -144,9 +144,9 @@ namespace MenuTest.Drinks
             });
         }
         [Fact]
-        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        public void ShouldhaveholdIceAndLemonInSpecail()
         {
-            Tyrannotea ty = new Tyrannotea();
+            Water ty = new Water();
             ty.HoldIce();
             ty.AddLemon();
 
@@ -157,6 +157,37 @@ namespace MenuTest.Drinks
             item =>
             {
                 Assert.Equal("Hold Ice", item);
+            });
+        }
+
+        [Fact]
+        public void ShouldShowPriceSmallPropertyChange()
+        {
+            Water jv = new Water();
+            jv.Size = Size.Small;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceMediumPropertyChange()
+        {
+            Water jv = new Water();
+            jv.Size = Size.Medium;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Medium;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceLargePropertyChange()
+        {
+            Water jv = new Water();
+            jv.Size = Size.Large;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Large;
             });
         }
 

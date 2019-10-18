@@ -90,5 +90,36 @@ namespace MenuTest.Sides
             Fryceritops ft = new Fryceritops();
             Assert.Empty(ft.Special);
         }
+
+        [Fact]
+        public void ShouldShowPriceSmallPropertyChange()
+        {
+            Fryceritops jv = new Fryceritops();
+            jv.Size = Size.Small;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceMediumPropertyChange()
+        {
+            Fryceritops jv = new Fryceritops();
+            jv.Size = Size.Medium;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Medium;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceLargePropertyChange()
+        {
+            Fryceritops jv = new Fryceritops();
+            jv.Size = Size.Large;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Large;
+            });
+        }
     }
 }

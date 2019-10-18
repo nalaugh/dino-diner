@@ -5,13 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// creatse the comb with the right size calories and ingredients
     /// </summary>
-    public class CretaceousCombo
+    public class CretaceousCombo : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// private backer with default to small
@@ -25,6 +26,17 @@ namespace DinoDiner.Menu
         /// creats a field of Drink
         /// </summary>
         public Drink Drinks { get; set; } = new Sodasaurus();
+        /// <summary>
+        /// propertychange evnt handler; notifies of chagws to the price,
+        /// Desciption and Special Properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Creats a field of side
         /// </summary>
@@ -118,10 +130,11 @@ namespace DinoDiner.Menu
             {
                 List<string> specials = new List<string>();
                 specials.AddRange(Entrees.Special);
-                specials.Add(Drinks.ToString());
-                specials.AddRange(Drinks.Special);
                 specials.Add(Sides.ToString());
                 specials.AddRange(Sides.Special);
+                specials.Add(Drinks.ToString());
+                specials.AddRange(Drinks.Special);
+               
                 return specials.ToArray();
             }
         }

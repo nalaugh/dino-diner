@@ -119,7 +119,7 @@ namespace MenuTest.Drinks
             });
         }
         [Fact]
-        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        public void ShouldhaveholdIceAndRoomInSpecail()
         {
             JurrassicJava jv = new JurrassicJava();
             jv.AddIce();
@@ -132,6 +132,36 @@ namespace MenuTest.Drinks
             item =>
             {
                 Assert.Equal("Leave Room for Cream", item);
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceSmallPropertyChange()
+        {
+            JurrassicJava jv = new JurrassicJava();
+            jv.Size = Size.Small;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Small;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceMediumPropertyChange()
+        {
+            JurrassicJava jv = new JurrassicJava();
+            jv.Size = Size.Medium;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Medium;
+            });
+        }
+        [Fact]
+        public void ShouldShowPriceLargePropertyChange()
+        {
+            JurrassicJava jv = new JurrassicJava();
+            jv.Size = Size.Large;
+            Assert.PropertyChanged(jv, "Price", () =>
+            {
+                jv.Size = Size.Large;
             });
         }
 

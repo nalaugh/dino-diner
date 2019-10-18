@@ -94,7 +94,7 @@ namespace MenuTest.Entrees
             Assert.Empty(bw.Special);
         }
         [Fact]
-        public void ShouldhaveholdBunInSpecail()
+        public void ShouldhaveholdLettuceInSpecail()
         {
             VelociWrap bw = new VelociWrap();
             bw.HoldLettuce();
@@ -104,7 +104,7 @@ namespace MenuTest.Entrees
             });
         }
         [Fact]
-        public void ShouldhaveholdPeppersInSpecail()
+        public void ShouldhaveholdDressingInSpecail()
         {
             VelociWrap bw = new VelociWrap();
             bw.HoldDressing();
@@ -114,7 +114,7 @@ namespace MenuTest.Entrees
             });
         }
         [Fact]
-        public void ShouldhaveholdOnionsInSpecail()
+        public void ShouldhaveholdCheeseInSpecail()
         {
             VelociWrap bw = new VelociWrap();
             bw.HoldCheese();
@@ -124,7 +124,7 @@ namespace MenuTest.Entrees
             });
         }
         [Fact]
-        public void ShouldhaveholdPeanutButterdandJellyInSpecail()
+        public void ShouldhaveholdAllInSpecail()
         {
             VelociWrap bw = new VelociWrap();
             bw.HoldLettuce();
