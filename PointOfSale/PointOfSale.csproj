@@ -63,6 +63,9 @@
     <Compile Include="FlavorSelection.xaml.cs">
       <DependentUpon>FlavorSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderContrrol.xaml.cs">
+      <DependentUpon>OrderContrrol.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SelectEntree.xaml.cs">
       <DependentUpon>SelectEntree.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MenuCategorySelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderContrrol.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,11 +207,16 @@
     <Resource Include="Images\stegosaurus.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="brontosaurus.png" />
+    <Resource Include="Images\brontosaurus.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Raptor.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Menu\Menu.csproj">
+      <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
+      <Name>Menu</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

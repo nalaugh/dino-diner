@@ -9,7 +9,7 @@ using DinoDiner.Menu;
 namespace DinoDiner.Menu
 {
 
-    public abstract class Side : IMenuItem
+    public abstract class Side : IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the price

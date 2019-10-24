@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
     /// Create an Entree base class in the DiniDiner.Menu.Entrees namespace. 
     /// It should be an abstract class, and include Properties for **Price, Calories, **and read-only Ingredients.
     /// </summary>
-    public abstract class Entree : IMenuItem
+    public abstract class Entree : IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the price

@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -28,12 +29,18 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : PageFunction<String>
     {
+        private CretaceousCombo CretaceousCombo { get; set; }
         /// <summary>
         /// constructs the page for combo selections
         /// </summary>
         public ComboSelection()
         {
             InitializeComponent();
+        }
+        public ComboSelection(CretaceousCombo cretaceous)
+        {
+            InitializeComponent();
+            this.CretaceousCombo = cretaceous;
         }
         /// <summary>
         /// navigates to cutomize combo selection

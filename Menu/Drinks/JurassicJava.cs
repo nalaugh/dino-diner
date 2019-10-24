@@ -143,9 +143,9 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             if (Decaff)
-                return size + " Decaf Jurassic Java";
+                return $"{ size}  Decaf Jurassic Java";
             else
-                return  size + " Jurassic Java";
+                return $"{ size} Jurassic Java";
         }
 
     }

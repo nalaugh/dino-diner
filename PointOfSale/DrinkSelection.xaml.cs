@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -30,6 +31,7 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        private Drink Drink { get; set; }
         /// <summary>
         /// constructor for the drinks page
         /// </summary>
@@ -37,6 +39,27 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        public DrinkSelection(Drink drink)
+        {
+            InitializeComponent();
+            this.Drink = drink;
+        }
+        private void SelectDrink(Drink drink)
+        {
+            if (DataContext is Order order)
+            {
+                order.Item.Add(drink);
+                this.Drink = drink;
+            }
+        }
+        private void SelectSize(DinoDiner.Menu.Size size)
+        {
+            if (Drink != null)
+            {
+                this.Drink.Size = size;
+            }
+        }
+
         /// <summary>
         /// creats a clickable button for flavor
         /// </summary>
@@ -44,6 +67,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Soda(object sender, RoutedEventArgs e)
         {
+            SelectDrink(new Sodasaurus());
             this.top.Children.Clear();
             this.mid.Children.Clear();
             this.bottom.Children.Clear();
@@ -63,6 +87,10 @@ namespace PointOfSale
         {
             NavigationService.Navigate(new FlavorSelection());
         }
+        private void Done(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
         /// <summary>
         /// creats a button for lemon and sweet
         /// </summary>
@@ -70,6 +98,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Tea(object sender, RoutedEventArgs e)
         {
+            SelectDrink(new Tyrannotea());
             this.top.Children.Clear();
             this.mid.Children.Clear();
             this.bottom.Children.Clear();
@@ -81,6 +110,9 @@ namespace PointOfSale
             sweet.FontFamily = new FontFamily("Showcard Gothic");
             sweet.Content = "Sweet";
             this.mid.Children.Add(sweet);
+            lemon.Click += Lemon;
+            sweet.Click += Sweet;
+
         }
         /// <summary>
         /// creats a button for decaf ice and room for cream
@@ -89,6 +121,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Coffee(object secder, RoutedEventArgs e)
         {
+            SelectDrink(new JurrassicJava());
             this.top.Children.Clear();
             this.mid.Children.Clear();
             this.bottom.Children.Clear();
@@ -105,6 +138,9 @@ namespace PointOfSale
             room.FontFamily = new FontFamily("Showcard Gothic");
             room.Content = "Leave room";
             this.bottom.Children.Add(room);
+            ice.Click += HoldIce;
+            decaf.Click += Decaf;
+            room.Click += LeaveRoom;
         }
         /// <summary>
         /// creats a button for lemon
@@ -113,6 +149,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Water(object sender, RoutedEventArgs e)
         {
+            SelectDrink(new Water());
             this.top.Children.Clear();
             this.mid.Children.Clear();
             this.bottom.Children.Clear();
@@ -120,6 +157,39 @@ namespace PointOfSale
             lemon.FontFamily = new FontFamily("Showcard Gothic");
             lemon.Content = "Lemon";
             this.top.Children.Add(lemon);
+            lemon.Click += Lemon;
+        }
+        protected void OnselectLarge(object sender, RoutedEventArgs e)
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+        protected void OnselectMedium(object sender, RoutedEventArgs e)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+        }
+        protected void OnselectSmall(object sender, RoutedEventArgs e)
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
+        }
+        protected void HoldIce(object sender, RoutedEventArgs e)
+        {
+            this.Drink.HoldIce();
+        }
+        protected void Decaf(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        protected void Lemon(object sender, RoutedEventArgs e)
+        {
+
+        }
+        protected void LeaveRoom(object sender, RoutedEventArgs e)
+        {
+
+        }
+        protected void Sweet(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

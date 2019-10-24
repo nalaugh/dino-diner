@@ -19,11 +19,7 @@
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+
             <Label Grid.Column="1" HorizontalAlignment="Center">Add To Order</Label>
         </Grid>
         <Grid Grid.Row="1">
@@ -37,39 +33,51 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Grid.Column="0" Grid.Row="0"  >
+
+            <Button Grid.Column="0" Grid.Row="0" Click="ChooseBront" >
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap">Brontowurst</TextBlock>
-                    <Image Source="brontosaurus.png" Height="92" Width="104"></Image>
+                    <Image Source="Images/DinoDiner-01.png" Height="92" Width="104"></Image>
                 </StackPanel>
             </Button>
-            <Button Grid.Column="0" Grid.Row="1" >Prehistoric PB &amp; J</Button>
-            <Button Grid.Column="0" Grid.Row="2"  >Dino-Nuggets</Button>
-            <Button Grid.Column="2" Grid.Row="0"   >
+            <Button Grid.Column="0" Grid.Row="1" Click="ChoosePbJ">
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap">Prehistoric PB &amp; J</TextBlock>
+                    <Image Source="Images/DinoDiner-03.png" Height="92" Width="104"></Image>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="2" Click="ChooseNuggt" >
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap">Dino-Nuggets</TextBlock>
+                    <Image Source="Images/DinoDiner-02.png" Height="92" Width="104"></Image>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="0"  Click="ChooseWrap" >
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap">Veloci-Wrap</TextBlock>
-                    <Image Source="Images/Raptor.png" Height="92" Width="104"></Image>
+                    <Image Source="Images/DinoDiner-07.png" Height="92" Width="104"></Image>
                 </StackPanel>
             </Button>
-            <Button Grid.Column="1" Grid.Row="1"   >
+            <Button Grid.Column="1" Grid.Row="1"  Click="Choosewings" >
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap">Pterodactyl Wings</TextBlock>
-                    <Image Source="Images/pterodactyl.png" Height="92" Width="104"></Image>
+                    <Image Source="Images/DinoDiner-04.png" Height="92" Width="104"></Image>
                 </StackPanel>
             </Button>
-            <Button Grid.Column="1" Grid.Row="2"  >
+            <Button Grid.Column="1" Grid.Row="2" Click="ChooseKing" >
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap">T-Rex King Burger</TextBlock>
-                    <Image Source="Images/T-Rex.png" Height="92" Width="104"></Image>
+                    <Image Source="Images/DinoDiner-06.png" Height="92" Width="104"></Image>
                 </StackPanel>
             </Button>
-            <Button Grid.Column="1" Grid.Row="0"  >
+            <Button Grid.Column="1" Grid.Row="0" Click="ChooseBurger" >
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap">Steakosarus Burger</TextBlock>
-                    <Image Source="Images/stegosaurus.png" Height="66" Width="94"></Image>
+                    <Image Source="Images/DinoDiner-05.png" Height="81" Width="121"></Image>
                 </StackPanel>
             </Button>
-            
+            <Image Source="Images/brontosaurus.png" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"/>
+
         </Grid>
     </Grid>
 </Page>

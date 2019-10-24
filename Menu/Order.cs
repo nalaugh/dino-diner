@@ -16,7 +16,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// this creats an Order collection of items with a getter and set ter
         /// </summary>
-       public  ObservableCollection<IOrderItem> Item { get; set; }
+        public ObservableCollection<IOrderItem> Item { get; set; } = new ObservableCollection<IOrderItem>();
         /// <summary>
         /// this is the getter for the subtodal that prevent the value from being a negative number
         /// </summary>

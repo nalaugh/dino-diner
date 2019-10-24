@@ -18,8 +18,9 @@
     </Page.Resources>
     <Grid  Style="{StaticResource CustomerDefinition}">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="9*"/>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="148*"/>
+            <RowDefinition Height="261*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -37,50 +38,23 @@
                 <ColumnDefinition Width="0.5*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="61*"/>
-                <RowDefinition Height="82*"/>
-                <RowDefinition Height="82*"/>
+                <RowDefinition Height="30*"/>
+
             </Grid.RowDefinitions>
 
             <Button Grid.Column="0" Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" Click="Brontowurst" >
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap">Brontowurst Combo</TextBlock>
                     <Image Source="Images/DinoDiner-01.png" Height="80" Width="99"/>
-                
-                    </StackPanel>
-            </Button>
-            <Button Grid.Column="0" Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" Click="PBJ" >
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap">Prehistoric PBJ Combo</TextBlock>
-                    <Image Source="Images/DinoDiner-03.png" Height="80" Width="99"/>
-                </StackPanel>
 
-            </Button>
-            <Button Grid.Column="0" Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" Click="DinoNuggets" >
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap">Dino-Nuggets Combo</TextBlock>
-                    <Image Source="Images/DinoDiner-02.png" Height="101" Width="89"></Image>
                 </StackPanel>
-
             </Button>
+
+
             <Button Grid.Column="2" Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" Click="Wrap" >
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap">Veloci-Wrap Combo</TextBlock>
                     <Image Source="Images/DinoDiner-07.png" Height="90" Width="96"></Image>
-                </StackPanel>
-
-            </Button>
-            <Button Grid.Column="1" Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" Click="Wings" >
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap">Pterodactyl Wings Combo</TextBlock>
-                    <Image Source="Images/DinoDiner-04.png" Height="98" Width="114"/>
-                </StackPanel>
-
-            </Button>
-            <Button Grid.Column="1" Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" Click="TRex">
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap">T-Rex King Burger Combo</TextBlock>
-                    <Image Source="Images/DinoDiner-06.png" Height="82" Width="86"></Image>
                 </StackPanel>
 
             </Button>
@@ -91,7 +65,59 @@
                 </StackPanel>
 
             </Button>
-            <Image Grid.Column="2" Grid.Row="1"  Source="Images/Dino.jpg" Grid.RowSpan="2"></Image>
+
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="3"   Source="Images/Dino.jpg"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" Click="DinoNuggets" >
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap">Dino-Nuggets Combo</TextBlock>
+                        <Image Source="Images/DinoDiner-02.png" Height="101" Width="89"></Image>
+                    </StackPanel>
+
+                </Button>
+                <Button Grid.Column="1" Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" Click="TRex">
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap">T-Rex King Burger Combo</TextBlock>
+                        <Image Source="Images/DinoDiner-06.png" Height="82" Width="86"></Image>
+                    </StackPanel>
+
+                </Button>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="1" Grid.Row="1" FontFamily="Showcard Gothic" FontSize="18" Click="Wings" >
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap">Pterodactyl Wings Combo</TextBlock>
+                        <Image Source="Images/DinoDiner-04.png" Height="98" Width="114"/>
+                    </StackPanel>
+
+                </Button>
+                <Button Grid.Column="0" Grid.Row="0" FontFamily="Showcard Gothic" FontSize="18" Click="PBJ" >
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap">Prehistoric PBJ Combo</TextBlock>
+                        <Image Source="Images/DinoDiner-03.png" Height="80" Width="99"/>
+                    </StackPanel>
+
+                </Button>
+                
+            </Grid>
+            <Image Grid.Column="0"   Source="Images/Raptor.png"/>
         </Grid>
     </Grid>
 </PageFunction>

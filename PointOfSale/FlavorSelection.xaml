@@ -41,17 +41,17 @@
 
                 </Grid.RowDefinitions>
 
-                <Button Grid.Row="1" >
+                <Button Grid.Row="1" Click="Cola">
                     <Button.Background>
                         <SolidColorBrush Color="Tan"></SolidColorBrush>
                     </Button.Background>
                     Cola</Button>
-                <Button Grid.Row="2">
+                <Button Grid.Row="2" Click="Charry">
                     <Button.Background>
                     <SolidColorBrush Color="Maroon"></SolidColorBrush>
                     </Button.Background>
                     Cherry</Button>
-                <Button Grid.Row="0" >
+                <Button Grid.Row="0" Click="Chocolate">
                     <Button.Background>
                         <SolidColorBrush Color="SaddleBrown"></SolidColorBrush>
                     </Button.Background>
@@ -67,12 +67,12 @@
                     <RowDefinition/>
 
                 </Grid.RowDefinitions>
-                <Button Grid.Row="1"  >
+                <Button Grid.Row="1" Click="Line" >
                     <Button.Background>
                         <SolidColorBrush Color="LimeGreen"></SolidColorBrush>
                     </Button.Background>
                     Lime</Button>
-                <Button Grid.Row="0"  >
+                <Button Grid.Row="0"  Click="Orange">
                     <Button.Background>
                         <SolidColorBrush Color="Orange"></SolidColorBrush>
                     </Button.Background>
@@ -84,16 +84,17 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="1">
+                <Button Grid.Row="1" Click="RootBeer">
                     <Button.Background>
                         <SolidColorBrush Color="SandyBrown"></SolidColorBrush>
                     </Button.Background>
                     Root Beer</Button>
-                <Button Grid.Row="0">
+                <Button Grid.Row="0" Click="Vanilla">
                     <Button.Background>
                         <SolidColorBrush Color="Beige"></SolidColorBrush>
                     </Button.Background>
                     Vanilla</Button>
+                <Image Source="Images/pterodactyl.png" Grid.Row="2" Margin="-313,0,0,0"/>
             </Grid>
         </Grid>
     </Grid>

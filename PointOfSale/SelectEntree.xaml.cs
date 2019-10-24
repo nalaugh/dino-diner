@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -26,12 +27,69 @@ namespace PointOfSale
     /// </summary>
     public partial class SelectEntree : Page
     {
+        private Entree Entree { get; set; }
         /// <summary>
         /// constructs the Entree page
         /// </summary>
         public SelectEntree()
         {
             InitializeComponent();
+        }
+        public SelectEntree(Entree entree)
+        {
+            InitializeComponent();
+            this.Entree = entree;
+        }
+        private void SelectEntrees(Entree entree)
+        {
+            if (DataContext is Order order)
+            {
+                order.Item.Add(entree);
+                this.Entree = entree;
+            }
+        }
+        private void ChooseBront(object sender, RoutedEventArgs e)
+        {
+  
+                SelectEntrees(new Brontowurst());
+            NavigationService.Navigate(new MenuCategorySelection());
+
+
+        }
+        private void ChooseNuggt(object sender, RoutedEventArgs e)
+        {
+
+            SelectEntrees(new DinoNuggets());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+        private void Choosewings(object sender, RoutedEventArgs e)
+        {
+
+            SelectEntrees(new PterodactylWings());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+        private void ChoosePbJ(object sender, RoutedEventArgs e)
+        {
+
+            SelectEntrees(new PrehistoricPBJ());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+        private void ChooseKing(object sender, RoutedEventArgs e)
+        {
+
+            SelectEntrees(new TRexKingBurger());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+        private void ChooseBurger(object sender, RoutedEventArgs e)
+        {
+
+            SelectEntrees(new SteakosaurusBurger());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+        private void ChooseWrap(object sender, RoutedEventArgs e)
+        {
+            SelectEntrees(new VelociWrap());
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

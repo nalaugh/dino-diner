@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -25,6 +26,7 @@ namespace PointOfSale
 
     public partial class SideSelection : Page
     {
+        public Side Side { get; set; }
         /// <summary>
         /// Construction of a the side selection page
         /// </summary>
@@ -33,5 +35,85 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        public SideSelection(Side side)
+        {
+            InitializeComponent();
+            this.Side = side;
+        }
+        private void SelectSide(Side side)
+        {
+            if (DataContext is Order order)
+            {
+                order.Item.Add(side);
+                this.Side = side;
+            }
+        }
+        private void SelectSize(DinoDiner.Menu.Size size)
+        {
+            if (Side != null)
+            {
+                this.Side.Size = size;
+            }
+        }
+        private void Done(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+        private void ChooseFryceritops(object sender, RoutedEventArgs e)
+        {
+            SelectSide(new Fryceritops());
+          
+                TriButton.IsEnabled = false;
+                MacButton.IsEnabled = false;
+                MezzButton.IsEnabled = false;
+                FryButton.IsEnabled = false;
+            
+        }
+        private void ChooseTriceritots(object sender, RoutedEventArgs e)
+        {
+
+
+            SelectSide(new Triceritots());
+                TriButton.IsEnabled = false;
+                MacButton.IsEnabled = false;
+                MezzButton.IsEnabled = false;
+                FryButton.IsEnabled = false;
+            
+        }
+        private void ChooseMac(object sender, RoutedEventArgs e)
+        {
+
+
+            SelectSide(new MeteorMacAndCheese());
+                TriButton.IsEnabled = false;
+                MacButton.IsEnabled = false;
+                MezzButton.IsEnabled = false;
+                FryButton.IsEnabled = false;
+            
+        }
+        private void ChooseMezz(object sender, RoutedEventArgs e)
+        {
+
+
+            SelectSide(new MezzorellaSticks());
+                TriButton.IsEnabled = false;
+                MacButton.IsEnabled = false;
+                MezzButton.IsEnabled = false;
+                FryButton.IsEnabled = false;
+            
+        }
+        protected void OnselectLarge(object sender, RoutedEventArgs e)
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+        protected void OnselectMedium(object sender, RoutedEventArgs e)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+        }
+        protected void OnselectSmall(object sender, RoutedEventArgs e)
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
+        }
+
     }
 }

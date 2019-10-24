@@ -15,8 +15,8 @@
     </Page.Resources>
     <Grid x:Name="Drinkpage" Style="{StaticResource CustomerDefinition}">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="9*"/>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="409*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -24,7 +24,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="1" HorizontalAlignment="Center"  >Add To Combo</Label>
+            <Label Grid.Column="1" HorizontalAlignment="Center">Add To Order</Label>
+            <Button Grid.Column="2" HorizontalAlignment="Center" Click="Done">Done</Button>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -42,27 +43,27 @@
                     <RowDefinition Height="89*"/>
                 </Grid.RowDefinitions>
                 <Label   HorizontalAlignment="Center" Margin="171,0" Width="58">Sides</Label>
-                <Button Grid.Row="1" >
+                <Button Name="FryButton" Grid.Row="1" Click="ChooseFryceritops" >
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Fryceritops</TextBlock>
                         <Image Source="Images/DinoDiner-08.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Row="2" >
+                <Button Name="TriButton" Grid.Row="2" Click="ChooseTriceritots">
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Triceritots</TextBlock>
                         <Image Source="Images/DinoDiner-11.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Row="3" >
+                <Button Name="MacButton" Grid.Row="3" Click="ChooseMac">
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Meteor Mac &amp; Cheese</TextBlock>
                         <Image Source="Images/DinoDiner-09.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Row="4">
+                <Button Name ="MezzButton" Grid.Row="4" Click="ChooseMezz">
                     <StackPanel>
-                        <TextBlock TextWrapping="Wrap">Mozzerella Sticks</TextBlock>
+                        <TextBlock TextWrapping="Wrap">Mezzerella Sticks</TextBlock>
                         <Image Source="Images/DinoDiner-10.png" Height="64" Width="84"/>
                     </StackPanel>
                 </Button>
@@ -71,15 +72,17 @@
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
 
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="49*"/>
+                    <RowDefinition Height="45*"/>
+                    <RowDefinition Height="32*"/>
+                    <RowDefinition Height="32*"/>
+                    <RowDefinition Height="247*"/>
                 </Grid.RowDefinitions>
-                <Label HorizontalAlignment="Center">Size</Label>
-                <RadioButton Grid.Row="1" HorizontalAlignment="Center" >Small</RadioButton>
-                <RadioButton Grid.Row="2"  HorizontalAlignment="Center" >Medium</RadioButton>
-                <RadioButton Grid.Row="3" HorizontalAlignment="Center" >Large</RadioButton>
+                <Label HorizontalAlignment="Center" Margin="176,0" Width="48">Size</Label>
+                <RadioButton Name="SmallButton" Grid.Row="1" HorizontalAlignment="Center"  Click="OnselectSmall">Small</RadioButton>
+                <RadioButton Name ="MediumButton"  Grid.Row="2"  HorizontalAlignment="Center" Click="OnselectMedium">Medium</RadioButton>
+                <RadioButton Name ="LargeButton"  Grid.Row="3" HorizontalAlignment="Center" Click="OnselectLarge" >Large</RadioButton>
+                <Image Grid.Row="4"   Source="Images/T-Rex.png"/>
             </Grid>
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
