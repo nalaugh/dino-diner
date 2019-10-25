@@ -44,16 +44,19 @@ namespace DinoDiner.Menu
                         Price = .59;
                         Calories = 2;
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Medium:
                         Price = 0.99;
                         Calories = 4;
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Large:
                         Price = 1.49;
                         Calories = 8;
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }
@@ -143,9 +146,9 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             if (Decaff)
-                return $"{ size}  Decaf Jurassic Java";
+                return $"{Size}  Decaf Jurassic Java";
             else
-                return $"{ size} Jurassic Java";
+                return $"{Size} Jurassic Java";
         }
 
     }

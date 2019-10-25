@@ -26,29 +26,46 @@ namespace PointOfSale
         {
             InitializeComponent();
             OrderList.NavigationService = OrderInterface.NavigationService;
-       
+
 
         }
-  
+        /// <summary>
+        /// this marks the page being done loading
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="arge"></param>
         public void OnLoadCompleted(object sender, NavigationEventArgs arge)
         {
             BindDataContextToPage();
+
         }
+        /// <summary>
+        /// this makes that the data has changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
             BindDataContextToPage();
+
         }
+        /// <summary>
+        /// this sets the data context
+        /// </summary>
         private void SetFrameDataContext()
         {
             FrameworkElement content = OrderInterface.Content as FrameworkElement;
             if (content == null) return;
             content.DataContext = OrderInterface.DataContext;
         }
+        /// <summary>
+        /// this sets the data context
+        /// </summary>
         private void BindDataContextToPage()
         {
-           if(OrderInterface.Content is FrameworkElement element)
+            if (OrderInterface.Content is FrameworkElement element)
             {
-                element.DataContext = OrderInterface.DataContext; 
+                element.DataContext = OrderInterface.DataContext;
             }
 
         }

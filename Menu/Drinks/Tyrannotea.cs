@@ -52,6 +52,7 @@ namespace DinoDiner.Menu
                             Calories = Calories * 2;
                         }
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Medium:
                         Price = 1.49;
@@ -62,6 +63,7 @@ namespace DinoDiner.Menu
                             Calories = Calories * 2;
                         }
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Large:
                         Price = 1.99;
@@ -72,6 +74,7 @@ namespace DinoDiner.Menu
                             Calories = Calories * 2;
                         }
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }
@@ -151,6 +154,14 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
         }
+        public void AddMakeSweet()
+        {
+            this.Sweet = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
+
+        }
         /// <summary>
         /// orverides the toString
         /// </summary>
@@ -159,11 +170,15 @@ namespace DinoDiner.Menu
         {
             if (Sweet)
             {
+
                 return size + " Sweet Tyrannotea";
             }
             else
+            {
 
                 return size + " Tyrannotea";
+            }
+
         }
     }
 }

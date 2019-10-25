@@ -51,5 +51,13 @@ namespace PointOfSale
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                order.Item.Remove((sender as Button).Tag as IOrderItem);
+            }
+        }
     }
+    
 }

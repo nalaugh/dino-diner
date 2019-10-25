@@ -102,14 +102,29 @@ namespace PointOfSale
                 FryButton.IsEnabled = false;
             
         }
+        /// <summary>
+        /// Changed the size to Large
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnselectLarge(object sender, RoutedEventArgs e)
         {
             SelectSize(DinoDiner.Menu.Size.Large);
         }
+        /// <summary>
+        /// chaged the size to medium
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnselectMedium(object sender, RoutedEventArgs e)
         {
             SelectSize(DinoDiner.Menu.Size.Medium);
         }
+        /// <summary>
+        /// changes the size to small
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnselectSmall(object sender, RoutedEventArgs e)
         {
             SelectSize(DinoDiner.Menu.Size.Small);

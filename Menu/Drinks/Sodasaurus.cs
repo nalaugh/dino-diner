@@ -52,16 +52,19 @@ namespace DinoDiner.Menu
                         Price = 1.50;
                         Calories = 112;
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Medium:
                         Price = 2.00;
                         Calories = 156;
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Large:
                         Price = 2.50;
                         Calories = 208;
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }
@@ -102,7 +105,15 @@ namespace DinoDiner.Menu
             }
         }
 
-
+        /// <summary>
+        /// Adds ice if the person wants it.
+        /// </summary>
+        public void HoldIce()
+        {
+            this.Ice = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
         /// <summary>
         /// fills in the ingrediance
         /// </summary>

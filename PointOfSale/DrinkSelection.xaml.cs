@@ -38,11 +38,14 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
+
         }
         public DrinkSelection(Drink drink)
         {
             InitializeComponent();
             this.Drink = drink;
+
+
         }
         private void SelectDrink(Drink drink)
         {
@@ -133,7 +136,7 @@ namespace PointOfSale
             Button ice = new Button();
             ice.FontFamily = new FontFamily("Showcard Gothic");
             ice.Content = "Hold Ice";
-            this.top.Children.Add(ice) ;
+            this.mid.Children.Add(ice) ;
             Button room = new Button();
             room.FontFamily = new FontFamily("Showcard Gothic");
             room.Content = "Leave room";
@@ -158,38 +161,95 @@ namespace PointOfSale
             lemon.Content = "Lemon";
             this.top.Children.Add(lemon);
             lemon.Click += Lemon;
+            Button ice = new Button();
+            ice.FontFamily = new FontFamily("Showcard Gothic");
+            ice.Content = "Hold Ice";
+            this.mid.Children.Add(ice);
+            ice.Click += HoldIce;
         }
+        /// <summary>
+        /// Changed the size to Large
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnselectLarge(object sender, RoutedEventArgs e)
         {
             SelectSize(DinoDiner.Menu.Size.Large);
         }
+        /// <summary>
+        /// chaged the size to medium
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnselectMedium(object sender, RoutedEventArgs e)
         {
             SelectSize(DinoDiner.Menu.Size.Medium);
         }
+        /// <summary>
+        /// changes the size to small
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnselectSmall(object sender, RoutedEventArgs e)
         {
             SelectSize(DinoDiner.Menu.Size.Small);
         }
         protected void HoldIce(object sender, RoutedEventArgs e)
         {
-            this.Drink.HoldIce();
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is Water drink)
+                {
+                    drink.HoldIce();
+                }
+            }
+
         }
         protected void Decaf(object sender, RoutedEventArgs e)
         {
-            
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is JurrassicJava drink)
+                {
+                    drink.Decaff = !drink.Decaff;
+                }
+            }
         }
         protected void Lemon(object sender, RoutedEventArgs e)
         {
-
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is Water drink)
+                {
+                    drink.Lemon = !drink.Lemon;
+                }
+                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is Tyrannotea drinks)
+                {
+                    drinks.Lemon = !drinks.Lemon;
+                }
+            }
         }
         protected void LeaveRoom(object sender, RoutedEventArgs e)
         {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is Water drink)
+                {
+                    drink.Ice = !drink.Ice;
+                }
+            }
 
         }
         protected void Sweet(object sender, RoutedEventArgs e)
         {
-
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is Tyrannotea drink)
+                {
+                    drink.AddMakeSweet();
+                }
+            }
         }
+        
     }
 }

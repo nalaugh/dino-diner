@@ -17,10 +17,18 @@
         <ListBox Name ="OrderItem" Grid.Row="1" ItemsSource="{Binding Path=Item}" SelectionChanged="OrderItem_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
                         <TextBlock Text="{Binding Path=Description}"/>
                         <ListBox ItemsSource="{Binding Path=Special}"/>
+                        
                     </StackPanel>
+                        <Button Grid.Column="1" Content="X" Click="Button_Click" HorizontalAlignment="Right"  Tag="{Binding}"/>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
