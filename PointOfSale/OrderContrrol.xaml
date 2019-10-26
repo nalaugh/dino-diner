@@ -20,23 +20,25 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0">
+                    <StackPanel Grid.Column="0" >
                         <TextBlock Text="{Binding Path=Description}"/>
-                        <ListBox ItemsSource="{Binding Path=Special}"/>
-                        
-                    </StackPanel>
-                        <Button Grid.Column="1" Content="X" Click="Button_Click" HorizontalAlignment="Right"  Tag="{Binding}"/>
+                            <ListBox ItemsSource="{Binding Path=Special}"/>
+
+                        </StackPanel>
+                        <Button Grid.Column="1" Content="X" Click="Button_Click"  Tag="{Binding}"/>
                     </Grid>
+                    
                 </DataTemplate>
+                
             </ListBox.ItemTemplate>
         </ListBox>
 
         <Border Grid.Row="2">
             <StackPanel Orientation="Horizontal">
                 <TextBox Text="Price: "/>
-                <TextBox Text="$___"/>
+                <TextBlock Text="{Binding Path=SubtotalCost, StringFormat=n2}"/>
             </StackPanel>
         </Border>
         <TextBox Text="Buttons Go Here" Grid.Row="3"/>

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*OrderContrrol
+ * Natalie Laughlin
+ */ 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +19,7 @@ using DinoDiner.Menu;
 
 namespace PointOfSale
 {
- 
+
     /// <summary>
     /// Interaction logic for OrderContrrol.xaml
     /// </summary>
@@ -28,7 +31,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-
+        /// <summary>
+        /// if selected it sends to the page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrderItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (OrderItem.SelectedItem is Side side)
@@ -43,6 +50,7 @@ namespace PointOfSale
             }
             else if (OrderItem.SelectedItem is Drink drink)
             {
+                
                 NavigationService?.Navigate(new DrinkSelection(drink));
             }
             else if (OrderItem.SelectedItem is CretaceousCombo cretaceous)
@@ -50,7 +58,11 @@ namespace PointOfSale
                 NavigationService?.Navigate(new ComboSelection(cretaceous));
             }
         }
-
+        /// <summary>
+        /// removes item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -59,5 +71,5 @@ namespace PointOfSale
             }
         }
     }
-    
+
 }

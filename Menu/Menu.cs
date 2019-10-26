@@ -4,6 +4,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace DinoDiner.Menu
 {
@@ -12,7 +14,7 @@ namespace DinoDiner.Menu
     ///  It should also implement a property with a getter to return all available entrees(AvailableEntrees), sides(AvailableSides), drinks(AvailableDrinks), and combos(AvailableCombos).
     ///It should also override the ToString() method to display the full menu contents, separated by new line characters(\n).
     /// </summary>
-   public class Menu
+   public class Menu 
     {
         /// <summary>
         /// gets a list of all the objects 
@@ -96,6 +98,9 @@ namespace DinoDiner.Menu
                 return it;
             }
         }
+
+      
+
         /// <summary>
         /// overrides the toString method
         /// </summary>

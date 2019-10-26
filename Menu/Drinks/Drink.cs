@@ -56,14 +56,13 @@ namespace DinoDiner.Menu
          
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
-
-        /// <summary>
-        /// hold the ice from the drink;
-        /// </summary>
-        public void HoldIce()
+        private void NotifyOfPropertyChange(string propertyName)
         {
-            this.Ice = false;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
     }
 }

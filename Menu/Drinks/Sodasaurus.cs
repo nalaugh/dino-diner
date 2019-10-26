@@ -31,11 +31,13 @@ namespace DinoDiner.Menu
         public SodasaurusFlavor Flavor {
             get
             {
+               
                 return flavor;
             }
             set
             {
                 flavor = value;
+                NotifyOfPropertyChange("Description");
             }
         }
         /// <summary>
@@ -104,7 +106,12 @@ namespace DinoDiner.Menu
 
             }
         }
+        public void ChangeFlavor(SodasaurusFlavor flavor)
+        {
+            this.Flavor = flavor;
+            NotifyOfPropertyChange("Description");
 
+        }
         /// <summary>
         /// Adds ice if the person wants it.
         /// </summary>

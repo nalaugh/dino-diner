@@ -39,16 +39,19 @@ namespace DinoDiner.Menu
                         Price = 0.10;
                         Calories = 0;
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Medium:
                         Price = 0.10;
                         Calories = 0;
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Small:
                         Price = 0.10;
                         Calories = 0;
                         NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }
@@ -102,6 +105,7 @@ namespace DinoDiner.Menu
                 {
                     ingredients.Add("Lemon");
                 }
+
               
                 return ingredients;
             }
@@ -115,7 +119,13 @@ namespace DinoDiner.Menu
             this.Calories = 0;
 
         }
+        public void Add()
+        {
+            this.Ice = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
 
+        }
         /// <summary>
         /// this adds the lemon
         /// </summary>

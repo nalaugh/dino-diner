@@ -84,7 +84,7 @@
                 <RadioButton Name ="LargeButton"  Grid.Row="3" HorizontalAlignment="Center" Click="OnselectLarge" >Large</RadioButton>
                 <Image Grid.Row="4"   Source="Images/T-Rex.png"/>
             </Grid>
-            <Grid Grid.Column="2">
+            <Grid Grid.Column="2"> 
                 <Grid.RowDefinitions>
 
                     <RowDefinition/>

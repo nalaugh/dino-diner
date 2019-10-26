@@ -76,7 +76,7 @@ namespace PointOfSale
             this.bottom.Children.Clear();
             Button flavor = new Button();
             flavor.FontFamily = new FontFamily("Showcard Gothic");
-           
+
             flavor.Content = "Flavor";
             flavor.Click += Flavor;
             this.top.Children.Add(flavor);
@@ -88,7 +88,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Flavor(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new FlavorSelection());
+            NavigationService.Navigate(new FlavorSelection(Drink));
         }
         private void Done(object sender, EventArgs e)
         {
@@ -136,7 +136,7 @@ namespace PointOfSale
             Button ice = new Button();
             ice.FontFamily = new FontFamily("Showcard Gothic");
             ice.Content = "Hold Ice";
-            this.mid.Children.Add(ice) ;
+            this.mid.Children.Add(ice);
             Button room = new Button();
             room.FontFamily = new FontFamily("Showcard Gothic");
             room.Content = "Leave room";
@@ -194,62 +194,74 @@ namespace PointOfSale
         {
             SelectSize(DinoDiner.Menu.Size.Small);
         }
+        /// <summary>
+        /// Holds Ice
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void HoldIce(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order order)
+            if (Drink is Water water)
             {
-                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is Water drink)
-                {
-                    drink.HoldIce();
-                }
+                water.Add();
             }
-
+            if (Drink is JurrassicJava java)
+            {
+                java.AddIce();
+            }
         }
+        /// <summary>
+        /// Makes Decaf
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Decaf(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order order)
+            if (Drink is JurrassicJava java)
             {
-                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is JurrassicJava drink)
-                {
-                    drink.Decaff = !drink.Decaff;
-                }
+                java.MakeDecaf();
             }
         }
+        /// <summary>
+        /// Adds Lemon
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Lemon(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order order)
+            if (Drink is Water water)
             {
-                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is Water drink)
-                {
-                    drink.Lemon = !drink.Lemon;
-                }
-                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is Tyrannotea drinks)
-                {
-                    drinks.Lemon = !drinks.Lemon;
-                }
+                water.AddLemon();
+            }
+            if (Drink is Tyrannotea tea)
+            {
+                tea.AddLemon();
             }
         }
+        /// <summary>
+        /// Leaves room
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void LeaveRoom(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order order)
+            if (Drink is JurrassicJava java)
             {
-                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is Water drink)
-                {
-                    drink.Ice = !drink.Ice;
-                }
+                java.RoomForCream();
             }
-
         }
+        /// <summary>
+        /// Makes Sweet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Sweet(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order order)
+            if (Drink is Tyrannotea tea)
             {
-                if (CollectionViewSource.GetDefaultView(order.Item).CurrentItem is Tyrannotea drink)
-                {
-                    drink.AddMakeSweet();
-                }
+                tea.AddMakeSweet();
             }
         }
-        
+
     }
 }

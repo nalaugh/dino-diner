@@ -18,6 +18,7 @@ namespace DinoDiner.Menu
     /// </summary>
     public class JurrassicJava : Drink, IOrderItem, INotifyPropertyChanged
     {
+        public bool Ice = false;
         /// <summary>
         /// private veriable of size
         /// </summary>
@@ -120,7 +121,19 @@ namespace DinoDiner.Menu
             this.Calories = 2;
             this.HoldIce();
         }
+        public void HoldIce()
+        {
+            this.Ice = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
 
+        public void MakeDecaf()
+        {
+            this.Decaff = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
+        }
         /// <summary>
         /// this leaves room for cream
         /// </summary>
@@ -149,6 +162,7 @@ namespace DinoDiner.Menu
                 return $"{Size}  Decaf Jurassic Java";
             else
                 return $"{Size} Jurassic Java";
+
         }
 
     }
