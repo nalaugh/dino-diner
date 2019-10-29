@@ -42,7 +42,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Item.Add(cretaceous);
+                order.Add(cretaceous);
                 this.CretaceousCombo = cretaceous;
             }
         }

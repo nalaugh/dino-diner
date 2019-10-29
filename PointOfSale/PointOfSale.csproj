@@ -57,6 +57,9 @@
     <Compile Include="CustomizeCombo.xaml.cs">
       <DependentUpon>CustomizeCombo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomPBJ.xaml.cs">
+      <DependentUpon>CustomPBJ.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ComboSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomPBJ.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,73 +157,47 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Dino.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-03.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-02.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-07.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-04.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-06.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-05.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-13.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-12.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-14.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-15.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-08.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-11.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-09.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DinoDiner-10.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\pterodactyl.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\T-Rex.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\stegosaurus.png" />
+    <ProjectReference Include="..\Menu\Menu.csproj">
+      <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
+      <Name>Menu</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\brontosaurus.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Dino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pterodactyl.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Images\Raptor.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Menu\Menu.csproj">
-      <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
-      <Name>Menu</Name>
-    </ProjectReference>
+    <Resource Include="Images\stegosaurus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\T-Rex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DinoDiner-01.png" />
+    <Resource Include="Images\DinoDiner-02.png" />
+    <Resource Include="Images\DinoDiner-03.png" />
+    <Resource Include="Images\DinoDiner-04.png" />
+    <Resource Include="Images\DinoDiner-05.png" />
+    <Resource Include="Images\DinoDiner-06.png" />
+    <Resource Include="Images\DinoDiner-07.png" />
+    <Resource Include="Images\DinoDiner-09.png" />
+    <Resource Include="Images\DinoDiner-10.png" />
+    <Resource Include="Images\DinoDiner-11.png" />
+    <Resource Include="Images\DinoDiner-12.png" />
+    <Resource Include="Images\DinoDiner-13.png" />
+    <Resource Include="Images\DinoDiner-14.png" />
+    <Resource Include="Images\DinoDiner-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DinoDiner-08.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

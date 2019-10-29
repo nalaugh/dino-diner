@@ -26,7 +26,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="1" HorizontalAlignment="Center">Add To Order</Label>
-                <Button Grid.Column="2" HorizontalAlignment="Center" Click="Done">Done</Button>
+                <Button Grid.Column="2" HorizontalAlignment="Center" Click="Done" Background="Red" BorderBrush="Black" BorderThickness="5">Done</Button>
 
             </Grid>
 

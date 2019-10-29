@@ -67,7 +67,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Item.Remove((sender as Button).Tag as IOrderItem);
+                order.Remove((sender as Button).Tag as IOrderItem);
             }
         }
     }

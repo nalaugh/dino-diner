@@ -10,29 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{9FABDA8A-4F96-4763-A7C3-41AC367CE151}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7C1B5B40-5F15-4A99-B8ED-14F389DAAD58}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Pictures\brontosaurus.png = ..\..\..\Pictures\brontosaurus.png
-		Dino.jpg = Dino.jpg
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-01.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-01.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-02.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-02.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-03.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-03.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-04.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-04.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-05.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-05.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-06.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-06.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-07.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-07.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-08.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-08.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-09.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-09.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-10.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-10.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-11.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-11.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-12.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-12.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-13.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-13.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-14.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-14.png
-		..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-15.png = ..\..\..\..\Downloads\Dino Diner PNG\Dino Diner PNG\DinoDiner-15.png
-		..\..\..\Pictures\pterodactyl.png = ..\..\..\Pictures\pterodactyl.png
-		..\..\..\Pictures\Raptor.png = ..\..\..\Pictures\Raptor.png
-		..\..\..\Pictures\stegosaurus.png = ..\..\..\Pictures\stegosaurus.png
-		..\..\..\Pictures\T-Rex.png = ..\..\..\Pictures\T-Rex.png
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

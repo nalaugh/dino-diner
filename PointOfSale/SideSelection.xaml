@@ -25,7 +25,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="1" HorizontalAlignment="Center">Add To Order</Label>
-            <Button Grid.Column="2" HorizontalAlignment="Center" Click="Done">Done</Button>
+            <Button Grid.Column="2" HorizontalAlignment="Center" Click="Done" Background="Red" BorderBrush="Black" BorderThickness="5">Done</Button>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -50,6 +50,7 @@
                     </StackPanel>
                 </Button>
                 <Button Name="TriButton" Grid.Row="2" Click="ChooseTriceritots">
+                    
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap">Triceritots</TextBlock>
                         <Image Source="Images/DinoDiner-11.png" Height="64" Width="84"/>

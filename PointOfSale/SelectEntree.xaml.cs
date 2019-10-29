@@ -44,7 +44,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Item.Add(entree);
+                order.Add(entree);
                 this.Entree = entree;
             }
         }
@@ -72,7 +72,8 @@ namespace PointOfSale
         {
 
             SelectEntrees(new PrehistoricPBJ());
-            NavigationService.Navigate(new MenuCategorySelection());
+            if(this.Entree is PrehistoricPBJ pBJ)
+            NavigationService.Navigate(new CustomPBJ(pBJ));
         }
         private void ChooseKing(object sender, RoutedEventArgs e)
         {

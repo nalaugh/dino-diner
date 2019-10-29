@@ -14,10 +14,21 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Order : INotifyPropertyChanged
     {
+        double salesTaxRate = 0;
+        List<IOrderItem> items = new List<IOrderItem>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// this creats an Order collection of items with a getter and set ter
         /// </summary>
-        public ObservableCollection<IOrderItem> Item { get; set; }
+        public IOrderItem[] Item
+        {
+            get
+            {
+                return items.ToArray();
+            }
+        }
         /// <summary>
         /// this is the getter for the subtodal that prevent the value from being a negative number
         /// </summary>
@@ -38,18 +49,33 @@ namespace DinoDiner.Menu
         }
         public Order()
         {
-            Item = new ObservableCollection<IOrderItem>();
-            Item.CollectionChanged += OnCollectionsChared;
 
         }
-
-        private void OnCollectionsChared(object sender, EventArgs e)
+        /// <summary>
+        /// Adds a new item to our oder
+        /// </summary>
+        /// <param name="item"></param>
+        public void Add(IOrderItem item)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxRate"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Item"));
+            items.Add(item);
+            item.PropertyChanged += OnPropertyChanged;
+            NotifyOfPropertyChanged();
         }
+        public bool Remove(IOrderItem item)
+        {
+            bool flag =items.Remove(item);
+            if (flag)
+            {
+                NotifyOfPropertyChanged();
+            }
+            return flag;
+        }
+        private void OnPropertyChanged(object sender, ProgressChangedEventArgs args)
+        {
+            NotifyOfPropertyChanged();
+
+        }
+
         /// <summary>
         /// this takes in the the tax rate and has a protected rate to lover the amount that is used
         /// </summary>
@@ -79,11 +105,16 @@ namespace DinoDiner.Menu
             }
 
         }
+           /// <summary>
+           /// the proberty chaed even handeler notifies when and item chaes 
+           /// </summary>
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyOfPropertyChange(string propertyName)
+        private void NotifyOfPropertyChanged()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
         }
     }
 }
