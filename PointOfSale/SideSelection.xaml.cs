@@ -40,6 +40,12 @@ namespace PointOfSale
             InitializeComponent();
             this.Side = side;
         }
+        public SideSelection(CretaceousCombo cb)
+        {
+            InitializeComponent();
+       
+                this.Side = cb.Sides;
+        }
         private void SelectSide(Side side)
         {
             if (DataContext is Order order)

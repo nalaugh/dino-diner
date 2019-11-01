@@ -50,6 +50,7 @@ namespace DinoDiner.Menu
         public Order()
         {
 
+           // Item.PropertyChanged += OnPropertyChanged;
         }
         /// <summary>
         /// Adds a new item to our oder
@@ -70,7 +71,7 @@ namespace DinoDiner.Menu
             }
             return flag;
         }
-        private void OnPropertyChanged(object sender, ProgressChangedEventArgs args)
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
             NotifyOfPropertyChanged();
 
@@ -111,7 +112,7 @@ namespace DinoDiner.Menu
 
         private void NotifyOfPropertyChanged()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Item"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));

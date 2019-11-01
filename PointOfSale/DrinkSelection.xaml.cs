@@ -32,6 +32,7 @@ namespace PointOfSale
     public partial class DrinkSelection : Page
     {
         private Drink Drink { get; set; }
+
         /// <summary>
         /// constructor for the drinks page
         /// </summary>
@@ -47,6 +48,15 @@ namespace PointOfSale
 
 
         }
+        public DrinkSelection(CretaceousCombo cb)
+        {
+            InitializeComponent();
+            
+            this.Drink = cb.Drinks;
+
+
+        }
+
         private void SelectDrink(Drink drink)
         {
             if (DataContext is Order order)

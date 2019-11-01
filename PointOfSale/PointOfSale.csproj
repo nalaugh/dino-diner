@@ -54,11 +54,26 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="customBrontowurst.xaml.cs">
+      <DependentUpon>customBrontowurst.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomizeCombo.xaml.cs">
       <DependentUpon>CustomizeCombo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomNugget.xaml.cs">
+      <DependentUpon>CustomNugget.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomPBJ.xaml.cs">
       <DependentUpon>CustomPBJ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomSteakosaurus.xaml.cs">
+      <DependentUpon>CustomSteakosaurus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTRex.xaml.cs">
+      <DependentUpon>CustomTRex.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomVelociWrap.xaml.cs">
+      <DependentUpon>CustomVelociWrap.xaml</DependentUpon>
     </Compile>
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
@@ -75,6 +90,10 @@
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
+    <Page Include="customBrontowurst.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomizeCombo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,7 +102,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CustomNugget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomPBJ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomSteakosaurus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomTRex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomVelociWrap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

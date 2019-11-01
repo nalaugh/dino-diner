@@ -49,27 +49,27 @@
                     </Grid.RowDefinitions>
 
                     <Label  FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center"  >Drinks</Label>
-                    <Button Grid.Row="1" FontSize="18" Click="Coffee" HorizontalAlignment="Center" >
+                    <Button Grid.Row="1" FontSize="18" Click="Coffee" >
                         <StackPanel>
                             <TextBlock TextWrapping="Wrap">Jurassic Java</TextBlock>
                             <Image Source="Images/DinoDiner-13.png" Height="64" Width="84"/>
                         </StackPanel>
 
                     </Button>
-                    <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" Click="Soda" HorizontalAlignment="Center" >
+                    <Button Grid.Row="2" FontFamily="Showcard Gothic" FontSize="18" Click="Soda"  >
                         <StackPanel>
                             <TextBlock TextWrapping="Wrap">Sodasaurus</TextBlock>
                             <Image Source="Images/DinoDiner-14.png" Height="64" Width="84"/>
                         </StackPanel>
 
                     </Button>
-                    <Button Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" Click="Tea" HorizontalAlignment="Center" >
+                    <Button Grid.Row="3" FontFamily="Showcard Gothic" FontSize="18" Click="Tea" >
                         <StackPanel>
                             <TextBlock TextWrapping="Wrap">Tyrannotea</TextBlock>
                             <Image Source="Images/DinoDiner-12.png" Height="64" Width="84"/>
                         </StackPanel>
                     </Button>
-                    <Button Grid.Row="4" FontFamily="Showcard Gothic" FontSize="18" Click="Water" HorizontalAlignment="Center" >
+                    <Button Grid.Row="4" FontFamily="Showcard Gothic" FontSize="18" Click="Water"  >
                         <StackPanel>
                             <TextBlock TextWrapping="Wrap">Water</TextBlock>
                             <Image Source="Images/DinoDiner-15.png" Height="64" Width="84" RenderTransformOrigin="-0.256,0.469"/>

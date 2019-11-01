@@ -29,6 +29,7 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : PageFunction<String>
     {
+        private Entree et;
         private CretaceousCombo CretaceousCombo { get; set; }
         /// <summary>
         /// constructs the page for combo selections
@@ -59,7 +60,7 @@ namespace PointOfSale
         private void Brontowurst(object sender, RoutedEventArgs e)
         {
             SelectComb(new CretaceousCombo(new Brontowurst()));
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new customBrontowurst(CretaceousCombo));
         }
         /// <summary>
         /// navigates to cutomize combo selection
@@ -69,7 +70,7 @@ namespace PointOfSale
         private void DinoNuggets(object sender, RoutedEventArgs e)
         {
             SelectComb(new CretaceousCombo(new DinoNuggets()));
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomNugget(CretaceousCombo));
         }
         /// <summary>
         /// navigates to cutomize combo selection
@@ -79,7 +80,7 @@ namespace PointOfSale
         private void PBJ(object sender, RoutedEventArgs e)
         {
             SelectComb(new CretaceousCombo(new PrehistoricPBJ()));
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomPBJ(CretaceousCombo));
         }
         /// <summary>
         /// navigates to cutomize combo selection
@@ -89,7 +90,7 @@ namespace PointOfSale
         private void Wings(object sender, RoutedEventArgs e)
         {
             SelectComb(new CretaceousCombo(new PterodactylWings()));
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomizeCombo(CretaceousCombo));
         }
         /// <summary>
         /// navigates to cutomize combo selection
@@ -99,7 +100,7 @@ namespace PointOfSale
         private void TRex(object sender, RoutedEventArgs e)
         {
             SelectComb(new CretaceousCombo(new TRexKingBurger()));
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomTRex(CretaceousCombo));
         }
         /// <summary>
         /// navigates to cutomize combo selection
@@ -109,7 +110,7 @@ namespace PointOfSale
         private void Wrap(object sender, RoutedEventArgs e)
         {
             SelectComb(new CretaceousCombo(new VelociWrap()));
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomVelociWrap(CretaceousCombo));
         }
         /// <summary>
         /// navigates to cutomize combo selection
@@ -119,7 +120,7 @@ namespace PointOfSale
         private void Burger(object sender, RoutedEventArgs e)
         {
             SelectComb(new CretaceousCombo(new SteakosaurusBurger()));
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomSteakosaurus(CretaceousCombo));
         }
     }
 }

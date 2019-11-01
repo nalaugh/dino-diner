@@ -51,8 +51,9 @@ namespace PointOfSale
         private void ChooseBront(object sender, RoutedEventArgs e)
         {
   
-                SelectEntrees(new Brontowurst());
-            NavigationService.Navigate(new MenuCategorySelection());
+            SelectEntrees(new Brontowurst());
+            if(this.Entree is Brontowurst bt)
+            NavigationService.Navigate(new customBrontowurst(bt));
 
 
         }
@@ -60,7 +61,8 @@ namespace PointOfSale
         {
 
             SelectEntrees(new DinoNuggets());
-            NavigationService.Navigate(new MenuCategorySelection());
+            if(this.Entree is DinoNuggets dn)
+            NavigationService.Navigate(new CustomNugget(dn));
         }
         private void Choosewings(object sender, RoutedEventArgs e)
         {
@@ -79,18 +81,21 @@ namespace PointOfSale
         {
 
             SelectEntrees(new TRexKingBurger());
-            NavigationService.Navigate(new MenuCategorySelection());
+            if(this.Entree is TRexKingBurger tr)
+            NavigationService.Navigate(new CustomTRex(tr));
         }
         private void ChooseBurger(object sender, RoutedEventArgs e)
         {
 
             SelectEntrees(new SteakosaurusBurger());
-            NavigationService.Navigate(new MenuCategorySelection());
+            if(this.Entree is SteakosaurusBurger st)
+            NavigationService.Navigate(new CustomSteakosaurus(st));
         }
         private void ChooseWrap(object sender, RoutedEventArgs e)
         {
             SelectEntrees(new VelociWrap());
-            NavigationService.Navigate(new MenuCategorySelection());
+            if(this.Entree is VelociWrap vw)
+            NavigationService.Navigate(new CustomVelociWrap(vw));
         }
     }
 }

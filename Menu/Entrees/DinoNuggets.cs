@@ -92,6 +92,7 @@ namespace DinoDiner.Menu
             this.Calories = 59 * (Nuggetcount);
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Price");
         }
         /// <summary>
         /// overrides the to string method

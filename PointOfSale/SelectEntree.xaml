@@ -6,7 +6,9 @@
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Background="Yellow"
       Title="SelectEntree">
+        
     <Page.Resources>
         <Style x:Key="CustomerDefinition">
             <Setter Property="Control.FontFamily" Value="Showcard Gothic"/>
