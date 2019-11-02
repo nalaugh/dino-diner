@@ -25,7 +25,13 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderContrrol : UserControl
     {
+        /// <summary>
+        /// lets the user navigate
+        /// </summary>
         public NavigationService NavigationService { get; set; }
+        /// <summary>
+        /// constuctor for a order
+        /// </summary>
         public OrderContrrol()
         {
             InitializeComponent();

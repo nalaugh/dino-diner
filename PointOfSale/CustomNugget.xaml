@@ -20,7 +20,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Click="AddNugget">Add Nugget</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="2" Background="Red" Click="Done">Done</Button>
+        <Grid x:Name="page" Grid.Column="1" Grid.Row="2" ></Grid>
+       
 
     </Grid>
 </Page>

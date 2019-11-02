@@ -27,6 +27,7 @@ namespace PointOfSale
     /// </summary>
     public partial class SelectEntree : Page
     {
+        //field for the entree
         private Entree Entree { get; set; }
         /// <summary>
         /// constructs the Entree page
@@ -35,11 +36,19 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// constuctor for an entree
+        /// </summary>
+        /// <param name="entree"></param>
         public SelectEntree(Entree entree)
         {
             InitializeComponent();
             this.Entree = entree;
         }
+        /// <summary>
+        /// set the entrees
+        /// </summary>
+        /// <param name="entree"></param>
         private void SelectEntrees(Entree entree)
         {
             if (DataContext is Order order)
@@ -48,6 +57,11 @@ namespace PointOfSale
                 this.Entree = entree;
             }
         }
+        /// <summary>
+        /// set the entree to brostoswarst
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChooseBront(object sender, RoutedEventArgs e)
         {
   
@@ -57,6 +71,11 @@ namespace PointOfSale
 
 
         }
+        /// <summary>
+        /// set the entree to nuggest
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChooseNuggt(object sender, RoutedEventArgs e)
         {
 
@@ -64,12 +83,22 @@ namespace PointOfSale
             if(this.Entree is DinoNuggets dn)
             NavigationService.Navigate(new CustomNugget(dn));
         }
+        /// <summary>
+        /// set the entree to wings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Choosewings(object sender, RoutedEventArgs e)
         {
 
             SelectEntrees(new PterodactylWings());
             NavigationService.Navigate(new MenuCategorySelection());
         }
+        /// <summary>
+        /// set the entree to PBJ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChoosePbJ(object sender, RoutedEventArgs e)
         {
 
@@ -77,6 +106,11 @@ namespace PointOfSale
             if(this.Entree is PrehistoricPBJ pBJ)
             NavigationService.Navigate(new CustomPBJ(pBJ));
         }
+        /// <summary>
+        /// Set the entree to kingburger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChooseKing(object sender, RoutedEventArgs e)
         {
 
@@ -84,6 +118,11 @@ namespace PointOfSale
             if(this.Entree is TRexKingBurger tr)
             NavigationService.Navigate(new CustomTRex(tr));
         }
+        /// <summary>
+        /// set the entree to burger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChooseBurger(object sender, RoutedEventArgs e)
         {
 
@@ -91,6 +130,11 @@ namespace PointOfSale
             if(this.Entree is SteakosaurusBurger st)
             NavigationService.Navigate(new CustomSteakosaurus(st));
         }
+        /// <summary>
+        /// set the entree to wrap
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChooseWrap(object sender, RoutedEventArgs e)
         {
             SelectEntrees(new VelociWrap());

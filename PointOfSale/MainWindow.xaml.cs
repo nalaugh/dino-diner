@@ -70,6 +70,11 @@ namespace PointOfSale
             }
 
         }
+        /// <summary>
+        /// the back button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="arge"></param>
         private void Done(object sender, RoutedEventArgs arge)
         {
             if (OrderInterface.NavigationService.CanGoBack)

@@ -29,6 +29,7 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : PageFunction<String>
     {
+        //private backer for entree
         private Entree et;
         private CretaceousCombo CretaceousCombo { get; set; }
         /// <summary>
@@ -38,7 +39,10 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// set the combo
+        /// </summary>
+        /// <param name="cretaceous"></param>
         private void SelectComb(CretaceousCombo cretaceous)
         {
             if (DataContext is Order order)
@@ -47,6 +51,10 @@ namespace PointOfSale
                 this.CretaceousCombo = cretaceous;
             }
         }
+        /// <summary>
+        /// constuctor for a combo
+        /// </summary>
+        /// <param name="cretaceous"></param>
         public ComboSelection(CretaceousCombo cretaceous)
         {
             InitializeComponent();

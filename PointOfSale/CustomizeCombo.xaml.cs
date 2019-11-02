@@ -41,6 +41,17 @@ namespace PointOfSale
             this.cb = cb;
         }
         /// <summary>
+        /// set the size
+        /// </summary>
+        /// <param name="size"></param>
+        private void SelectSize(DinoDiner.Menu.Size size)
+        {
+            if (cb != null)
+            {
+                this.cb.Size = size;
+            }
+        }
+        /// <summary>
         /// navigates to sides page
         /// </summary>
         /// <param name="sender"></param>
@@ -57,6 +68,28 @@ namespace PointOfSale
         private void Drink(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new DrinkSelection(cb));
+        }
+        protected void OnselectLarge(object sender, RoutedEventArgs e)
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+        /// <summary>
+        /// chaged the size to medium
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void OnselectMedium(object sender, RoutedEventArgs e)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+        }
+        /// <summary>
+        /// changes the size to small
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void OnselectSmall(object sender, RoutedEventArgs e)
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
         }
     }
 }

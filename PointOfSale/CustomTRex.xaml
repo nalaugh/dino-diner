@@ -27,6 +27,7 @@
         <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="0" Click="OnHoldMayo">Hold Mayo</Button>
         <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="2" Background="LawnGreen" Click="OnHoldLettuse">Hold Lettuse</Button>
         <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Background="Beige" Click="OnHoldOnion">Hold Onions</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="0" Background="Red" Click="Done">Done</Button>
+        <Grid x:Name="page" Grid.Row="0" Grid.Column="1"/>
+
     </Grid>
 </Page>

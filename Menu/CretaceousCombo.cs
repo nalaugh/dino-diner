@@ -14,6 +14,12 @@ namespace DinoDiner.Menu
     /// </summary>
     public class CretaceousCombo : IOrderItem, INotifyPropertyChanged
     {
+        //backer for side
+        private Side side;
+        //backer for drink
+        private Drink drink;
+        //backer for entree
+        private Entree entree;
         /// <summary>
         /// private backer with default to small
         /// </summary>
@@ -21,11 +27,43 @@ namespace DinoDiner.Menu
         /// <summary>
         /// creats a fied for entree
         /// </summary>
-        public Entree Entrees { get; set; }
+        public Entree Entrees
+        {
+            get
+            {
+                return entree;
+            
+
+            }
+            set
+            {
+                this.entree = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Description"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
         /// <summary>
         /// creats a field of Drink
         /// </summary>
-        public Drink Drinks { get; set; } = new Sodasaurus();
+        public Drink Drinks
+        {
+            get
+            {
+                return drink;
+               
+
+            }
+            set
+            {
+                this.drink = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Description"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
         /// <summary>
         /// propertychange evnt handler; notifies of chagws to the price,
         /// Desciption and Special Properties
@@ -40,7 +78,25 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Creats a field of side
         /// </summary>
-        public Side Sides { get; set; } = new Fryceritops();
+        public Side Sides
+        {
+
+            get
+            {
+                return side;
+      
+
+            }
+            set
+            {
+                this.side = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Description"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
+
         /// <summary>
         /// sets the size of the drink and the sides
         /// </summary>
@@ -50,13 +106,15 @@ namespace DinoDiner.Menu
             get
             {
                 return size;
+             
+
             }
             set
             {
                 this.size = value;
                 this.Drinks.Size = value;
                 this.Sides.Size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special")) ;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Description"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
@@ -110,6 +168,10 @@ namespace DinoDiner.Menu
             Entrees = entree;
             Sides = new Fryceritops();
             Drinks = new Sodasaurus();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Description"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
 
         }
         /// <summary>
@@ -120,6 +182,9 @@ namespace DinoDiner.Menu
         {
             return $"{Entrees} Combo";
         }
+        /// <summary>
+        /// the combos discription
+        /// </summary>
         public string Description
         {
             get
@@ -129,6 +194,10 @@ namespace DinoDiner.Menu
                 }
             }
         }
+
+        /// <summary>
+        /// the combos specials
+        /// </summary>
         public string[] Special
         {
             get
@@ -139,7 +208,7 @@ namespace DinoDiner.Menu
                 specials.AddRange(Sides.Special);
                 specials.Add(Drinks.ToString());
                 specials.AddRange(Drinks.Special);
-               
+
                 return specials.ToArray();
             }
         }

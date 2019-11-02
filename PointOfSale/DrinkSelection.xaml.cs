@@ -31,8 +31,15 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        //if this is a combo
         private bool combo = false;
+        /// <summary>
+        /// dink field
+        /// </summary>
         private Drink Drink { get; set; }
+        /// <summary>
+        /// combo field
+        /// </summary>
         private CretaceousCombo cb { get; set; }
 
         /// <summary>
@@ -43,6 +50,10 @@ namespace PointOfSale
             InitializeComponent();
 
         }
+        /// <summary>
+        /// constructor for a drink
+        /// </summary>
+        /// <param name="drink"></param>
         public DrinkSelection(Drink drink)
         {
             InitializeComponent();
@@ -117,6 +128,10 @@ namespace PointOfSale
                 room.Click += LeaveRoom;
             }
         }
+        /// <summary>
+        /// constructor for a combo
+        /// </summary>
+        /// <param name="cb"></param>
         public DrinkSelection(CretaceousCombo cb)
         {
             InitializeComponent();
@@ -195,7 +210,10 @@ namespace PointOfSale
 
 
         }
-
+        /// <summary>
+        /// sets the drink
+        /// </summary>
+        /// <param name="drink"></param>
         private void SelectDrink(Drink drink)
         {
             if (DataContext is Order order)
@@ -215,6 +233,10 @@ namespace PointOfSale
 
             }
         }
+        /// <summary>
+        /// sets the size
+        /// </summary>
+        /// <param name="size"></param>
         private void SelectSize(DinoDiner.Menu.Size size)
         {
             if (Drink != null)
@@ -249,6 +271,11 @@ namespace PointOfSale
         {
             NavigationService.Navigate(new FlavorSelection(Drink));
         }
+        /// <summary>
+        /// if the user is done
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Done(object sender, EventArgs e)
         {
             NavigationService.Navigate(new MenuCategorySelection());
@@ -360,13 +387,28 @@ namespace PointOfSale
         /// <param name="e"></param>
         protected void HoldIce(object sender, RoutedEventArgs e)
         {
-            if (Drink is Water water)
+            if (!combo)
             {
-                water.Add();
+                if (Drink is Water water)
+                {
+                    water.Add();
+                }
+                if (Drink is JurrassicJava java)
+                {
+                    java.AddIce();
+                }
             }
-            if (Drink is JurrassicJava java)
+            else
             {
-                java.AddIce();
+                if (this.cb.Drinks is Water water)
+                {
+                    water.Add();
+                }
+                if(this.cb.Drinks is JurrassicJava java)
+                {
+                    java.AddIce();
+                }
+
             }
         }
         /// <summary>
@@ -376,10 +418,24 @@ namespace PointOfSale
         /// <param name="e"></param>
         protected void Decaf(object sender, RoutedEventArgs e)
         {
-            if (Drink is JurrassicJava java)
+            if (!combo)
             {
-                java.MakeDecaf();
+                if (Drink is JurrassicJava java)
+
+                {
+                    java.MakeDecaf();
+                }
             }
+            else
+            {
+                if (this.cb.Drinks is JurrassicJava java)
+
+                {
+                    java.MakeDecaf();
+                }
+            }
+        
+
         }
         /// <summary>
         /// Adds Lemon
@@ -388,13 +444,27 @@ namespace PointOfSale
         /// <param name="e"></param>
         protected void Lemon(object sender, RoutedEventArgs e)
         {
-            if (Drink is Water water)
+            if (!combo)
             {
-                water.AddLemon();
+                if (Drink is Water water)
+                {
+                    water.AddLemon();
+                }
+                if (Drink is Tyrannotea tea)
+                {
+                    tea.AddLemon();
+                }
             }
-            if (Drink is Tyrannotea tea)
+            else
             {
-                tea.AddLemon();
+                if(this.cb.Drinks is Water water)
+                {
+                    water.AddLemon();
+                }
+                if(this.cb.Drinks is Tyrannotea tea)
+                {
+                    tea.AddLemon();
+                }
             }
         }
         /// <summary>
@@ -404,9 +474,20 @@ namespace PointOfSale
         /// <param name="e"></param>
         protected void LeaveRoom(object sender, RoutedEventArgs e)
         {
-            if (Drink is JurrassicJava java)
+            if (!combo)
             {
-                java.RoomForCream();
+
+                if (Drink is JurrassicJava java)
+                {
+                    java.RoomForCream();
+                }
+            }
+            else
+            {
+                if(this.cb.Drinks is JurrassicJava java)
+                {
+                    java.RoomForCream();
+                }
             }
         }
         /// <summary>
@@ -416,9 +497,21 @@ namespace PointOfSale
         /// <param name="e"></param>
         protected void Sweet(object sender, RoutedEventArgs e)
         {
-            if (Drink is Tyrannotea tea)
+            if (!combo)
             {
-                tea.AddMakeSweet();
+
+
+                if (Drink is Tyrannotea tea)
+                {
+                    tea.AddMakeSweet();
+                }
+            }
+            else
+            {
+                if(this.cb.Drinks is Tyrannotea tea)
+                {
+                    tea.AddMakeSweet();
+                }
             }
         }
 

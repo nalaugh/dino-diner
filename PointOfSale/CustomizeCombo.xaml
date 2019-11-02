@@ -48,9 +48,9 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <RadioButton Grid.Column="0" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Small</RadioButton>
-                    <RadioButton Grid.Column="1" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Medium</RadioButton>
-                    <RadioButton Grid.Column="2" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" >Large</RadioButton>
+                    <RadioButton Grid.Column="0" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Click="OnselectSmall" >Small</RadioButton>
+                    <RadioButton Grid.Column="1" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Click="OnselectMedium" >Medium</RadioButton>
+                    <RadioButton Grid.Column="2" FontFamily="Showcard Gothic" FontSize="18" HorizontalAlignment="Center" Click="OnselectLarge" >Large</RadioButton>
                 </Grid>
             </Grid>
         </Grid>

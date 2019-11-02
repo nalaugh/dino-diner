@@ -21,7 +21,6 @@
         </Grid.ColumnDefinitions>
         <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="Tan" Click="OnHoldPB">Hold Peanut Butter</Button>
         <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="Purple" Click="OnHoldJelly">Hold Jelly</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Background="Red" Click="Done">Done</Button>
-
+        <Grid x:Name="page" Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Page>

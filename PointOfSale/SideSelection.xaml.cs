@@ -26,34 +26,68 @@ namespace PointOfSale
 
     public partial class SideSelection : Page
     {
+        //set the comb to false
+        private bool comb = false;
+        /// <summary>
+        /// side field 
+        /// </summary>
         public Side Side { get; set; }
+        /// <summary>
+        /// combo field 
+        /// </summary>
+        private CretaceousCombo cb { get; set; }
         /// <summary>
         /// Construction of a the side selection page
         /// </summary>
-
         public SideSelection()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// cinstuctor if drink is selected
+        /// </summary>
+        /// <param name="side"></param>
         public SideSelection(Side side)
         {
             InitializeComponent();
             this.Side = side;
         }
+        /// <summary>
+        /// constuctor if read in from the combo
+        /// </summary>
+        /// <param name="cb"></param>
         public SideSelection(CretaceousCombo cb)
         {
             InitializeComponent();
-       
-                this.Side = cb.Sides;
+            this.cb = cb;
+            this.Side = cb.Sides;
+            comb = true;
         }
+        /// <summary>
+        /// sets the side if there is a comb it changes
+        /// </summary>
+        /// <param name="side"></param>
         private void SelectSide(Side side)
         {
             if (DataContext is Order order)
             {
-                order.Add(side);
-                this.Side = side;
+                if(!comb)
+                {
+                    order.Add(side);
+                    this.Side = side;
+                }
+                else
+                {
+                    this.cb.Sides = side;
+                    this.Side = side;
+                }
+                
             }
         }
+        /// <summary>
+        /// set the size of the assinment
+        /// </summary>
+        /// <param name="size"></param>
         private void SelectSize(DinoDiner.Menu.Size size)
         {
             if (Side != null)
@@ -61,52 +95,59 @@ namespace PointOfSale
                 this.Side.Size = size;
             }
         }
+        /// <summary>
+        /// is a done metheod
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Done(object sender, EventArgs e)
         {
             NavigationService.Navigate(new MenuCategorySelection());
         }
+        /// <summary>
+        /// changes the side to fryceritop
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChooseFryceritops(object sender, RoutedEventArgs e)
         {
             SelectSide(new Fryceritops());
-          
-                TriButton.IsEnabled = false;
-                MacButton.IsEnabled = false;
-                MezzButton.IsEnabled = false;
-                FryButton.IsEnabled = false;
-            
+
+
         }
+        /// <summary>
+        /// changes the side to tatertots
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChooseTriceritots(object sender, RoutedEventArgs e)
         {
 
 
             SelectSide(new Triceritots());
-                TriButton.IsEnabled = false;
-                MacButton.IsEnabled = false;
-                MezzButton.IsEnabled = false;
-                FryButton.IsEnabled = false;
-            
+
+
         }
+        /// <summary>
+        /// changes the side to mac and cheese
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChooseMac(object sender, RoutedEventArgs e)
         {
 
 
             SelectSide(new MeteorMacAndCheese());
-                TriButton.IsEnabled = false;
-                MacButton.IsEnabled = false;
-                MezzButton.IsEnabled = false;
-                FryButton.IsEnabled = false;
-            
+
+
         }
         private void ChooseMezz(object sender, RoutedEventArgs e)
         {
 
 
             SelectSide(new MezzorellaSticks());
-                TriButton.IsEnabled = false;
-                MacButton.IsEnabled = false;
-                MezzButton.IsEnabled = false;
-                FryButton.IsEnabled = false;
-            
+
+
         }
         /// <summary>
         /// Changed the size to Large
