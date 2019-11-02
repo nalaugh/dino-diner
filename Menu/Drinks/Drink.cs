@@ -55,10 +55,17 @@ namespace DinoDiner.Menu
             get;
          
         }
+        public  void HoldIce()
+        {
+            this.Ice = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyOfPropertyChange(string propertyName)
+        protected void NotifyOfPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

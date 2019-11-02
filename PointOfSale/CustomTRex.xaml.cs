@@ -22,6 +22,7 @@ namespace PointOfSale
     public partial class CustomTRex : Page
     {
         private TRexKingBurger tr;
+        private CretaceousCombo cb;
         public CustomTRex(TRexKingBurger tr)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace PointOfSale
         public CustomTRex(CretaceousCombo cb)
         {
             InitializeComponent();
+            this.cb = cb;
             if (cb.Entrees is TRexKingBurger bt)
                 this.tr = bt;
         }
@@ -64,6 +66,10 @@ namespace PointOfSale
         private void OnHoldOnion(object sender, RoutedEventArgs e)
         {
             tr.HoldOnion();
+        }
+        private void Done(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(this.cb));
         }
     }
 }

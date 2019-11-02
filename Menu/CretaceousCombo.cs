@@ -56,6 +56,11 @@ namespace DinoDiner.Menu
                 this.size = value;
                 this.Drinks.Size = value;
                 this.Sides.Size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special")) ;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Description"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+
 
             }
         }

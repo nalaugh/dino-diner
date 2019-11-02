@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
     /// Calories are 112 (small), 156 (medium), and 208 (large). 
     /// Its ingredients should be "Water", "Natural Flavors", and "Cane Sugar."
     /// </summary>
-    public class Sodasaurus : Drink, IOrderItem, INotifyPropertyChanged
+    public class Sodasaurus : Drink
     {
         /// <summary>
         /// private varible of flavor
@@ -75,17 +75,7 @@ namespace DinoDiner.Menu
                 return size;
             }
         }
-        /// <summary>
-        /// propertychange evnt handler; notifies of chagws to the price,
-        /// Desciption and Special Properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        //helper function for notifying of property change
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         /// <summary>
         /// Gets the disciption
         /// </summary>

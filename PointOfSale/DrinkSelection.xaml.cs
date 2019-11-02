@@ -31,7 +31,9 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        private bool combo = false;
         private Drink Drink { get; set; }
+        private CretaceousCombo cb { get; set; }
 
         /// <summary>
         /// constructor for the drinks page
@@ -45,14 +47,151 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.Drink = drink;
+            if (drink is Sodasaurus soda)
+            {
+                this.top.Children.Clear();
+                this.mid.Children.Clear();
+                this.bottom.Children.Clear();
+                Button flavor = new Button();
+                flavor.FontFamily = new FontFamily("Showcard Gothic");
 
+                flavor.Content = "Flavor";
+                flavor.Click += Flavor;
+                this.top.Children.Add(flavor);
+            }
+            if (drink is Tyrannotea tea)
+            {
+                SelectDrink(new Tyrannotea());
+                this.top.Children.Clear();
+                this.mid.Children.Clear();
+                this.bottom.Children.Clear();
+                Button lemon = new Button();
+                lemon.FontFamily = new FontFamily("Showcard Gothic");
+                lemon.Content = "Lemon";
+                this.top.Children.Add(lemon);
+                Button sweet = new Button();
+                sweet.FontFamily = new FontFamily("Showcard Gothic");
+                sweet.Content = "Sweet";
+                this.mid.Children.Add(sweet);
+                lemon.Click += Lemon;
+                sweet.Click += Sweet;
+            }
+            if(drink is Water wt)
+            {
+                SelectDrink(new Water());
+                this.top.Children.Clear();
+                this.mid.Children.Clear();
+                this.bottom.Children.Clear();
+                Button lemon = new Button();
+                lemon.FontFamily = new FontFamily("Showcard Gothic");
+                lemon.Content = "Lemon";
+                this.top.Children.Add(lemon);
+                lemon.Click += Lemon;
+                Button ice = new Button();
+                ice.FontFamily = new FontFamily("Showcard Gothic");
+                ice.Content = "Hold Ice";
+                this.mid.Children.Add(ice);
+                ice.Click += HoldIce;
+            }
+            if(drink is JurrassicJava jv)
+            {
+                SelectDrink(new JurrassicJava());
+                this.top.Children.Clear();
+                this.mid.Children.Clear();
+                this.bottom.Children.Clear();
+                Button decaf = new Button();
+                decaf.FontFamily = new FontFamily("Showcard Gothic");
 
+                decaf.Content = "Decaf";
+                this.top.Children.Add(decaf);
+                Button ice = new Button();
+                ice.FontFamily = new FontFamily("Showcard Gothic");
+                ice.Content = "Hold Ice";
+                this.mid.Children.Add(ice);
+                Button room = new Button();
+                room.FontFamily = new FontFamily("Showcard Gothic");
+                room.Content = "Leave room";
+                this.bottom.Children.Add(room);
+                ice.Click += HoldIce;
+                decaf.Click += Decaf;
+                room.Click += LeaveRoom;
+            }
         }
         public DrinkSelection(CretaceousCombo cb)
         {
             InitializeComponent();
-            
+            this.cb = cb;
             this.Drink = cb.Drinks;
+            combo = true;
+            if (this.Drink is Sodasaurus soda)
+            {
+                this.top.Children.Clear();
+                this.mid.Children.Clear();
+                this.bottom.Children.Clear();
+                Button flavor = new Button();
+                flavor.FontFamily = new FontFamily("Showcard Gothic");
+
+                flavor.Content = "Flavor";
+                flavor.Click += Flavor;
+                this.top.Children.Add(flavor);
+            }
+            if (this.Drink is Tyrannotea tea)
+            {
+                SelectDrink(new Tyrannotea());
+                this.top.Children.Clear();
+                this.mid.Children.Clear();
+                this.bottom.Children.Clear();
+                Button lemon = new Button();
+                lemon.FontFamily = new FontFamily("Showcard Gothic");
+                lemon.Content = "Lemon";
+                this.top.Children.Add(lemon);
+                Button sweet = new Button();
+                sweet.FontFamily = new FontFamily("Showcard Gothic");
+                sweet.Content = "Sweet";
+                this.mid.Children.Add(sweet);
+                lemon.Click += Lemon;
+                sweet.Click += Sweet;
+            }
+            if (this.Drink is Water wt)
+            {
+                SelectDrink(new Water());
+                this.top.Children.Clear();
+                this.mid.Children.Clear();
+                this.bottom.Children.Clear();
+                Button lemon = new Button();
+                lemon.FontFamily = new FontFamily("Showcard Gothic");
+                lemon.Content = "Lemon";
+                this.top.Children.Add(lemon);
+                lemon.Click += Lemon;
+                Button ice = new Button();
+                ice.FontFamily = new FontFamily("Showcard Gothic");
+                ice.Content = "Hold Ice";
+                this.mid.Children.Add(ice);
+                ice.Click += HoldIce;
+            }
+            if (this.Drink is JurrassicJava jv)
+            {
+                SelectDrink(new JurrassicJava());
+                this.top.Children.Clear();
+                this.mid.Children.Clear();
+                this.bottom.Children.Clear();
+                Button decaf = new Button();
+                decaf.FontFamily = new FontFamily("Showcard Gothic");
+
+                decaf.Content = "Decaf";
+                this.top.Children.Add(decaf);
+                Button ice = new Button();
+                ice.FontFamily = new FontFamily("Showcard Gothic");
+                ice.Content = "Hold Ice";
+                this.mid.Children.Add(ice);
+                Button room = new Button();
+                room.FontFamily = new FontFamily("Showcard Gothic");
+                room.Content = "Leave room";
+                this.bottom.Children.Add(room);
+                ice.Click += HoldIce;
+                decaf.Click += Decaf;
+                room.Click += LeaveRoom;
+            }
 
 
         }
@@ -61,8 +200,19 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Add(drink);
-                this.Drink = drink;
+
+                if (!combo)
+                {
+                    order.Add(drink);
+                    this.Drink = drink;
+                }
+                else
+                {
+                    this.cb.Drinks = drink;
+                    this.Drink = drink;
+                }
+
+
             }
         }
         private void SelectSize(DinoDiner.Menu.Size size)
@@ -80,7 +230,6 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Soda(object sender, RoutedEventArgs e)
         {
-            SelectDrink(new Sodasaurus());
             this.top.Children.Clear();
             this.mid.Children.Clear();
             this.bottom.Children.Clear();

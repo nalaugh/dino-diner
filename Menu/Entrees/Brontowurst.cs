@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// Its price is $5.36, it contains 498 calories, and its ingredients are: brautwurst, whole-wheat bun, peppers, and onions.  
     /// It should implement methods for holding the bun, peppers, and onions.
     /// </summary>
-    public class Brontowurst : Entree, IOrderItem, INotifyPropertyChanged
+    public class Brontowurst : Entree
     {
         /// <summary>
         /// private verible of bun
@@ -26,17 +26,7 @@ namespace DinoDiner.Menu
         /// </summary>
         private bool Onions = true;
 
-        /// <summary>
-        /// propertychange evnt handler; notifies of chagws to the price,
-        /// Desciption and Special Properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        //helper function for notifying of property change
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         /// <summary>
         /// Gets the disciption
         /// </summary>

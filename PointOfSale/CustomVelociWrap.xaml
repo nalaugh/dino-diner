@@ -19,8 +19,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Click="OnHoldDressing">Hold Dressing</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Click="OnHoldLettuce">Hold Lettuce</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Click="OnHoldCheese">Hold Cheese</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="MintCream" Click="OnHoldDressing">Hold Dressing</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="LawnGreen" Click="OnHoldLettuce">Hold Lettuce</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Background="Yellow" Click="OnHoldCheese">Hold Cheese</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="2" Background="Red" Click="Done">Done</Button>
     </Grid>
 </Page>

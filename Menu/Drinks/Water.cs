@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
     /// The Water class should have a price of $0.10 and 0 calories for all sizes. 
     /// Its ingredients should be "Water" and (if lemon was added) "Lemon".
     /// </summary>
-    public class Water : Drink, INotifyPropertyChanged, IOrderItem
+    public class Water : Drink
     {
         /// <summary>
         /// private property of size
@@ -60,17 +60,7 @@ namespace DinoDiner.Menu
                 return size;
             }
         }
-        /// <summary>
-        /// propertychange evnt handler; notifies of chagws to the price,
-        /// Desciption and Special Properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        //helper function for notifying of property change
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+  
         /// <summary>
         /// Gets the disciption
         /// </summary>

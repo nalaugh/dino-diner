@@ -14,7 +14,7 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Order" Grid.Row="0" Background="Azure" TextAlignment="Center"/>
-        <ListBox Name ="OrderItem" Grid.Row="1" ItemsSource="{Binding Path=Item}" SelectionChanged="OrderItem_SelectionChanged">
+        <ListBox Name ="OrderItem" Grid.Row="1" ItemsSource="{Binding Path=Item}" SelectionChanged="OrderItem_SelectionChanged" IsSynchronizedWithCurrentItem="False">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

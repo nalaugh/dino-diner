@@ -7,10 +7,11 @@ using System.ComponentModel;
 using System.Text;
 using DinoDiner.Menu;
 
+
 namespace DinoDiner.Menu
 {
 
-    public abstract class Side : IMenuItem, IOrderItem
+    public abstract class Side : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets the price
@@ -48,7 +49,7 @@ namespace DinoDiner.Menu
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyOfPropertyChange(string propertyName)
+        protected void NotifyOfPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

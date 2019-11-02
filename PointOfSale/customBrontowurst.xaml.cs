@@ -23,7 +23,8 @@ namespace PointOfSale
     public partial class customBrontowurst : Page
     {
         private Brontowurst bt;
-        private bool custom;
+        private CretaceousCombo cb;
+
         public customBrontowurst(Brontowurst bt)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace PointOfSale
         public customBrontowurst(CretaceousCombo cb)
         {
             InitializeComponent();
+            this.cb = cb;
             if (cb.Entrees is Brontowurst bt)
                 this.bt = bt;
         }
@@ -46,6 +48,10 @@ namespace PointOfSale
         private void OnHoldOnions(object sender, RoutedEventArgs e)
         {
             bt.HoldOnion();
+        }
+        private void Done(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(this.cb));
         }
     }
 }

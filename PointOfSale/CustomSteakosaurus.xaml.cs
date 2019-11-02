@@ -22,6 +22,7 @@ namespace PointOfSale
     public partial class CustomSteakosaurus : Page
     {
         private SteakosaurusBurger st;
+        private CretaceousCombo cb;
         public CustomSteakosaurus(SteakosaurusBurger st)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace PointOfSale
         public CustomSteakosaurus(CretaceousCombo cb)
         {
             InitializeComponent();
+            this.cb = cb;
             if (cb.Entrees is SteakosaurusBurger bt)
                 this.st = bt;
         }
@@ -48,6 +50,10 @@ namespace PointOfSale
         private void OnHoldMustard(object sender, RoutedEventArgs e)
         {
             st.HoldMustard();
+        }
+        private void Done(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(this.cb));
         }
     }
 }

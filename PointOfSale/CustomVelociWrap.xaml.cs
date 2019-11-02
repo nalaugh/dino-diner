@@ -22,6 +22,7 @@ namespace PointOfSale
     public partial class CustomVelociWrap : Page
     {
         private VelociWrap vw;
+        private CretaceousCombo cb;
         public CustomVelociWrap(VelociWrap vw)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace PointOfSale
         public CustomVelociWrap(CretaceousCombo cb)
         {
             InitializeComponent();
+                this.cb = cb; 
             if (cb.Entrees is VelociWrap bt)
                 this.vw = bt;
         }
@@ -44,6 +46,10 @@ namespace PointOfSale
         private void OnHoldCheese(object sender, RoutedEventArgs e)
         {
             vw.HoldCheese();
+        }
+        private void Done(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(this.cb));
         }
     }
 }

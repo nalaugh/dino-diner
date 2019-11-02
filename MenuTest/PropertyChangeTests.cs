@@ -367,7 +367,7 @@ namespace MenuTest
         [InlineData(Size.Large, "Description")]
         public void JurassicJavaSizeChangeShouldNotifyProperties(Size size, string property)
         {
-            JurassicJava java = new JurassicJava();
+            JurrassicJava java = new JurrassicJava();
             Assert.PropertyChanged(java, property, () =>
             {
                 java.Size = size;
@@ -377,7 +377,7 @@ namespace MenuTest
         [Fact]
         public void JurrasicJavaAddIceShouldNotifyPropertySpecial()
         {
-            JurassicJava java = new JurassicJava();
+            JurrassicJava java = new JurrassicJava();
             Assert.PropertyChanged(java, "Special", () =>
             {
                 java.AddIce();
@@ -387,10 +387,10 @@ namespace MenuTest
         [Fact]
         public void JurrasicJavaLeaveRoomForCreamShouldNotifyPropertySpecial()
         {
-            JurassicJava java = new JurassicJava();
+            JurrassicJava java = new JurrassicJava();
             Assert.PropertyChanged(java, "Special", () =>
             {
-                java.LeaveRoomForCream();
+                java.MakeDecaf();
             });
         }
 
@@ -464,7 +464,7 @@ namespace MenuTest
         }
 
         [Fact]
-        public void TyrannoteaSetSweetShouldNotifyPropertyDescription()
+         public void TyrannoteaSetSweetShouldNotifyPropertyDescription()
         {
             Tyrannotea tea = new Tyrannotea();
             Assert.PropertyChanged(tea, "Description", () =>
@@ -529,7 +529,7 @@ namespace MenuTest
             Water water = new Water();
             Assert.PropertyChanged(water, "Special", () =>
             {
-                water.HoldIce();
+                water.Add();
             });
         }
 
@@ -620,7 +620,7 @@ namespace MenuTest
         #region Order 
 
         [Theory]
-        [InlineData("Items")]
+        [InlineData("Item")]
         [InlineData("TotalCost")]
         [InlineData("SalesTaxCost")]
         [InlineData("SubtotalCost")]
@@ -635,7 +635,7 @@ namespace MenuTest
         }
 
         [Theory]
-        [InlineData("Items")]
+        [InlineData("Item")]
         [InlineData("TotalCost")]
         [InlineData("SalesTaxCost")]
         [InlineData("SubtotalCost")]

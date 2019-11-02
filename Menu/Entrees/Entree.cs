@@ -46,5 +46,11 @@ namespace DinoDiner.Menu
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        //helper function for notifying of property change
+       protected void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

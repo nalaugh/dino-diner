@@ -4,6 +4,7 @@ using System.Text;
 using Xunit;
 using DinoDiner.Menu;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace MenuTest
 {
@@ -31,13 +32,14 @@ namespace MenuTest
                     this.Price = -40;
                 }
             }
+
+            public event PropertyChangedEventHandler PropertyChanged;
         }
         [Fact]
         public void ShouldnothaveNegative()
         {
             Order order = new Order();
-            order.Item = new ObservableCollection<IOrderItem>();
-            order.Item.Add(new MockItem(-2));
+            order.Add(new MockItem(-2));
 
          
             Assert.Equal<double>(0, order.SubtotalCost);
@@ -47,8 +49,7 @@ namespace MenuTest
         public void ShouldnothaveZero()
         {
             Order order = new Order();
-            order.Item = new ObservableCollection<IOrderItem>();
-            order.Item.Add(new MockItem(0));
+            order.Add(new MockItem(0));
 
 
             Assert.Equal<double>(0, order.SubtotalCost);
@@ -58,8 +59,7 @@ namespace MenuTest
         public void ShouldnothavePrice()
         {
             Order order = new Order();
-            order.Item = new ObservableCollection<IOrderItem>();
-            order.Item.Add(new MockItem(5));
+            order.Add(new MockItem(5));
 
 
             Assert.Equal<double>(5.50, order.SubtotalCost);

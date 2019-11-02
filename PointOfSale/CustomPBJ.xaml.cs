@@ -22,6 +22,7 @@ namespace PointOfSale
     public partial class CustomPBJ : Page
     {
         private PrehistoricPBJ pbj;
+        private CretaceousCombo cb;
         public CustomPBJ(PrehistoricPBJ pb)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace PointOfSale
         public CustomPBJ(CretaceousCombo cb)
         {
             InitializeComponent();
+            this.cb = cb;
             if (cb.Entrees is PrehistoricPBJ bt)
                 this.pbj = bt;
         }
@@ -41,6 +43,10 @@ namespace PointOfSale
         private void OnHoldPB(object sender, RoutedEventArgs e)
         {
             pbj.HoldPeanutButter();
+        }
+        private void Done(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(this.cb));
         }
 
     }

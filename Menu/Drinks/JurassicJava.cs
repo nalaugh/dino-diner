@@ -16,7 +16,7 @@ namespace DinoDiner.Menu
     /// Its price is $.59 (small), $.99 (medium), and $1.49 (large) and calories are 2 (small), 4 (medium), and 8 (large). 
     /// Its ingredients should be "Water" and "Coffee".
     /// </summary>
-    public class JurrassicJava : Drink, IOrderItem, INotifyPropertyChanged
+    public class JurrassicJava : Drink
     {
         public bool Ice = false;
         /// <summary>
@@ -46,18 +46,21 @@ namespace DinoDiner.Menu
                         Calories = 2;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Calories");
                         break;
                     case Size.Medium:
                         Price = 0.99;
                         Calories = 4;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Calories");
                         break;
                     case Size.Large:
                         Price = 1.49;
                         Calories = 8;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Calories");
                         break;
                 }
             }
@@ -67,17 +70,8 @@ namespace DinoDiner.Menu
             }
         }
 
-        /// <summary>
-        /// propertychange evnt handler; notifies of chagws to the price,
-        /// Desciption and Special Properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        //helper function for notifying of property change
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+   
         /// <summary>
         /// Gets the disciption
         /// </summary>
@@ -159,7 +153,7 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             if (Decaff)
-                return $"{Size}  Decaf Jurassic Java";
+                return $"{Size} Decaf Jurassic Java";
             else
                 return $"{Size} Jurassic Java";
 

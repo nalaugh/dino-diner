@@ -16,8 +16,9 @@ namespace DinoDiner.Menu
     /// It should also implement a method AddLemon() which sets the lemon to true. 
     /// Its ingredients should be "Water", "Tea", (if lemon was added) "Lemon", and (if sweet) "Cane Sugar".
     /// </summary>
-    public class Tyrannotea : Drink, IOrderItem, INotifyPropertyChanged
+    public class Tyrannotea : Drink
     {
+        private bool sweet = false;
         /// <summary>
         /// private veriabl of size
         /// </summary>
@@ -25,12 +26,24 @@ namespace DinoDiner.Menu
         /// <summary>
         /// this is tea unless the cutemer wants sweet tea
         /// </summary>
-        public bool Sweet { get; set; } = false;
+        public bool Sweet
+        {
+            get
+            {
+                return sweet;
+            }
+            set
+            {
+                this.sweet = value;
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Description");
+            }
+        }
 
         /// <summary>
         /// this has no lemon unless the cutomer wants it
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon { get; set; } = false ;
         /// <summary>
         /// gets the size of the drink
         /// </summary>
@@ -83,17 +96,7 @@ namespace DinoDiner.Menu
                 return size;
             }
         }
-        /// <summary>
-        /// propertychange evnt handler; notifies of chagws to the price,
-        /// Desciption and Special Properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        //helper function for notifying of property change
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         /// <summary>
         /// Gets the disciption
         /// </summary>
@@ -153,6 +156,7 @@ namespace DinoDiner.Menu
             this.Lemon = true;
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
         }
         public void AddMakeSweet()
         {

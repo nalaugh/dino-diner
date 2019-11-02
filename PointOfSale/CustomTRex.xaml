@@ -19,13 +19,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Click="OnHoldBun">Hold Bun</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Click="OnHoldPickle">Hold Pickles</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="2" Click="OnHoldKetchup">Hold Ketchup</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="2" Click="OnHoldMustard">Hold Mustard</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="0" Click="OnHoldTomato">Hold Tomato</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="Tan" Click="OnHoldBun">Hold Bun</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="green" Click="OnHoldPickle">Hold Pickles</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="2" Background="Maroon" Click="OnHoldKetchup">Hold Ketchup</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="2" Background="Gold" Click="OnHoldMustard">Hold Mustard</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="0" Background="Crimson" Click="OnHoldTomato">Hold Tomato</Button>
         <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="0" Click="OnHoldMayo">Hold Mayo</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="2" Click="OnHoldLettuse">Hold Lettuse</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Click="OnHoldOnion">Hold Onions</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="2" Background="LawnGreen" Click="OnHoldLettuse">Hold Lettuse</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Background="Beige" Click="OnHoldOnion">Hold Onions</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="0" Background="Red" Click="Done">Done</Button>
     </Grid>
 </Page>

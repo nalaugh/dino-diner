@@ -13,7 +13,7 @@ namespace DinoDiner.Menu
     /// It’s price is $0.99 (small), $1.45 (medium), or $1.95 (large).  Its calories are 222 (small), 365 (medium), and 480 (large).  
     /// Its ingredients are **potatoes, salt, **and vegtable oil
     /// </summary>
-    public class Fryceritops : Side, INotifyPropertyChanged, IOrderItem
+    public class Fryceritops : Side
     {
         /// <summary>
         /// private verible of size
@@ -55,17 +55,7 @@ namespace DinoDiner.Menu
                 return size;
             }
         }
-        /// <summary>
-        /// propertychange evnt handler; notifies of chagws to the price,
-        /// Desciption and Special Properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        //helper function for notifying of property change
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         /// <summary>
         /// Gets the disciption
         /// </summary>
