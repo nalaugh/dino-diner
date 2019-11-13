@@ -1,0 +1,85 @@
+﻿@page
+@model Website.Pages.MenuModel
+@{
+    ViewData["Title"] = "Menu";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Menu</h2>
+    <h3>Combos</h3>
+    @for (int i = 0; i < Model.Menu.AvailableCombos.Count; i++)
+    {
+<div class="menu-item">
+    @Model.Menu.AvailableCombos[i]
+    <div>
+        @Model.Menu.AvailableCombos[i].Price
+        @Model.Menu.AvailableCombos[i].Calories
+        
+
+    </div>
+    <div>
+        @for (int x = 0; x < Model.Menu.AvailableCombos[i].Ingredients.Count; x++)
+        {
+            @Model.Menu.AvailableCombos[i].Ingredients[x];
+        }
+    </div>
+    </div>
+    }
+    <h3>Entrees</h3>
+    @for (int i = 0; i < Model.Menu.AvailableEntrees.Count; i++)
+    {
+        <div class="menu-item">@Model.Menu.AvailableEntrees[i]
+            <div>
+                @Model.Menu.AvailableEntrees[i].Price
+                @Model.Menu.AvailableEntrees[i].Calories
+               
+
+            </div>
+            <div>
+                @for (int x = 0; x < @Model.Menu.AvailableEntrees[i].Ingredients.Count; x++)
+                {
+                    @Model.Menu.AvailableEntrees[i].Ingredients[x];
+                }
+            </div>
+    </div>
+    }
+    <h3>Dinks</h3>
+    @for (int i = 0; i < Model.Menu.AvailableDrinks.Count; i++)
+    {
+        <div class="menu-item">@Model.Menu.AvailableDrinks[i]
+            <div>
+                @Model.Menu.AvailableDrinks[i].Price
+                @Model.Menu.AvailableDrinks[i].Calories
+               
+
+            </div>
+            <div>
+                @for (int x = 0; x < @Model.Menu.AvailableDrinks[i].Ingredients.Count; x++)
+                {
+                    @Model.Menu.AvailableDrinks[i].Ingredients[x];
+                }
+            </div>
+    </div>
+    }
+    <h3>Sides</h3>
+    @for (int i = 0; i < Model.Menu.AvailableSides.Count; i++)
+    {
+<div class="menu-item">
+    @Model.Menu.AvailableSides[i]
+    <div>
+        @Model.Menu.AvailableSides[i].Price
+        @Model.Menu.AvailableSides[i].Calories
+       
+
+    </div>
+    <div>
+        @for (int x = 0; x < @Model.Menu.AvailableSides[i].Ingredients.Count; x++)
+        {
+            @Model.Menu.AvailableSides[i].Ingredients[x];
+        }
+    </div>
+    </div>
+    }
+</body>
+</html>
