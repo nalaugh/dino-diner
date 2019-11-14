@@ -2,13 +2,67 @@
 for details on configuring this project to bundle and minify static web assets. */
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 100px;
 }
-
+.container body-content {
+    height: auto;
+    min-height: 100%;
+}
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.menu-item {
+   
+    text-align: center;
+    font-size: x-large;
+}
+.column {
+    width: 25%;
+    float: left;
+    height: 25%;
+}
+.columnmain {
+    width: 30%;
+    float: left;
+    height: r0%;
+}
+
+.title {
+    font-size: 100px;
+    font-family: 'Showcard Gothic';
+    text-align: center;
+}
+.menu-item > .type {
+    text-align: left;
+}
+.menu-item > .info {
+  text-align:left;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+
+}
+
+.menu-item > .Item {
+    text-decoration: underline;
+    text-align:center;
+    font-family: 'Showcard Gothic';
+}
+.Item {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.type {
+    font-size: 50px;
+    text-align: left;
+    font-family: 'Showcard Gothic';
 }
 
