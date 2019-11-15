@@ -1,16 +1,30 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
 for details on configuring this project to bundle and minify static web assets. */
 body {
+    position: absolute;
     padding-top: 50px;
     padding-bottom: 100px;
+    width: 100%;
 }
 .container body-content {
+    position: absolute;
     height: auto;
     min-height: 100%;
+    width: 100%;
+}
+.indexbody {
+    background-position: 50% 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
+    
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -28,11 +42,13 @@ body {
 .columnmain {
     width: 30%;
     float: left;
-    height: r0%;
+    height: 0%;
+    position: absolute;
+    bottom: 100px;
 }
 
 .title {
-    font-size: 100px;
+    font-size: 150px;
     font-family: 'Showcard Gothic';
     text-align: center;
 }
@@ -49,6 +65,12 @@ body {
     height: 50px;
 
 }
+.ul{
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    overflow:hidden;
+}
 
 .menu-item > .Item {
     text-decoration: underline;
@@ -64,5 +86,14 @@ body {
     font-size: 50px;
     text-align: left;
     font-family: 'Showcard Gothic';
+}
+.link {
+    font-size: 20px;
+   float: none;
+   display: block;
+   text-align:center;
+   padding: 16px;
+   text-decoration: none;
+
 }
 
