@@ -19,7 +19,12 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Click="AddNugget">Add Nugget</Button>
+        <Button Grid.Column="1" Grid.Row="1"  Click="AddNugget" >
+            <StackPanel >
+                <TextBlock FontFamily="Showcard Gothic" FontSize="18">Add Nugget</TextBlock>
+                <Image Source="Images/DinoDiner-02.png" Height="92" Width="104"></Image>
+            </StackPanel>
+        </Button>
         <Grid x:Name="page" Grid.Column="1" Grid.Row="2" ></Grid>
        
 
