@@ -12,10 +12,59 @@
 </head>
 <body class="body-content" style="background-color: antiquewhite">
     <div class="title">Menu</div>
+    <form method="post">
+
+        <div>
+            <input id="searchs" type="text" name="search" value="@Model.search" />
+            <input type="submit" value="Search" />
+            <input type="submit" name="filter" id="filter" value="Apply Filter(s)" />
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" class="menu-Category" name="menuCategory" value="Combo"  />
+                Combos
+            </label>
+            <label>
+                <input type="checkbox" class="menu-Category" name="menuCategory" value="Entree"/>
+                Entree
+            </label>
+            <label>
+                <input type="checkbox" class="menu-Category" name="menuCategory" value="Side" />
+                Side
+            </label>
+            <label>
+                <input type="checkbox" class="menu-Category" name="menuCategory" value="Drink" />
+                Drink
+            </label>
+        </div>
+        <div>
+            <label>
+                Minimum Price
+                <input type="number" id="minimum-price" min="0" max="20" name="minimumPrice"  value="@Model.minimumPrice"/>
+            </label>
+            <label>
+                Maximum Price
+                <input type="number" id="max-price" min="0" max="20" name="maxPrice"  value="@Model.maxPrice"/>
+            </label>
+        </div>
+        <div class="box">
+            <h4>Excude Ingredients</h4>
+            @foreach (string s in Model.Posibleingredints)
+            {
+                <label>
+                    @s
+                    <input type="checkbox" name="Ingredients" value="@s"/>
+                </label>
+            }
+        </div>
+    </form>
+
     <div class="column">
         <h2 class="type">Combos</h2>
+
         @for (int i = 0; i < Model.Menu.AvailableCombos.Count; i++)
-        {
+        {       
+            
             <div class="menu-item">
 
                 <div class="Item"> @Model.Menu.AvailableCombos[i]</div>
@@ -36,97 +85,104 @@
                 </div>
 
             </div>
+                
 
-        }
+            }
     </div>
     <div class="column">
         <h2 class="type">Entrees</h2>
         @for (int i = 0; i < Model.Menu.AvailableEntrees.Count; i++)
         {
-            <div class="menu-item">
-                <div class="Item">
-                    @Model.Menu.AvailableEntrees[i]
+           
+                <div class="menu-item">
+                    <div class="Item">
+                        @Model.Menu.AvailableEntrees[i]
+                    </div>
+                    <div class="info">
+                        <p>
+                            Price: $@Model.Menu.AvailableEntrees[i].Price<br />
+                            Calories: @Model.Menu.AvailableEntrees[i].Calories
+
+                        </p>
+                        <p>
+                            <b>Ingredients</b>
+                            @for (int x = 0; x < @Model.Menu.AvailableEntrees[i].Ingredients.Count; x++)
+                            {
+                                <br />@Model.Menu.AvailableEntrees[i].Ingredients[x]
+                            }
+                        </p>
+
+
+                    </div>
+
                 </div>
-                <div class="info">
-                    <p>
-                        Price: $@Model.Menu.AvailableEntrees[i].Price<br />
-                        Calories: @Model.Menu.AvailableEntrees[i].Calories
-
-                    </p>
-                    <p>
-                        <b>Ingredients</b>
-                        @for (int x = 0; x < @Model.Menu.AvailableEntrees[i].Ingredients.Count; x++)
-                        {
-                            <br />@Model.Menu.AvailableEntrees[i].Ingredients[x]
-                        }
-                    </p>
-
-
-                </div>
-
-            </div>
-        }
-    </div>
+                
+            }
+        </div>
     <div class="column">
-        <h2 class="type">Dinks</h2>
+        <h2 class="type">Drinks</h2>
 
         @for (int i = 0; i < Model.Menu.AvailableDrinks.Count; i++)
         {
-            <div class="menu-item">
-                <div class="Item">
-                    @Model.Menu.AvailableDrinks[i]
+            
+                <div class="menu-item">
+                    <div class="Item">
+                        @Model.Menu.AvailableDrinks[i]
+                    </div>
+                    <div class="info">
+                        <p>
+                            Price: $@Model.Menu.AvailableDrinks[i].Price<br />
+                            Calories: @Model.Menu.AvailableDrinks[i].Calories<br />
+
+                        </p>
+
+                        <p>
+                            <b>Ingredients</b>
+
+                            @for (int x = 0; x < @Model.Menu.AvailableDrinks[i].Ingredients.Count; x++)
+                            {
+                                <br />@Model.Menu.AvailableDrinks[i].Ingredients[x]
+                            }
+                        </p>
+
+
+                    </div>
+
+
                 </div>
-                <div class="info">
-                    <p>
-                        Price: $@Model.Menu.AvailableDrinks[i].Price<br />
-                        Calories: @Model.Menu.AvailableDrinks[i].Calories<br />
-
-                    </p>
-
-                    <p>
-                        <b>Ingredients</b>
-
-                        @for (int x = 0; x < @Model.Menu.AvailableDrinks[i].Ingredients.Count; x++)
-                        {
-                            <br />@Model.Menu.AvailableDrinks[i].Ingredients[x]
-                        }
-                    </p>
-
-
-                </div>
-
-
-            </div>
-        }
-    </div>
+                
+            }
+        </div>
     <div class="column">
         <h2 class="type">Sides</h2>
         @for (int i = 0; i < Model.Menu.AvailableSides.Count; i++)
         {
-            <div class="menu-item">
-                <div class="Item">
-                    @Model.Menu.AvailableSides[i]
+
+                <div class="menu-item">
+                    <div class="Item">
+                        @Model.Menu.AvailableSides[i]
+                    </div>
+                    <div class="info">
+                        <p>
+                            Price: $ @Model.Menu.AvailableSides[i].Price<br />
+                            Calories: @Model.Menu.AvailableSides[i].Calories
+
+                        </p>
+                        <p>
+                            <b>Ingredients</b>
+                            @for (int x = 0; x < @Model.Menu.AvailableSides[i].Ingredients.Count; x++)
+                            {
+                                <br />@Model.Menu.AvailableSides[i].Ingredients[x]
+                            }
+                        </p>
+
+
+                    </div>
+
+
                 </div>
-                <div class="info">
-                    <p>
-                        Price: $ @Model.Menu.AvailableSides[i].Price<br />
-                        Calories: @Model.Menu.AvailableSides[i].Calories
-
-                    </p>
-                    <p>
-                        <b>Ingredients</b>
-                        @for (int x = 0; x < @Model.Menu.AvailableSides[i].Ingredients.Count; x++)
-                        {
-                            <br />@Model.Menu.AvailableSides[i].Ingredients[x]
-                        }
-                    </p>
-
-
-                </div>
-
-
-            </div>
-        }
-    </div>
+                
+            }
+        </div>
 </body>
 </html>
