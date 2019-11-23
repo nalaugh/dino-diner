@@ -19,14 +19,54 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="Tan" Click="OnHoldBun">Hold Bun</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="green" Click="OnHoldPickle">Hold Pickles</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="2" Background="Maroon" Click="OnHoldKetchup">Hold Ketchup</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="2" Background="Gold" Click="OnHoldMustard">Hold Mustard</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="0" Background="Crimson" Click="OnHoldTomato">Hold Tomato</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="0" Click="OnHoldMayo">Hold Mayo</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="2" Background="LawnGreen" Click="OnHoldLettuse">Hold Lettuse</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Background="Beige" Click="OnHoldOnion">Hold Onions</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="Tan" Click="OnHoldBun">
+            <StackPanel>
+                <TextBlock>Hold Bun</TextBlock>
+                <Image Source="Images/bun.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="green" Click="OnHoldPickle">
+            <StackPanel>
+                <TextBlock>Hold Pickles</TextBlock>
+                <Image Source="Images/Pickle.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="2" Background="Maroon" Click="OnHoldKetchup">
+            <StackPanel>
+                <TextBlock>Hold Ketchup</TextBlock>
+                <Image Source="Images/ketchup.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="2" Background="Gold" Click="OnHoldMustard">
+            <StackPanel>
+                <TextBlock>Hold Mustard</TextBlock>
+                <Image Source="Images/mustard.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="0" Background="Crimson" Click="OnHoldTomato">
+            <StackPanel>
+                <TextBlock>Hold Tomato</TextBlock>
+                <Image Source="Images/Tomato.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="0" Click="OnHoldMayo">
+            <StackPanel>
+                <TextBlock>Hold Mayo</TextBlock>
+                <Image Source="Images/mayo.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="2" Background="LawnGreen" Click="OnHoldLettuse">
+            <StackPanel>
+                <TextBlock>Hold Lettuse</TextBlock>
+                <Image Source="Images/Lettuce.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Background="Beige" Click="OnHoldOnion">
+            <StackPanel>
+                <TextBlock>Hold Onions</TextBlock>
+                <Image Source="Images/onion.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
         <Grid x:Name="page" Grid.Row="0" Grid.Column="1"/>
 
     </Grid>

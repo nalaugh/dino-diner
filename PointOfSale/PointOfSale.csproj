@@ -234,5 +234,20 @@
   <ItemGroup>
     <Resource Include="Images\DinoDiner-08.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bun.png" />
+    <Resource Include="Images\Cheese.png" />
+    <Resource Include="Images\dressing.png" />
+    <Resource Include="Images\jelly.png" />
+    <Resource Include="Images\ketchup.png" />
+    <Resource Include="Images\Lettuce.png" />
+    <Resource Include="Images\mayo.png" />
+    <Resource Include="Images\mustard.png" />
+    <Resource Include="Images\onion.png" />
+    <Resource Include="Images\peanut.png" />
+    <Resource Include="Images\pepper.png" />
+    <Resource Include="Images\Pickle.png" />
+    <Resource Include="Images\Tomato.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

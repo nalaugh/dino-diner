@@ -19,8 +19,18 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="Tan" Click="OnHoldPB">Hold Peanut Butter</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="Purple" Click="OnHoldJelly">Hold Jelly</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="Tan" Click="OnHoldPB">
+            <StackPanel>
+            <TextBlock>Hold Peanut Butter</TextBlock>
+            <Image Source="Images/peanut.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="Purple" Click="OnHoldJelly">
+            <StackPanel>
+            <TextBlock>Hold Jelly</TextBlock>
+            <Image Source="Images/jelly.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
         <Grid x:Name="page" Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Page>

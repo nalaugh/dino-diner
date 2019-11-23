@@ -19,9 +19,24 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="Tan" Click="OnHoldBun">Hold Bun</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="Green" Click="OnHoldPepper">Hold Peppers</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Background="LightYellow" Click="OnHoldOnions">Hold Onions</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="Tan" Click="OnHoldBun">
+            <StackPanel>
+                <TextBlock>Hold Bun</TextBlock>
+                <Image Source="Images/bun.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="Green" Click="OnHoldPepper">
+            <StackPanel>
+            <TextBlock>Hold Peppers</TextBlock>
+            <Image Source="Images/pepper.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="1" Grid.Row="1" Background="LightYellow" Click="OnHoldOnions">
+           <StackPanel>
+            <TextBlock>Hold Onion</TextBlock>
+            <Image Source="Images/onion.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
         <Grid x:Name="page" Grid.Row="2" Grid.Column="1"/>
 
 

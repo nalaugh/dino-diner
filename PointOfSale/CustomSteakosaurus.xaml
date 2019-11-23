@@ -19,10 +19,30 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="Tan" Click="OnHoldBun">Hold Bun</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="DarkSeaGreen" Click="OnHoldPickle">Hold Pickles</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="2" Background="Maroon" Click="OnHoldKetchup">Hold Ketchup</Button>
-        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="2" Background="Gold" Click="OnHoldMustard">Hold Mustard</Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="1" Background="Tan" Click="OnHoldBun">
+            <StackPanel>
+            <TextBlock>Hold Bun</TextBlock>
+            <Image Source="Images/bun.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="1" Background="DarkSeaGreen" Click="OnHoldPickle">
+            <StackPanel>
+            <TextBlock>Hold Pickles</TextBlock>
+            <Image Source="Images/Pickle.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="0" Grid.Row="2" Background="Maroon" Click="OnHoldKetchup">
+            <StackPanel>
+            <TextBlock>Hold Ketchup</TextBlock>
+            <Image Source="Images/ketchup.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
+        <Button FontFamily="Showcard Gothic" FontSize="18" Grid.Column="2" Grid.Row="2" Background="Gold" Click="OnHoldMustard">
+            <StackPanel>
+            <TextBlock>Hold Mustard</TextBlock>
+            <Image Source="Images/mustard.png" Height="90" Width="96"></Image>
+            </StackPanel>
+        </Button>
         <Grid x:Name="page" Grid.Row="2" Grid.Column="1"/>
 
     </Grid>
