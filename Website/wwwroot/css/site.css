@@ -28,11 +28,18 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
-
-.menu-item {
+.menu-itemA {
+    text-align: center;
+    font-size: x-large;
+    background-color: darkolivegreen;
+    border: solid;
+}
+.menu-itemB {
    
     text-align: center;
     font-size: x-large;
+    background-color:olive;
+    border:solid;
 }
 .column {
     width: 25%;

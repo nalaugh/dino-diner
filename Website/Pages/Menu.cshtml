@@ -4,8 +4,8 @@
     ViewData["Title"] = "Menu";
 }
 <!DOCTYPE html>
-<html >
-<head >
+<html>
+<head>
     <title> >Menu</title>
 
 
@@ -21,30 +21,30 @@
         </div>
         <div>
             <label>
-                <input type="checkbox" class="menu-Category" name="menuCategory" value="Combo"  />
+                <input type="checkbox" class="menu-Category" name="menuCategory" value="Combo" checked="@Model.menuCategory.Contains("Combo")" />
                 Combos
             </label>
             <label>
-                <input type="checkbox" class="menu-Category" name="menuCategory" value="Entree"/>
+                <input type="checkbox" class="menu-Category" name="menuCategory" value="Entree" checked="@Model.menuCategory.Contains("Entree")" />
                 Entree
             </label>
             <label>
-                <input type="checkbox" class="menu-Category" name="menuCategory" value="Side" />
+                <input type="checkbox" class="menu-Category" name="menuCategory" value="Side" checked="@Model.menuCategory.Contains("Side")" />
                 Side
             </label>
             <label>
-                <input type="checkbox" class="menu-Category" name="menuCategory" value="Drink" />
+                <input type="checkbox" class="menu-Category" name="menuCategory" value="Drink" checked="@Model.menuCategory.Contains("Drink")" />
                 Drink
             </label>
         </div>
         <div>
             <label>
                 Minimum Price
-                <input type="number" id="minimum-price" min="0" max="20" name="minimumPrice"  value="@Model.minimumPrice"/>
+                <input type="number" id="minimum-price" min="0" max="20" name="minimumPrice" value="@Model.minimumPrice" />
             </label>
             <label>
                 Maximum Price
-                <input type="number" id="max-price" min="0" max="20" name="maxPrice"  value="@Model.maxPrice"/>
+                <input type="number" id="max-price" min="0" max="20" name="maxPrice" value="@Model.maxPrice" />
             </label>
         </div>
         <div class="box">
@@ -53,7 +53,7 @@
             {
                 <label>
                     @s
-                    <input type="checkbox" name="Ingredients" value="@s"/>
+                    <input class="Posibleingredints" type="checkbox" name="Ingredients" value="@s" />
                 </label>
             }
         </div>
@@ -62,53 +62,133 @@
     <div class="column">
         <h2 class="type">Combos</h2>
 
-        @for (int i = 0; i < Model.Menu.AvailableCombos.Count; i++)
-        {       
-            
-            <div class="menu-item">
+        @for (int i = 0; i < Model.Combo.Count(); i++)
+        {
+            @if (i % 2 == 0)
+            {
+                <div class="menu-itemA">
+                    <div class="Item">
+                        @Model.Combo.ElementAt(i)
+                    </div>
+                    <div class="info">
+                        <table>
 
-                <div class="Item"> @Model.Menu.AvailableCombos[i]</div>
-                <div class="info">
-                    <p>
-                        Price: $@Model.Menu.AvailableCombos[i].Price<br />
-                        Calories: @Model.Menu.AvailableCombos[i].Calories
+                            <tr>
+                                <th>Size</th>
+                                <th>Small</th>
+                                <th>Medium</th>
+                                <th>Large</th>
+                            </tr>
+                            
+                            <tr>
+                                <th>Price</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                                <th>@Model.Combo.ElementAt(i).Price</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+                                <th>@Model.Combo.ElementAt(i).Price</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
+                                <th>@Model.Combo.ElementAt(i).Price</th>
+                            </tr>
+                            <tr>
+                                <th>Calories</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                                <th>@Model.Combo.ElementAt(i).Calories</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+                                <th>@Model.Combo.ElementAt(i).Calories</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
+                                <th>@Model.Combo.ElementAt(i).Calories</th>
+                            </tr>
 
-                    </p>
-                    <p>
-                        <b>Ingredients</b>
-                        @for (int x = 0; x < Model.Menu.AvailableCombos[i].Ingredients.Count; x++)
-                        {
-                            <br />@Model.Menu.AvailableCombos[i].Ingredients[x]
-                        }
-                    </p>
+                         
+
+                        </table>
+                        <p>
+                            <b>Ingredients</b>
+                            @for (int x = 0; x < @Model.Combo.ElementAt(i).Ingredients.Count; x++)
+                            {
+                                <br />@Model.Combo.ElementAt(i).Ingredients[x]
+                            }
+                        </p>
+
+
+                    </div>
 
                 </div>
-
-            </div>
-                
-
             }
+            @if (i % 2 == 1)
+            {
+                <div class="menu-itemB">
+                    <div class="Item">
+                        @Model.Combo.ElementAt(i)
+                    </div>
+                    <div class="info">
+                        <table>
+
+                            <tr>
+                                <th>Size</th>
+                                <th>Small</th>
+                                <th>Medium</th>
+                                <th>Large</th>
+                            </tr>
+
+                            <tr>
+                                <th>Price</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                                <th>@Model.Combo.ElementAt(i).Price</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+                                <th>@Model.Combo.ElementAt(i).Price</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
+                                <th>@Model.Combo.ElementAt(i).Price</th>
+                            </tr>
+                            <tr>
+                                <th>Calories</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                                <th>@Model.Combo.ElementAt(i).Calories</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+                                <th>@Model.Combo.ElementAt(i).Calories</th>
+                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
+                                <th>@Model.Combo.ElementAt(i).Calories</th>
+                            </tr>
+
+
+
+                        </table>
+                        <p>
+                            <b>Ingredients</b>
+                            @for (int x = 0; x < @Model.Combo.ElementAt(i).Ingredients.Count; x++)
+                            {
+                                <br />@Model.Combo.ElementAt(i).Ingredients[x]
+                            }
+                        </p>
+
+
+                    </div>
+
+                </div>
+            }
+        }
     </div>
     <div class="column">
         <h2 class="type">Entrees</h2>
-        @for (int i = 0; i < Model.Menu.AvailableEntrees.Count; i++)
+        @for (int i = 0; i < Model.Entree.Count(); i++)
         {
-           
-                <div class="menu-item">
+            @if (i % 2 == 0)
+            {
+                <div class="menu-itemB">
                     <div class="Item">
-                        @Model.Menu.AvailableEntrees[i]
+                        @Model.Entree.ElementAt(i)
                     </div>
                     <div class="info">
                         <p>
-                            Price: $@Model.Menu.AvailableEntrees[i].Price<br />
-                            Calories: @Model.Menu.AvailableEntrees[i].Calories
+                            Price: $@Model.Entree.ElementAt(i).Price<br />
+                            Calories: @Model.Entree.ElementAt(i).Calories
 
                         </p>
                         <p>
                             <b>Ingredients</b>
-                            @for (int x = 0; x < @Model.Menu.AvailableEntrees[i].Ingredients.Count; x++)
+                            @for (int x = 0; x < @Model.Entree.ElementAt(i).Ingredients.Count; x++)
                             {
-                                <br />@Model.Menu.AvailableEntrees[i].Ingredients[x]
+                                <br />@Model.Entree.ElementAt(i).Ingredients[x]
                             }
                         </p>
 
@@ -116,32 +196,84 @@
                     </div>
 
                 </div>
-                
             }
-        </div>
+            @if (i % 2 == 1)
+            {
+                <div class="menu-itemA">
+                    <div class="Item">
+                        @Model.Entree.ElementAt(i)
+                    </div>
+                    <div class="info">
+                        <p>
+                            Price: $@Model.Entree.ElementAt(i).Price<br />
+                            Calories: @Model.Entree.ElementAt(i).Calories
+
+                        </p>
+                        <p>
+                            <b>Ingredients</b>
+                            @for (int x = 0; x < @Model.Entree.ElementAt(i).Ingredients.Count; x++)
+                            {
+                                <br />@Model.Entree.ElementAt(i).Ingredients[x]
+                            }
+                        </p>
+
+
+                    </div>
+
+                </div>
+            }
+        }
+    </div>
     <div class="column">
         <h2 class="type">Drinks</h2>
 
-        @for (int i = 0; i < Model.Menu.AvailableDrinks.Count; i++)
+        @for (int i = 0; i < Model.Drink.Count(); i++)
         {
-            
-                <div class="menu-item">
+            @if (i % 2 == 0)
+            {
+                <div class="menu-itemB">
                     <div class="Item">
-                        @Model.Menu.AvailableDrinks[i]
+                        @Model.Drink.ElementAt(i)
                     </div>
                     <div class="info">
-                        <p>
-                            Price: $@Model.Menu.AvailableDrinks[i].Price<br />
-                            Calories: @Model.Menu.AvailableDrinks[i].Calories<br />
+                        <table>
 
-                        </p>
+                            <tr>
+                                <th>Size</th>
+                                <th>Small</th>
+                                <th>Medium</th>
+                                <th>Large</th>
+                            </tr>
+
+                            <tr>
+                                <th>Price</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                                <th>@Model.Drink.ElementAt(i).Price</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+                                <th>@Model.Drink.ElementAt(i).Price</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
+                                <th>@Model.Drink.ElementAt(i).Price</th>
+                            </tr>
+                            <tr>
+                                <th>Calories</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                                <th>@Model.Drink.ElementAt(i).Calories</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+                                <th>@Model.Drink.ElementAt(i).Calories</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
+                                <th>@Model.Drink.ElementAt(i).Calories</th>
+                            </tr>
+
+
+
+                        </table>
 
                         <p>
                             <b>Ingredients</b>
 
-                            @for (int x = 0; x < @Model.Menu.AvailableDrinks[i].Ingredients.Count; x++)
+                            @for (int x = 0; x < @Model.Drink.ElementAt(i).Ingredients.Count; x++)
                             {
-                                <br />@Model.Menu.AvailableDrinks[i].Ingredients[x]
+                                <br />@Model.Drink.ElementAt(i).Ingredients[x]
                             }
                         </p>
 
@@ -150,29 +282,112 @@
 
 
                 </div>
-                
             }
-        </div>
+            @if (i % 2 == 1)
+            {
+                <div class="menu-itemA">
+                    <div class="Item">
+                        @Model.Drink.ElementAt(i)
+                    </div>
+                    <div class="info">
+                        <table>
+
+                            <tr>
+                                <th>Size</th>
+                                <th>Small</th>
+                                <th>Medium</th>
+                                <th>Large</th>
+                            </tr>
+
+                            <tr>
+                                <th>Price</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                                <th>@Model.Drink.ElementAt(i).Price</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+                                <th>@Model.Drink.ElementAt(i).Price</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
+                                <th>@Model.Drink.ElementAt(i).Price</th>
+                            </tr>
+                            <tr>
+                                <th>Calories</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                                <th>@Model.Drink.ElementAt(i).Calories</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+                                <th>@Model.Drink.ElementAt(i).Calories</th>
+                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
+                                <th>@Model.Drink.ElementAt(i).Calories</th>
+                            </tr>
+
+
+
+                        </table>
+
+                        <p>
+                            <b>Ingredients</b>
+
+                            @for (int x = 0; x < @Model.Drink.ElementAt(i).Ingredients.Count; x++)
+                            {
+                                <br />@Model.Drink.ElementAt(i).Ingredients[x]
+                            }
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+            }
+
+        }
+    </div>
     <div class="column">
         <h2 class="type">Sides</h2>
-        @for (int i = 0; i < Model.Menu.AvailableSides.Count; i++)
+        @for (int i = 0; i < Model.Side.Count(); i++)
         {
-
-                <div class="menu-item">
+            @if (i % 2 == 1)
+            {
+                <div class="menu-itemA">
                     <div class="Item">
-                        @Model.Menu.AvailableSides[i]
+                        @Model.Side.ElementAt(i)
                     </div>
                     <div class="info">
-                        <p>
-                            Price: $ @Model.Menu.AvailableSides[i].Price<br />
-                            Calories: @Model.Menu.AvailableSides[i].Calories
+                        <table>
 
-                        </p>
+                            <tr>
+                                <th>Size</th>
+                                <th>Small</th>
+                                <th>Medium</th>
+                                <th>Large</th>
+                            </tr>
+
+                            <tr>
+                                <th>Price</th>
+                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                                <th>@Model.Side.ElementAt(i).Price</th>
+                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+                                <th>@Model.Side.ElementAt(i).Price</th>
+                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
+                                <th>@Model.Side.ElementAt(i).Price</th>
+                            </tr>
+                            <tr>
+                                <th>Calories</th>
+                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                                <th>@Model.Side.ElementAt(i).Calories</th>
+                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+                                <th>@Model.Side.ElementAt(i).Calories</th>
+                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
+                                <th>@Model.Side.ElementAt(i).Calories</th>
+                            </tr>
+
+
+
+                        </table>
                         <p>
                             <b>Ingredients</b>
-                            @for (int x = 0; x < @Model.Menu.AvailableSides[i].Ingredients.Count; x++)
+                            @for (int x = 0; x < @Model.Side.ElementAt(i).Ingredients.Count; x++)
                             {
-                                <br />@Model.Menu.AvailableSides[i].Ingredients[x]
+                                <br />@Model.Side.ElementAt(i).Ingredients[x]
                             }
                         </p>
 
@@ -181,8 +396,34 @@
 
 
                 </div>
-                
             }
-        </div>
+            @if (i % 2 == 1)
+            {
+                <div class="menu-itemB">
+                    <div class="Item">
+                        @Model.Side.ElementAt(i)
+                    </div>
+                    <div class="info">
+                        <p>
+                            Price: $ @Model.Side.ElementAt(i).Price<br />
+                            Calories: @Model.Side.ElementAt(i).Calories
+
+                        </p>
+                        <p>
+                            <b>Ingredients</b>
+                            @for (int x = 0; x < @Model.Side.ElementAt(i).Ingredients.Count; x++)
+                            {
+                                <br />@Model.Side.ElementAt(i).Ingredients[x]
+                            }
+                        </p>
+
+
+                    </div>
+
+
+
+                </div>
+            }
+        }
 </body>
 </html>
