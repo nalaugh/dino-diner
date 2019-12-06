@@ -21,7 +21,7 @@
         </div>
         <div>
             <label>
-                <input type="checkbox" class="menu-Category" name="menuCategory" value="Combo" checked="@Model.menuCategory.Contains("Combo")" />
+                <input type="checkbox" class="menu-Category" name="menuCategory" value="CretaceousCombo" checked="@Model.menuCategory.Contains("CretaceousCombo")" />
                 Combos
             </label>
             <label>
@@ -71,35 +71,42 @@
                         @Model.Combo.ElementAt(i)
                     </div>
                     <div class="info">
-                        <table>
 
-                            <tr>
+                        <table class="table">
+
+                            <tr class="top">
                                 <th>Size</th>
-                                <th>Small</th>
-                                <th>Medium</th>
-                                <th>Large</th>
-                            </tr>
-                            
-                            <tr>
                                 <th>Price</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
-                                <th>@Model.Combo.ElementAt(i).Price</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
-                                <th>@Model.Combo.ElementAt(i).Price</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
-                                <th>@Model.Combo.ElementAt(i).Price</th>
-                            </tr>
-                            <tr>
                                 <th>Calories</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
-                                <th>@Model.Combo.ElementAt(i).Calories</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
-                                <th>@Model.Combo.ElementAt(i).Calories</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
-                                <th>@Model.Combo.ElementAt(i).Calories</th>
+
                             </tr>
 
-                         
+                            <tr class="childen">
+                                <th>@(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Small)</th>
+                                
+                                <th>@Model.Combo.ElementAt(i).Price</th>
+                                <th>@Model.Combo.ElementAt(i).Calories</th>
+
+
+                            </tr>
+                            <tr class="childen">
+                                <th> @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)</th>
+                               
+                                <th>@Model.Combo.ElementAt(i).Price</th>
+                                <th>@Model.Combo.ElementAt(i).Calories</th>
+
+                            </tr>
+                            <tr class="childen">
+                                <th> @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Large)</th>
+
+                               
+                                <th>@Model.Combo.ElementAt(i).Price</th>
+                                <th>@Model.Combo.ElementAt(i).Calories</th>
+
+
+                            </tr>
+
+
 
                         </table>
                         <p>
@@ -122,32 +129,38 @@
                         @Model.Combo.ElementAt(i)
                     </div>
                     <div class="info">
-                        <table>
+                        <table class="table">
 
-                            <tr>
+                            <tr class="top">
                                 <th>Size</th>
-                                <th>Small</th>
-                                <th>Medium</th>
-                                <th>Large</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+
                             </tr>
 
-                            <tr>
-                                <th>Price</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                            <tr class="childen">
+                                <th> @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Small)</th>
+                               
                                 <th>@Model.Combo.ElementAt(i).Price</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
-                                <th>@Model.Combo.ElementAt(i).Price</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
-                                <th>@Model.Combo.ElementAt(i).Price</th>
+                                <th>@Model.Combo.ElementAt(i).Calories</th>
+
+
                             </tr>
-                            <tr>
-                                <th>Calories</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                            <tr class="childen">
+                                <th>@(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)</th>
+                                
+                                <th>@Model.Combo.ElementAt(i).Price</th>
                                 <th>@Model.Combo.ElementAt(i).Calories</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+
+                            </tr>
+                            <tr class="childen">
+                                <th>   @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Large)</th>
+
+                             
+                                <th>@Model.Combo.ElementAt(i).Price</th>
                                 <th>@Model.Combo.ElementAt(i).Calories</th>
-                                @(Model.Combo.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
-                                <th>@Model.Combo.ElementAt(i).Calories</th>
+
+
                             </tr>
 
 
@@ -236,38 +249,43 @@
                         @Model.Drink.ElementAt(i)
                     </div>
                     <div class="info">
-                        <table>
+                       <table class="table">
 
-                            <tr>
+                            <tr class="top">
                                 <th>Size</th>
-                                <th>Small</th>
-                                <th>Medium</th>
-                                <th>Large</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+
                             </tr>
 
-                            <tr>
-                                <th>Price</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                            <tr class="childen">
+                                <th>@(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Small)</th>
+
                                 <th>@Model.Drink.ElementAt(i).Price</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
-                                <th>@Model.Drink.ElementAt(i).Price</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
-                                <th>@Model.Drink.ElementAt(i).Price</th>
+                                <th>@Model.Drink.ElementAt(i).Calories</th>
+
+
                             </tr>
-                            <tr>
-                                <th>Calories</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                            <tr class="childen">
+                                <th>@(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)</th>
+                               
+                                <th>@Model.Drink.ElementAt(i).Price</th>
                                 <th>@Model.Drink.ElementAt(i).Calories</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+
+                            </tr>
+                            <tr class="childen">
+                                <th>@(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Large)</th>
+
+                               
+                                <th>@Model.Drink.ElementAt(i).Price</th>
                                 <th>@Model.Drink.ElementAt(i).Calories</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
-                                <th>@Model.Drink.ElementAt(i).Calories</th>
+
+
                             </tr>
 
 
 
                         </table>
-
                         <p>
                             <b>Ingredients</b>
 
@@ -290,32 +308,39 @@
                         @Model.Drink.ElementAt(i)
                     </div>
                     <div class="info">
-                        <table>
+                        <table class="table">
 
-                            <tr>
+                            <tr class="top">
                                 <th>Size</th>
-                                <th>Small</th>
-                                <th>Medium</th>
-                                <th>Large</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+
                             </tr>
 
-                            <tr>
-                                <th>Price</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                            <tr class="childen">
+                                <th>@(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Small)</th>
+                                
                                 <th>@Model.Drink.ElementAt(i).Price</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
-                                <th>@Model.Drink.ElementAt(i).Price</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
-                                <th>@Model.Drink.ElementAt(i).Price</th>
+                                <th>@Model.Drink.ElementAt(i).Calories</th>
+
+
                             </tr>
-                            <tr>
-                                <th>Calories</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                            <tr class="childen">
+                                <th>@(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)</th>
+                                
+                                <th>@Model.Drink.ElementAt(i).Price</th>
                                 <th>@Model.Drink.ElementAt(i).Calories</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+
+                            </tr>
+                            <tr class="childen">
+                                <th>@(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Large)</th>
+
+                               
+                                <th>@Model.Drink.ElementAt(i).Price</th>
                                 <th>@Model.Drink.ElementAt(i).Calories</th>
-                                @(Model.Drink.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
-                                <th>@Model.Drink.ElementAt(i).Calories</th>
+
+
+
                             </tr>
 
 
@@ -352,32 +377,40 @@
                         @Model.Side.ElementAt(i)
                     </div>
                     <div class="info">
-                        <table>
+                        <table class="table">
 
-                            <tr>
+                            <tr class="top">
                                 <th>Size</th>
-                                <th>Small</th>
-                                <th>Medium</th>
-                                <th>Large</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+
                             </tr>
 
-                            <tr>
-                                <th>Price</th>
-                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                            <tr class="childen">
+                                <th>@(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Small)</th>
+                                
                                 <th>@Model.Side.ElementAt(i).Price</th>
-                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
-                                <th>@Model.Side.ElementAt(i).Price</th>
-                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
-                                <th>@Model.Side.ElementAt(i).Price</th>
+                                <th>@Model.Side.ElementAt(i).Calories</th>
+
+
                             </tr>
-                            <tr>
-                                <th>Calories</th>
-                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Small)
+                            <tr class="childen">
+                                <th>@(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)</th>
+                                
+                                <th>@Model.Side.ElementAt(i).Price</th>
                                 <th>@Model.Side.ElementAt(i).Calories</th>
-                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)
+
+                            </tr>
+                            <tr class="childen">
+                                <th>@(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Large)</th>
+
+                                
+                                <th>@Model.Side.ElementAt(i).Price</th>
                                 <th>@Model.Side.ElementAt(i).Calories</th>
-                                @(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Large)
-                                <th>@Model.Side.ElementAt(i).Calories</th>
+
+
+
+
                             </tr>
 
 
@@ -404,11 +437,45 @@
                         @Model.Side.ElementAt(i)
                     </div>
                     <div class="info">
-                        <p>
-                            Price: $ @Model.Side.ElementAt(i).Price<br />
-                            Calories: @Model.Side.ElementAt(i).Calories
+                        <table class="table">
 
-                        </p>
+                            <tr class="top">
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+                           
+                            </tr>
+
+                            <tr class="childen">
+                                <th>@(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Small)</th>
+                                
+                                <th>@Model.Side.ElementAt(i).Price</th>
+                                <th>@Model.Side.ElementAt(i).Calories</th>
+
+
+                            </tr>
+                            <tr class="childen">
+                                <th>@(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Medium)</th>
+                                
+                                <th>@Model.Side.ElementAt(i).Price</th>
+                                <th>@Model.Side.ElementAt(i).Calories</th>
+
+                            </tr>
+                            <tr class="childen">
+                                <th>@(Model.Side.ElementAt(i).Size = DinoDiner.Menu.Size.Large)</th>
+
+                                
+                                <th>@Model.Side.ElementAt(i).Price</th>
+                                <th>@Model.Side.ElementAt(i).Calories</th>
+
+
+                               
+
+                            </tr>
+
+
+
+                        </table>
                         <p>
                             <b>Ingredients</b>
                             @for (int x = 0; x < @Model.Side.ElementAt(i).Ingredients.Count; x++)

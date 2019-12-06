@@ -131,7 +131,7 @@ namespace DinoDiner.Menu
         /// <returns>the size and water</returns>
         public override string ToString()
         {
-            string  s  =  size + " Water";
+            string  s  =  $"{size}  Water";
             return s;
         }
     }

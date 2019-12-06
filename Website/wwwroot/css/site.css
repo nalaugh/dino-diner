@@ -28,6 +28,41 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+.menu-itemA > .info > table {
+    text-align: center;
+    font-family: arial;
+    border-collapse: collapse;
+    width: auto;
+    border-left: 2px solid black;
+}
+table, th, td {
+    width: 100%;
+
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.menu-itemA > .info > table {
+    border: 2px solid black;
+    text-align: left;
+    width: auto;
+    border-left: 2px solid black;
+}
+
+.menu-itemB > .info > table {
+    font-family: arial;
+    border-collapse: collapse;
+    width: auto;
+    border-left: 2px solid black;
+}
+
+.menu-itemB > .info > table {
+    border: 2px solid black;
+    text-align: left;
+    width: auto;
+    border-left: 2px solid black;
+}
+   
 .menu-itemA {
     text-align: center;
     font-size: x-large;
